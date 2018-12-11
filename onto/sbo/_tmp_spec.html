@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>Gi2MO Wave Ontology Specification</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper2">
+
+	<a href="http://www.mondragon.edu/en"><img id="logo_gsi" src="img/logo_mondragon.gif" alt="Mondragon University" style="border: 0pt none; padding: 10px;"/></a> 
+	<a href="http://purl.org/gi2mo/wave/"><img id="logo_gi2mo" src="img/gi2mo_logo.png" alt="GI2MO Wave Ontology" style="border: 0pt none ; float: right; padding: 10px;" /></a> 
+
+    <!-- <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3> -->
+    <h1 id="title">Gi2MO Wave Ontology Specification</h1>
+    <!--    <h2 id="subtitle">LONG NAME</h2> -->
+    <h3 id="mymw-doctype">V0.1 - 04 June 2012</h3>
+    <dl>
+    <table border="0">
+    <tr>
+        <td>
+            <b>This version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/wave/0.1/ns">http://purl.org/gi2mo/wave/0.1/ns</a> (<a href="ns.owl">RDF/XML</a>, <a href="ns.html">HTML</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Latest version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/wave/ns">http://purl.org/gi2mo/wave/ns</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Editors:</b>
+        </td>
+        <td>
+            Felix Larrinaga, Osane Lizarralde, Alain Perez
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Authors:</b>
+        </td>
+        <td>
+            Felix Larrinaga, Osane Lizarralde, Alain Perez
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Contributors:</b>
+        </td>
+        <td>
+            See <a href="#acknowledgements">acknowledgements</a>
+        </td>
+    </tr>
+    </table>
+    
+    <p>
+    <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0pt none ; float: right; padding: 10px;" src="img/cc_licence.png" /></a> 
+    </p>    
+    <p class="copyright">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. This copyright applies to the Gi2MO Wave Ontology Specification and accompanying documentation in RDF. This ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+    <!-- ===================================================================== -->
+    <hr/>
+
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        <b>Gi2MO Wave</b> is a standardized data schema (also referred as "ontology" or "vocabulary") designed to use for annotation and describing resources gathered inside Idea Management facilities. The following document contains the description of ontology and instructions how to connect it with descriptions of other resources.</p>
+
+    <hr/>
+
+    <h2 id="contents">Table of Contents</h2>
+    <ol id="toc">
+      <li><a href="#intro">Introduction</a>
+        <ol>
+          <li><a href="#s11">Idea Management Systems and InnoWEB project context</a></li>
+          <li><a href="#s12">The Semantic Web</a></li>
+          <li><a href="#s13">What is Gi2MO Wave for?</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec-glance">Gi2MO Wave Ontology at a glance</a></li>
+      <li>
+        <a href="#overview">Gi2MO Wave Ontology overview</a>
+<!--        <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+        <ol>
+          <li><a href="#s32">Example</a></li>
+        </ol>
+      </li>
+      <li><a href="#reference">Cross-reference for Gi2MO Wave Classes and Properties</a></li>
+    </ol>
+
+    <h3>Appendixes</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+<!--      <li><a href="#references">Normative References</a></li> -->
+      <li><a href="#changes">Changelog</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+
+    <h2 id="intro">1 Introduction</h2>
+
+    <p>The following specification is a formal description of metadata schema proposal that can be applied to data gathered in the so-called Idea Management Systems. The goal of the following section is to introduce both Semantic Web and Idea Management experts to the topic and goals of the ontology and provide the basic knowledge to comprehend the technical part of the specification.</p>
+    <p><b>An important note</b> is that Gi2MO Wave Ontology is not a complete model of the Idea Management System. It extends the concepts of the main <a href="http://purl.org/gi2mo/ns">Gi2MO Ontology</a> and defines concepts that were particular for Idea Management pipeline of InnoWEB project. See <a href="#s13">goals of the Wave ontology</a> to see if this particular setting is fit for reuse in your case.
+
+    <h3 id="s11">1.1 Idea Management Systems and InnoWEB project context</h3>
+
+    <p>The Idea Management Systems are referred most often as an application used by organizations to collect input about various ideas regarding their products and services; and manage them afterwards providing certain assessment and screening facilities. Those kind of systems are the main research interest of the InnoWEB project that evaluates new techniques for collaborative innovation in corporate environment.
+    </p>    
+    
+	<p>
+	The InnoWeb is an project by the <a href="http://www.mondragon.edu/en">Mondragon University</a>, <a href="http://www.iseamcc.net/">ISEA institute</a> and companies of <a href="http://www.mondragon-corporation.com/">Mondragon Corporation</a>. One of the outcomes of the project is a collaborative innovation platform based on social software. The specific characteristic of the platform is the introduction of 'innovation waves' - an element similar to the notion of Idea Contest but imposing a number of limitations on the innovators and as well as idea reviewers (e.g. elements of idea descriptions that users have to provide).
+	</p>
+	<p>
+	The presented ontology is an extension to a regular Idea Management model as a consequence of introducing this notion of innovation waves. 
+	</p>
+	<p>
+	For more details about the research and case studies conducted during InnoWEB please refer to a related publication from the 17th International Conference on Concurrent Enterprising (ICE 2011): "<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6041243">A Case Study on the Use of Community Platforms for Inter-Enterprise Innovation</a>" by Felix Larrinaga, Igor Santos, Osane Lizarralde, Alain Perez.
+	</p>
+    </p>
+
+    <h3 id="s12">1.2 The Semantic Web</h3>
+
+    <p>The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is a W3C initiative that aims to introduce rich metadata to the current Web and provide machine readable and processable data as a supplement to human-readable Web.
+    </p>
+    <p>
+    Semantic Web is a mature domain that has been in research phase for many years and with the increasing amount of commercial interest and emerging products is starting to gain appreciation and popularity as one of the rising trends for the future Internet.
+    </p>
+    
+    <p>
+    One of the corner stores of the Semantic Web is research on inter-linkable and interoperable data schemas for information published online. Those schemas are often referred to as ontologies or vocabularies. In order to facilitate the concept of ontologies that lead to a truly interoperable Web of Data, W3C has proposed a series of technologies such as <a href="http://www.w3.org/RDF/">RDF</a> and <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>.
+    <b>Gi2MO Wave</b> uses those technologies and the research that comes within to propose an ontology set in the domain of Idea Management.
+    </p>
+    
+    <h3 id="s13">1.4 What is Gi2MO Wave for?</h3>
+    <p>
+    The goals of the Gi2MO Wave Ontology to achieve as a data schema are:
+    <ul>
+    <li>extend the notion of Gi2MO's Idea Contests to 'innovation waves' that can have a status, type, and different idea selection criteria</li>
+    <li>force (limit to) a certain type of idea descriptions: Target, Market, Customer, Competitor, Outcome etc.</li>
+    </ul>
+    </p>
+
+
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. Gi2MO Wave Ontology at a glance</h2>
+
+    <p>
+      An alphabetical index of Gi2MO Wave terms,  by class (concepts) and by property 
+      (relationships, attributes), are given below. All the terms are hyperlinked 
+      to their detailed description for quick reference. <!-- class (categories or types) and by property -->
+    </p>
+
+    <!-- The list of classes and properties goes here -->
+ 
+ <div class="azlist">
+<p>Classes: |
+</p>
+<p>Properties: |
+</p>
+</div>
+
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. GI2MO Wave Ontology overview</h2>
+
+    <p>The GI2MO Wave UML diagram presented below shows connections between classes that implement the data model of Idea Management Systems.</p>
+    
+    <div class="img"> 
+				<a href="img/class_diagram_v0.1.jpg"><img src="img/class_diagram_v0.1_small.jpg" alt="UML Class Diagram for the GI2MO Wave Ontology" title="click to enlarge" style="border:0" /></a> 
+				<div>UML Class Diagram for the GI2MO Wave Ontology (based on Gi2MO Ontology diagram), high resolution version: <a href="img/class_diagram_v0.1.jpg">PNG</a>)</div> 
+	</div> 
+    <!--
+    <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO Wave Ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+    -->
+
+    <!-- ===================================================================== -->
+
+    <h3 id="s32">3.1. Example</h3> <!-- 3.2. Example -->
+
+    <p>A very basic example below shows a single idea annotated with Gi2MO and Gi2MO Wave metadata:</p>
+
+    <div class="example">
+      <pre>
+  &lt;gi2mo:Idea rdf:about="http://gi2mo.org/idea/012345"&gt;
+    &lt;foaf:page rdf:resource="http://gi2mo.org/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://gi2mo.org/user/pedro"/&gt;
+    &lt;gi2mo:content&gt;A new, nice and modern building for the department that would have a similar interior design 
+    as shopping malls
+    &lt;/gi2mo:content&gt;
+    &lt;dcterms:title&gt;Department building with shopping mall interior design&lt;/gi2mo:title&gt;
+    &lt;dcterms:created&gt;2012-04-23&lt;/gi2mo:created&gt;
+    &lt;gi2mo:hasStatus rdf:resource="http://www.purl.org/gi2mo/ns#Implemented"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://gi2mo.org/comment/054321"/&gt;
+    &lt;gi2mo:hasCategory rdf:resource="http://gi2mo.org/category/General"/&gt;
+    &lt;gi2mowave:hasTarget rdf:resource="http://gi2mo.org/description/02345"/&gt;
+    &lt;gi2mowave:hasCustomer rdf:resource="http://gi2mo.org/description/02346"/&gt;
+    &lt;gi2mowave:hasOutcome rdf:resource="http://gi2mo.org/description/02347"/&gt;
+  &lt;/gi2mo:Idea&gt;
+  
+  &lt;gi2mowave:Outcome rdf:about="http://gi2mo.org/description/012345"&gt;
+    &lt;foaf:page rdf:resource="http://gi2mo.org/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://gi2mo.org/user/pedro"/&gt;
+    &lt;gi2mo:content&gt;A new building would make people feel better in comparison to studding in the current one that has 
+    40+ years without renovation.
+    &lt;/gi2mo:content&gt;
+    &lt;dcterms:title&gt;Outcome: Department building with shopping mall interior design&lt;/gi2mo:title&gt;
+    &lt;dcterms:created&gt;2012-04-23&lt;/gi2mo:created&gt;
+    &lt;gi2mowave:isOutcomeOf rdf:resource="http://gi2mo.org/idea/012345"/&gt;
+  &lt;/gi2mowave:Outcome&gt;
+      </pre>
+    </div>
+    
+    <!-- ===================================================================== -->
+
+    <h2 id="reference">4. Cross-reference for Gi2MO Wave classes and properties</h2>
+
+    <p>Below see a comprehensive list of all Gi2MO Wave classes, properties and their descriptions.</p>
+
+    <!-- The following is the script-generated list of classes and properties -->
+
+<!-- Classes and Properties -->
+<!-- classes and properties -->
+<!-- this is the a-z listing -->
+<!-- <div class="azlist">
+<p>Classes: |
+</p>
+<p>Properties: |
+</p>
+</div> -->
+
+<!-- and this is the bulk of the vocab descriptions -->
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ 
+
+
+<h2>Properties</h2>
+ 
+
+
+
+</div>
+</div>
+
+    <h2 id="changes">A Changelog</h2>
+
+    <h3 id="sec-changes20120508">2012-06-04</h3> 
+    <ul>
+      <li>First version of the document</li> 
+    </ul>
+    
+	<h2><a id="acknowledgements"></a>B Acknowledgements</h2>
+
+    <p>
+        This documentation has been generated automatically from the most recent ontology specification in OWL using a python script called <a href="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</a>. The style formatting has been inspired on <a href="http://xmlns.com/foaf/spec/">FOAF</a> specification.
+    </p>
+
+</body>
+</html>
+
+

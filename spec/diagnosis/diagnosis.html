@@ -1,0 +1,1759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Gi2MO Wave Ontology Specification</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.5  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGED" CONTENT="20121108;18120200">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<!-- <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3> -->
+	<STYLE TYPE="text/css">
+	<!--
+		H3.cjk { font-family: "Droid Sans Fallback" }
+		H3.ctl { font-family: "FreeSans" }
+		H2.cjk { font-family: "Droid Sans Fallback" }
+		H2.ctl { font-family: "FreeSans" }
+		PRE.cjk { font-family: "Droid Sans Fallback", monospace }
+		PRE.ctl { font-family: "FreeSans", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<DIV ID="wrapper2" DIR="LTR">
+	<P><A NAME="logo_gsi"></A><A NAME="logo_gi2mo"></A><A HREF="http://www.mondragon.edu/en">
+	</A><BR><BR>
+	</P>
+	<H1>Starfire</H1>
+	<H3 CLASS="western"><A NAME="mymw-doctype"></A><!-- <h2 id="subtitle">LONG NAME</h2> -->V0.1
+	– 08 November 2012</H3>
+	<TABLE WIDTH=457 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=108>
+		<COL WIDTH=341>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>This version:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>DIRECCION DONDE ESTE ALOJADA LA ONTOLOGIA</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Latest version:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>MISMA DIRECCION QUE LA ANTERIOR</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Editors:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>Alvaro Carrera Barroso, Daniel Lara Diezma</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Authors:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>Alvaro Carrera Barroso, Daniel Lara Diezma</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR><BR>
+	</P>
+	<H2 CLASS="western"><A NAME="abstract"></A><!-- ===================================================================== -->Abstract</H2>
+	<P><B>Starfire</B> is a standardized data schema (also referred as
+	&quot;ontology&quot; or &quot;vocabulary&quot;) designed to use for
+	diagnosis failures in a network and try to solve them. The following
+	document contains the description of ontology and instructions how
+	to connect it with descriptions of other resources.</P>
+	<H2 CLASS="western"><A NAME="contents"></A>Table of Contents</H2>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A NAME="toc"></A><A HREF="#intro">Introduction</A>
+				</P>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0cm"><A HREF="#1.1 What is Starfire for_|outline">What
+			is Starfire for?</A></P>
+		</OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#2. Starfire Ontology at a glance|outline">Starfire
+		Ontology at a glance</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#3. Starfire Ontology overview|outline">Starfire
+		Ontology overview</A><!-- <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+				</P>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0cm"><A HREF="#s32">Example</A> 
+			</P>
+		</OL>
+		<LI><P><A HREF="#reference">Cross-reference for Starfire Classes and Properties</A> 
+		</P>
+	</OL>
+	<H3 CLASS="western">Appendixes</H3>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A NAME="appendix"></A><!-- <li><a href="#references">Normative References</a></li> --><A HREF="#changes">Changelog</A>
+				</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#acknowledgements">Acknowledgements</A>
+				</P>
+	</OL>
+	<HR>
+	<H2 CLASS="western"><A NAME="intro"></A><!-- ===================================================================== -->1
+	Introduction</H2>
+	<P>The following specification is a formal description of metadata
+	schema proposal that can be applied to diagnosis failures in a
+	network and try to resolve the failure according to the diagnostic.
+	The goal of the following section is to introduce goals of the
+	ontology and provide the basic knowledge to comprehend the technical
+	part of the specification.</P>
+	<H3 CLASS="western"><A NAME="s13"></A>1.1 What is Starfire for?</H3>
+	<P STYLE="margin-bottom: 0cm">The goals of the Starfire Ontology to
+	achieve as a data schema are: 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm">make a Diagnosis for failures
+		that happen in a Network</P>
+		<LI><P>try to solve the failures according the diagnosis.</P>
+	</UL>
+	<H2 CLASS="western"><A NAME="sec-glance"></A><A NAME="2. Starfire Ontology at a glance|outline"></A>
+	<!-- ===================================================================== -->2.
+	Starfire Ontology at a glance</H2>
+	<P>An alphabetical index of Starfire terms, by class (concepts) and
+	by property (relationships, attributes), are given below. All the
+	terms are hyperlinked to their detailed description for quick
+	reference.<!-- class (categories or types) and by property --> 
+	</P>
+	<P><!-- The list of classes and properties goes here --><div class="azlist">
+<p>Classes: | <a href="#Action">Action</a> |  <a href="#Actor">Actor</a> |  <a href="#Agent">Agent</a> |  <a href="#AvailableAction">AvailableAction</a> |  <a href="#Condition">Condition</a> |  <a href="#Connection">Connection</a> |  <a href="#Device">Device</a> |  <a href="#Diagnosis">Diagnosis</a> |  <a href="#EnvironmentAction">EnvironmentAction</a> |  <a href="#Failure">Failure</a> |  <a href="#HardwareSystem">HardwareSystem</a> |  <a href="#HealingAction">HealingAction</a> |  <a href="#Human">Human</a> |  <a href="#Hypothesis">Hypothesis</a> |  <a href="#MonitoringAction">MonitoringAction</a> |  <a href="#Network">Network</a> |  <a href="#Observation">Observation</a> |  <a href="#PerformedAction">PerformedAction</a> |  <a href="#RequiredActorCondition">RequiredActorCondition</a> |  <a href="#SatisfiedCondition">SatisfiedCondition</a> |  <a href="#SoftwareSystem">SoftwareSystem</a> |  <a href="#Subsystem">Subsystem</a> |  <a href="#SuccessfulyPerformedAction">SuccessfulyPerformedAction</a> |  <a href="#Symptom">Symptom</a> |  <a href="#System">System</a> |  <a href="#TestAction">TestAction</a> |  <a href="#UnavailableAction">UnavailableAction</a> |  <a href="#UnsatisfiedCondition">UnsatisfiedCondition</a> |  <a href="#UnsuccessfulyPerformedAction">UnsuccessfulyPerformedAction</a> |  <a href="#Variable">Variable</a> | 
+</p>
+<p>Properties: | <a href="#available">available</a> |  <a href="#belongsToDiagnosis">belongsToDiagnosis</a> |  <a href="#belongsToNetwork">belongsToNetwork</a> |  <a href="#canBePerformedBy">canBePerformedBy</a> |  <a href="#canBeRepairedWith">canBeRepairedWith</a> |  <a href="#canPerform">canPerform</a> |  <a href="#connectsSystem">connectsSystem</a> |  <a href="#expectedBenefit">expectedBenefit</a> |  <a href="#hasAgentResiding">hasAgentResiding</a> |  <a href="#hasBayesianNode">hasBayesianNode</a> |  <a href="#hasBeenPerformedBy">hasBeenPerformedBy</a> |  <a href="#hasCondition">hasCondition</a> |  <a href="#hasConnection">hasConnection</a> |  <a href="#hasData">hasData</a> |  <a href="#hasDevice">hasDevice</a> |  <a href="#hasFailure">hasFailure</a> |  <a href="#hasHypothesis">hasHypothesis</a> |  <a href="#hasLocation">hasLocation</a> |  <a href="#hasPerformed">hasPerformed</a> |  <a href="#hasPossibleActionsToPerform">hasPossibleActionsToPerform</a> |  <a href="#hasPostcondition">hasPostcondition</a> |  <a href="#hasPrecondition">hasPrecondition</a> |  <a href="#hypothesisConfidence">hypothesisConfidence</a> |  <a href="#id">id</a> |  <a href="#isComposedBy">isComposedBy</a> |  <a href="#isConnectedBy">isConnectedBy</a> |  <a href="#isExecutingIn">isExecutingIn</a> |  <a href="#isPartOf">isPartOf</a> |  <a href="#isPartOfNetwork">isPartOfNetwork</a> |  <a href="#observationResult">observationResult</a> |  <a href="#observationType">observationType</a> |  <a href="#observationValue">observationValue</a> |  <a href="#performableTypeOfActions">performableTypeOfActions</a> |  <a href="#performed">performed</a> |  <a href="#performedAction">performedAction</a> |  <a href="#performedHealingAction">performedHealingAction</a> |  <a href="#performedMonitoringAction">performedMonitoringAction</a> |  <a href="#performedTestAction">performedTestAction</a> |  <a href="#possibleResults">possibleResults</a> |  <a href="#repairsFailure">repairsFailure</a> |  <a href="#representsPossibleFailure">representsPossibleFailure</a> |  <a href="#residesIn">residesIn</a> |  <a href="#resultSymptom">resultSymptom</a> |  <a href="#satisfied">satisfied</a> |  <a href="#startedBySymptom">startedBySymptom</a> |  <a href="#startsDiagnosis">startsDiagnosis</a> |  <a href="#status">status</a> |  <a href="#successfullyPerformed">successfullyPerformed</a> |  <a href="#variableType">variableType</a> |  <a href="#variableValue">variableValue</a> |  <a href="#whenHasBeenPerformed">whenHasBeenPerformed</a> |  <a href="#whenHasFinished">whenHasFinished</a> |  <a href="#whenHasStarted">whenHasStarted</a> | 
+</p>
+</div><!-- End of the terms list --><!-- ===================================================================== -->
+		</P>
+	<H2 CLASS="western"><A NAME="overview"></A><A NAME="3. Starfire Ontology overview|outline"></A>
+	3. Starfire Ontology overview</H2>
+	<P>The Starfire UML diagram presented below shows connections
+	between classes that implement the data model of Network Failure
+	Diagnosis</P>
+	<P STYLE="margin-bottom: 0cm"><A HREF="img/class_diagram_v0.1.jpg"> </A>
+	</P>
+	<P><BR><BR>
+	</P>
+	<H3 CLASS="western"><A NAME="s32"></A><!-- <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO Wave Ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+ --><!-- ===================================================================== -->3.1.
+	Example</H3>
+	<P><!-- 3.2. Example -->A very basic example below shows a single
+	failure annotated with Starfire metadata:</P>
+	<PRE CLASS="western">    &lt;owl:Classrdf:about=&quot;http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure&quot;&gt;&lt;rdfs:comment xml:lang=&quot;en&quot;&gt;&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the concept of failure.
+    &lt;/p&gt;&lt;/rdfs:comment&gt;&lt;ns:term_status xml:lang=&quot;en&quot;&gt;Stable&lt;/ns:term_status&gt;&lt;/owl:Class&gt;
+  </PRE><H2 CLASS="western">
+	<A NAME="reference"></A><!-- ===================================================================== -->4.
+	Cross-reference for Starfire classes and properties</H2>
+	<P>Below see a comprehensive list of all Starfire classes,
+	properties and their descriptions.</P>
+	<P><!-- The following is the script-generated list of classes and properties --><!-- Classes and Properties --><!-- classes and properties --><!-- this is the a-z listing --><!-- <div class="azlist">
+<p>Classes: | <a href="#Action">Action</a> |  <a href="#Actor">Actor</a> |  <a href="#Agent">Agent</a> |  <a href="#AvailableAction">AvailableAction</a> |  <a href="#Condition">Condition</a> |  <a href="#Connection">Connection</a> |  <a href="#Device">Device</a> |  <a href="#Diagnosis">Diagnosis</a> |  <a href="#EnvironmentAction">EnvironmentAction</a> |  <a href="#Failure">Failure</a> |  <a href="#HardwareSystem">HardwareSystem</a> |  <a href="#HealingAction">HealingAction</a> |  <a href="#Human">Human</a> |  <a href="#Hypothesis">Hypothesis</a> |  <a href="#MonitoringAction">MonitoringAction</a> |  <a href="#Network">Network</a> |  <a href="#Observation">Observation</a> |  <a href="#PerformedAction">PerformedAction</a> |  <a href="#RequiredActorCondition">RequiredActorCondition</a> |  <a href="#SatisfiedCondition">SatisfiedCondition</a> |  <a href="#SoftwareSystem">SoftwareSystem</a> |  <a href="#Subsystem">Subsystem</a> |  <a href="#SuccessfulyPerformedAction">SuccessfulyPerformedAction</a> |  <a href="#Symptom">Symptom</a> |  <a href="#System">System</a> |  <a href="#TestAction">TestAction</a> |  <a href="#UnavailableAction">UnavailableAction</a> |  <a href="#UnsatisfiedCondition">UnsatisfiedCondition</a> |  <a href="#UnsuccessfulyPerformedAction">UnsuccessfulyPerformedAction</a> |  <a href="#Variable">Variable</a> | 
+</p>
+<p>Properties: | <a href="#available">available</a> |  <a href="#belongsToDiagnosis">belongsToDiagnosis</a> |  <a href="#belongsToNetwork">belongsToNetwork</a> |  <a href="#canBePerformedBy">canBePerformedBy</a> |  <a href="#canBeRepairedWith">canBeRepairedWith</a> |  <a href="#canPerform">canPerform</a> |  <a href="#connectsSystem">connectsSystem</a> |  <a href="#expectedBenefit">expectedBenefit</a> |  <a href="#hasAgentResiding">hasAgentResiding</a> |  <a href="#hasBayesianNode">hasBayesianNode</a> |  <a href="#hasBeenPerformedBy">hasBeenPerformedBy</a> |  <a href="#hasCondition">hasCondition</a> |  <a href="#hasConnection">hasConnection</a> |  <a href="#hasData">hasData</a> |  <a href="#hasDevice">hasDevice</a> |  <a href="#hasFailure">hasFailure</a> |  <a href="#hasHypothesis">hasHypothesis</a> |  <a href="#hasLocation">hasLocation</a> |  <a href="#hasPerformed">hasPerformed</a> |  <a href="#hasPossibleActionsToPerform">hasPossibleActionsToPerform</a> |  <a href="#hasPostcondition">hasPostcondition</a> |  <a href="#hasPrecondition">hasPrecondition</a> |  <a href="#hypothesisConfidence">hypothesisConfidence</a> |  <a href="#id">id</a> |  <a href="#isComposedBy">isComposedBy</a> |  <a href="#isConnectedBy">isConnectedBy</a> |  <a href="#isExecutingIn">isExecutingIn</a> |  <a href="#isPartOf">isPartOf</a> |  <a href="#isPartOfNetwork">isPartOfNetwork</a> |  <a href="#observationResult">observationResult</a> |  <a href="#observationType">observationType</a> |  <a href="#observationValue">observationValue</a> |  <a href="#performableTypeOfActions">performableTypeOfActions</a> |  <a href="#performed">performed</a> |  <a href="#performedAction">performedAction</a> |  <a href="#performedHealingAction">performedHealingAction</a> |  <a href="#performedMonitoringAction">performedMonitoringAction</a> |  <a href="#performedTestAction">performedTestAction</a> |  <a href="#possibleResults">possibleResults</a> |  <a href="#repairsFailure">repairsFailure</a> |  <a href="#representsPossibleFailure">representsPossibleFailure</a> |  <a href="#residesIn">residesIn</a> |  <a href="#resultSymptom">resultSymptom</a> |  <a href="#satisfied">satisfied</a> |  <a href="#startedBySymptom">startedBySymptom</a> |  <a href="#startsDiagnosis">startsDiagnosis</a> |  <a href="#status">status</a> |  <a href="#successfullyPerformed">successfullyPerformed</a> |  <a href="#variableType">variableType</a> |  <a href="#variableValue">variableValue</a> |  <a href="#whenHasBeenPerformed">whenHasBeenPerformed</a> |  <a href="#whenHasFinished">whenHasFinished</a> |  <a href="#whenHasStarted">whenHasStarted</a> | 
+</p>
+</div> --><!-- and this is the bulk of the vocab descriptions --><div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ <div class="specterm" id="Action" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action" typeof="owl:Class">
+  			<h3>Class: diag:Action</h3> 
+  			<em property="rdfs:label" >Action</em> - <span property="rdfs:comment" >This class represents an action that can be performed by an actor at any time.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#performed">performed</a>
+ <a href="#available">available</a>
+ <a href="#hasCondition">hasCondition</a>
+ <a href="#canBePerformedBy">canBePerformedBy</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#canPerform">canPerform</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th class="restrictions">Restriction(s):</th>
+ <td>  <span about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action" rel="rdfs:subClassOf" resource="[_:N5eb97a12d89e4f28ba89027fa45dae59]"></span>
+ <span about="[_:N5eb97a12d89e4f28ba89027fa45dae59]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:N5eb97a12d89e4f28ba89027fa45dae59]" rel="owl:onProperty" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPrecondition"><a href="#hasPrecondition">diag:hasPrecondition</a></span> must be set <em></em> 
+  									<span about="[_:N5eb97a12d89e4f28ba89027fa45dae59]" property="owl:onClass" datatype="xsd:nonNegativeInteger" >http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#RequiredActorCondition</span> time(s)   and <em></em> 
+  										<span about="[_:N5eb97a12d89e4f28ba89027fa45dae59]" property="owl:qualifiedCardinality" >1</span> time(s)<br/> <span about ="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action" rel="rdfs:subClassOf" resource="[_:N150a91eaed49445d90ee0a2b10cbcce6]"></span>
+ <span about="[_:N150a91eaed49445d90ee0a2b10cbcce6]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:N150a91eaed49445d90ee0a2b10cbcce6]" rel="owl:onProperty" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#available"><a href="#available">diag:available</a></span> must be set <em>exactly</em> 
+  									<span about="[_:N150a91eaed49445d90ee0a2b10cbcce6]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#PerformedAction">PerformedAction</a>
+ <a href="#EnvironmentAction">EnvironmentAction</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Action">#</a>] <!-- Action --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Actor" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor" typeof="owl:Class">
+  			<h3>Class: diag:Actor</h3> 
+  			<em property="rdfs:label" >Actor</em> - <span property="rdfs:comment" >This class represents any actor that can perform actions.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#canPerform">canPerform</a>
+ <a href="#performableTypeOfActions">performableTypeOfActions</a>
+ <a href="#hasPerformed">hasPerformed</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasBeenPerformedBy">hasBeenPerformedBy</a>
+ <a href="#canBePerformedBy">canBePerformedBy</a>
+</td></tr> <tr><th>Has sub class</th>
+ <td>  <a href="#Human">Human</a>
+ <a href="#Agent">Agent</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Actor">#</a>] <!-- Actor --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Agent" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Agent" typeof="owl:Class">
+  			<h3>Class: diag:Agent</h3> 
+  			<em property="rdfs:label" >Agent</em> - <span property="rdfs:comment" >This class represents software actors that can automate actions.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isExecutingIn">isExecutingIn</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasAgentResiding">hasAgentResiding</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Human"><a href="#Human">Human</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Agent">#</a>] <!-- Agent --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="AvailableAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#AvailableAction" typeof="owl:Class">
+  			<h3>Class: diag:AvailableAction</h3> 
+  			<em property="rdfs:label" >AvailableAction</em> - <span property="rdfs:comment" >This class is used to classify actions which all its preconditions are satisfied.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnavailableAction"><a href="#UnavailableAction">UnavailableAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#AvailableAction">#</a>] <!-- AvailableAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Condition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition" typeof="owl:Class">
+  			<h3>Class: diag:Condition</h3> 
+  			<em property="rdfs:label" >Condition</em> - <span property="rdfs:comment" >This class represents conditions of actions.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#satisfied">satisfied</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasCondition">hasCondition</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th class="restrictions">Restriction(s):</th>
+ <td>  <span about ="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition" rel="rdfs:subClassOf" resource="[_:Ndf101637ef8d4b6aa24eff78e142ac82]"></span>
+ <span about="[_:Ndf101637ef8d4b6aa24eff78e142ac82]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:Ndf101637ef8d4b6aa24eff78e142ac82]" rel="owl:onProperty" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#satisfied"><a href="#satisfied">diag:satisfied</a></span> must be set <em>exactly</em> 
+  									<span about="[_:Ndf101637ef8d4b6aa24eff78e142ac82]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#RequiredActorCondition">RequiredActorCondition</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Condition">#</a>] <!-- Condition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Connection" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection" typeof="owl:Class">
+  			<h3>Class: diag:Connection</h3> 
+  			<em property="rdfs:label" >Connection</em> - <span property="rdfs:comment" >This class represents the connection between devices.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#connectsSystem">connectsSystem</a>
+ <a href="#isPartOfNetwork">isPartOfNetwork</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#isConnectedBy">isConnectedBy</a>
+ <a href="#hasConnection">hasConnection</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Connection">#</a>] <!-- Connection --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Device" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device" typeof="owl:Class">
+  			<h3>Class: diag:Device</h3> 
+  			<em property="rdfs:label" >Device</em> - <span property="rdfs:comment" >This class represent an element of the system
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isConnectedBy">isConnectedBy</a>
+ <a href="#belongsToNetwork">belongsToNetwork</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#connectsSystem">connectsSystem</a>
+ <a href="#hasDevice">hasDevice</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Device">#</a>] <!-- Device --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Diagnosis" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis" typeof="owl:Class">
+  			<h3>Class: diag:Diagnosis</h3> 
+  			<em property="rdfs:label" >Diagnosis</em> - <span property="rdfs:comment" >This class represents the concept of diagnosis, i.e. the procedure to find the root cause failure.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#startedBySymptom">startedBySymptom</a>
+ <a href="#performedAction">performedAction</a>
+ <a href="#hasHypothesis">hasHypothesis</a>
+ <a href="#hasPossibleActionsToPerform">hasPossibleActionsToPerform</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#belongsToDiagnosis">belongsToDiagnosis</a>
+ <a href="#startsDiagnosis">startsDiagnosis</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Diagnosis">#</a>] <!-- Diagnosis --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="EnvironmentAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction" typeof="owl:Class">
+  			<h3>Class: diag:EnvironmentAction</h3> 
+  			<em property="rdfs:label" >EnvironmentAction</em> - <span property="rdfs:comment" >This class represents actions that can be executed in the environment, for example: external systems.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#belongsToDiagnosis">belongsToDiagnosis</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasPossibleActionsToPerform">hasPossibleActionsToPerform</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#TestAction">TestAction</a>
+ <a href="#HealingAction">HealingAction</a>
+ <a href="#MonitoringAction">MonitoringAction</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#EnvironmentAction">#</a>] <!-- EnvironmentAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Failure" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure" typeof="owl:Class">
+  			<h3>Class: diag:Failure</h3> 
+  			<em property="rdfs:label" >Failure</em> - <span property="rdfs:comment" >This class represents the concept of failure.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#canBeRepairedWith">canBeRepairedWith</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasFailure">hasFailure</a>
+ <a href="#representsPossibleFailure">representsPossibleFailure</a>
+ <a href="#repairsFailure">repairsFailure</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Failure">#</a>] <!-- Failure --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="HardwareSystem" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HardwareSystem" typeof="owl:Class">
+  			<h3>Class: diag:HardwareSystem</h3> 
+  			<em property="rdfs:label" >HardwareSystem</em> - <span property="rdfs:comment" >This class represent a physical device
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SoftwareSystem"><a href="#SoftwareSystem">SoftwareSystem</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#HardwareSystem">#</a>] <!-- HardwareSystem --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="HealingAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HealingAction" typeof="owl:Class">
+  			<h3>Class: diag:HealingAction</h3> 
+  			<em property="rdfs:label" >HealingAction</em> - <span property="rdfs:comment" >This class represents an action that can repair a failure.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#repairsFailure">repairsFailure</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#canBeRepairedWith">canBeRepairedWith</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction"><a href="#EnvironmentAction">EnvironmentAction</a></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction"><a href="#TestAction">TestAction</a></span>
+ <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#MonitoringAction"><a href="#MonitoringAction">MonitoringAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#HealingAction">#</a>] <!-- HealingAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Human" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Human" typeof="owl:Class">
+  			<h3>Class: diag:Human</h3> 
+  			<em property="rdfs:label" >Human</em> - <span property="rdfs:comment" >This class represents human actors that can perform actions manually.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Human">#</a>] <!-- Human --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Hypothesis" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis" typeof="owl:Class">
+  			<h3>Class: diag:Hypothesis</h3> 
+  			<em property="rdfs:label" >Hypothesis</em> - <span property="rdfs:comment" >This class represents the hypothesis of a failure. It has a associated confidence to represent how many certainty is about the occurrence of a failure.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#representsPossibleFailure">representsPossibleFailure</a>
+ <a href="#hypothesisConfidence">hypothesisConfidence</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasHypothesis">hasHypothesis</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Hypothesis">#</a>] <!-- Hypothesis --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="MonitoringAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#MonitoringAction" typeof="owl:Class">
+  			<h3>Class: diag:MonitoringAction</h3> 
+  			<em property="rdfs:label" >MonitoringAction</em> - <span property="rdfs:comment" >This class represent and action that scout a device
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#resultSymptom">resultSymptom</a>
+ </td></tr>
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction"><a href="#EnvironmentAction">EnvironmentAction</a></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction"><a href="#TestAction">TestAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#MonitoringAction">#</a>] <!-- MonitoringAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Network" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network" typeof="owl:Class">
+  			<h3>Class: diag:Network</h3> 
+  			<em property="rdfs:label" >Network</em> - <span property="rdfs:comment" >This class represents a network of connected devices.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#hasConnection">hasConnection</a>
+ <a href="#hasDevice">hasDevice</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#isPartOfNetwork">isPartOfNetwork</a>
+ <a href="#belongsToNetwork">belongsToNetwork</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Network">#</a>] <!-- Network --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Observation" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation" typeof="owl:Class">
+  			<h3>Class: diag:Observation</h3> 
+  			<em property="rdfs:label" >Observation</em> - <span property="rdfs:comment" >This class represent an observation
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#observationType">observationType</a>
+ <a href="#observationValue">observationValue</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#observationResult">observationResult</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Observation">#</a>] <!-- Observation --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="PerformedAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction" typeof="owl:Class">
+  			<h3>Class: diag:PerformedAction</h3> 
+  			<em property="rdfs:label" >PerformedAction</em> - <span property="rdfs:comment" >This class represents an action that has been performed by an actor.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#whenHasBeenPerformed">whenHasBeenPerformed</a>
+ <a href="#hasBeenPerformedBy">hasBeenPerformedBy</a>
+ <a href="#successfullyPerformed">successfullyPerformed</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#performedAction">performedAction</a>
+ <a href="#hasPerformed">hasPerformed</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#PerformedAction">#</a>] <!-- PerformedAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="RequiredActorCondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#RequiredActorCondition" typeof="owl:Class">
+  			<h3>Class: diag:RequiredActorCondition</h3> 
+  			<em property="rdfs:label" >RequiredActorCondition</em> - <span property="rdfs:comment" >This type of condition represents that an action needs an actor able to perform it.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition"><a href="#Condition">Condition</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#RequiredActorCondition">#</a>] <!-- RequiredActorCondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="SatisfiedCondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SatisfiedCondition" typeof="owl:Class">
+  			<h3>Class: diag:SatisfiedCondition</h3> 
+  			<em property="rdfs:label" >SatisfiedCondition</em> - <span property="rdfs:comment" >This class represents conditions that are satisfied.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsatisfiedCondition"><a href="#UnsatisfiedCondition">UnsatisfiedCondition</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#SatisfiedCondition">#</a>] <!-- SatisfiedCondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="SoftwareSystem" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SoftwareSystem" typeof="owl:Class">
+  			<h3>Class: diag:SoftwareSystem</h3> 
+  			<em property="rdfs:label" >SoftwareSystem</em> - <span property="rdfs:comment" >This class represent a program installed in a device
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#SoftwareSystem">#</a>] <!-- SoftwareSystem --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Subsystem" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Subsystem" typeof="owl:Class">
+  			<h3>Class: diag:Subsystem</h3> 
+  			<em property="rdfs:label" >Subsystem</em> - <span property="rdfs:comment" >This class represent a part of a whole system
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isPartOf">isPartOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#isComposedBy">isComposedBy</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Subsystem">#</a>] <!-- Subsystem --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="SuccessfulyPerformedAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SuccessfulyPerformedAction" typeof="owl:Class">
+  			<h3>Class: diag:SuccessfulyPerformedAction</h3> 
+  			<em property="rdfs:label" >SuccessfulyPerformedAction</em> - <span property="rdfs:comment" >This class represents an action that has been successfuly performed by an actor, i.e. all its postconditions are satisfied.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsuccessfulyPerformedAction"><a href="#UnsuccessfulyPerformedAction">UnsuccessfulyPerformedAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#SuccessfulyPerformedAction">#</a>] <!-- SuccessfulyPerformedAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Symptom" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom" typeof="owl:Class">
+  			<h3>Class: diag:Symptom</h3> 
+  			<em property="rdfs:label" >Symptom</em> - <span property="rdfs:comment" >This class represents the symtom that starts a diagnosis.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#startsDiagnosis">startsDiagnosis</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#startedBySymptom">startedBySymptom</a>
+ <a href="#resultSymptom">resultSymptom</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Symptom">#</a>] <!-- Symptom --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="System" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System" typeof="owl:Class">
+  			<h3>Class: diag:System</h3> 
+  			<em property="rdfs:label" >System</em> - <span property="rdfs:comment" >This concept represents systems that exist in the scenario.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isComposedBy">isComposedBy</a>
+ <a href="#hasData">hasData</a>
+ <a href="#hasFailure">hasFailure</a>
+ <a href="#hasAgentResiding">hasAgentResiding</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#isExecutingIn">isExecutingIn</a>
+ <a href="#residesIn">residesIn</a>
+ <a href="#isPartOf">isPartOf</a>
+</td></tr> <tr><th>Has sub class</th>
+ <td>  <a href="#Subsystem">Subsystem</a>
+ <a href="#HardwareSystem">HardwareSystem</a>
+ <a href="#SoftwareSystem">SoftwareSystem</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#System">#</a>] <!-- System --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="TestAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction" typeof="owl:Class">
+  			<h3>Class: diag:TestAction</h3> 
+  			<em property="rdfs:label" >TestAction</em> - <span property="rdfs:comment" >This class represents an action that can test a device, a systems, etc.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#expectedBenefit">expectedBenefit</a>
+ </td></tr>
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction"><a href="#EnvironmentAction">EnvironmentAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#TestAction">#</a>] <!-- TestAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="UnavailableAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnavailableAction" typeof="owl:Class">
+  			<h3>Class: diag:UnavailableAction</h3> 
+  			<em property="rdfs:label" >UnavailableAction</em> - <span property="rdfs:comment" >This class is used to classify actions which not all its preconditions are satisfied.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#UnavailableAction">#</a>] <!-- UnavailableAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="UnsatisfiedCondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsatisfiedCondition" typeof="owl:Class">
+  			<h3>Class: diag:UnsatisfiedCondition</h3> 
+  			<em property="rdfs:label" >UnsatisfiedCondition</em> - <span property="rdfs:comment" >This class represents conditions that are not satisfied.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#UnsatisfiedCondition">#</a>] <!-- UnsatisfiedCondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="UnsuccessfulyPerformedAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsuccessfulyPerformedAction" typeof="owl:Class">
+  			<h3>Class: diag:UnsuccessfulyPerformedAction</h3> 
+  			<em property="rdfs:label" >UnsuccessfulyPerformedAction</em> - <span property="rdfs:comment" >This class represents an action that has been unsuccessfuly performed by an actor, i.e. not all its postconditions are satisfied.
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#UnsuccessfulyPerformedAction">#</a>] <!-- UnsuccessfulyPerformedAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Variable" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Variable" typeof="owl:Class">
+  			<h3>Class: diag:Variable</h3> 
+  			<em property="rdfs:label" >Variable</em> - <span property="rdfs:comment" >This class represents data of the scenario. For example: variableType: clientIP variableValue: 192.168.0.100
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#residesIn">residesIn</a>
+ <a href="#variableType">variableType</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasData">hasData</a>
+</td></tr> 
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Variable">#</a>] <!-- Variable --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+<h2>Properties</h2>
+ <div class="specterm" id="available" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#available" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:available</h3> 
+  			<em property="rdfs:label" >available</em> - <span property="rdfs:comment" >Boolean that represent if an action is available to be performed
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean"><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#available">#</a>] <!-- available --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="belongsToDiagnosis" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#belongsToDiagnosis" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:belongsToDiagnosis</h3> 
+  			<em property="rdfs:label" >belongsToDiagnosis</em> - <span property="rdfs:comment" >This property indicate if a classes belongs to diagnosis
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction"><a href="#EnvironmentAction">EnvironmentAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">hasPossibleActionsToPerform</em>'</span>
+ (<span about="[_:h]" typeof="owl:InverseFunctionalProperty"><strong>Inverse Functional Property</strong></span>, <span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#belongsToDiagnosis">#</a>] <!-- belongsToDiagnosis --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="belongsToNetwork" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#belongsToNetwork" typeof="owl:InverseFunctionalProperty">
+  			<h3>Property: diag:belongsToNetwork</h3> 
+  			<em property="rdfs:label" >belongsToNetwork</em> - <span property="rdfs:comment" >This property indicates if a class belongs to network
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device"><a href="#Device">Device</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network"><a href="#Network">Network</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">hasDevice</em>'</span>
+ (<span about="[_:h]" typeof="owl:FunctionalProperty"><strong>Functional Property</strong></span>, <span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#belongsToNetwork">#</a>] <!-- belongsToNetwork --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="canBePerformedBy" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canBePerformedBy" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:canBePerformedBy</h3> 
+  			<em property="rdfs:label" >canBePerformedBy</em> - <span property="rdfs:comment" >This property indicate who can perform the action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#canPerform">canPerform</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#canBePerformedBy">#</a>] <!-- canBePerformedBy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="canBeRepairedWith" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canBeRepairedWith" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:canBeRepairedWith</h3> 
+  			<em property="rdfs:label" >canBeRepairedWith</em> - <span property="rdfs:comment" >This property indicate how can be repaired an object
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure"><a href="#Failure">Failure</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HealingAction"><a href="#HealingAction">HealingAction</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#repairsFailure">repairsFailure</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#canBeRepairedWith">#</a>] <!-- canBeRepairedWith --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="canPerform" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canPerform" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:canPerform</h3> 
+  			<em property="rdfs:label" >canPerform</em> - <span property="rdfs:comment" >This property indicates what actions can perform an agent
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">canBePerformedBy</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#canPerform">#</a>] <!-- canPerform --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="connectsSystem" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#connectsSystem" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:connectsSystem</h3> 
+  			<em property="rdfs:label" >connectsSystem</em> - <span property="rdfs:comment" >This property indicates what systems are connected by the object
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection"><a href="#Connection">Connection</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device"><a href="#Device">Device</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">isConnectedBy</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#connectsSystem">#</a>] <!-- connectsSystem --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="expectedBenefit" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#expectedBenefit" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:expectedBenefit</h3> 
+  			<em property="rdfs:label" >expectedBenefit</em> - <span property="rdfs:comment" >Float that the represent the expected benefit of an action, the action that has the highest expected benefit will be selected the first</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction"><a href="#TestAction">TestAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#float"><a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#expectedBenefit">#</a>] <!-- expectedBenefit --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasAgentResiding" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasAgentResiding" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasAgentResiding</h3> 
+  			<em property="rdfs:label" >hasAgentResiding</em> - <span property="rdfs:comment" >This property indicates if a class has a residing agent
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Agent"><a href="#Agent">Agent</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">isExecutingIn</em>'</span>
+ (<span about="[_:h]" typeof="owl:FunctionalProperty"><strong>Functional Property</strong></span>, <span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasAgentResiding">#</a>] <!-- hasAgentResiding --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasBayesianNode" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasBayesianNode" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:hasBayesianNode</h3> 
+  			<em property="rdfs:label" >hasBayesianNode</em> - <span property="rdfs:comment" >String that represent if a network has a bayesian node
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>   <span rel="rdfs:domain" resource="[_:N0d675f2f6cc34f4ba1d3c0717f403492]"></span>
+  									<span about="[_:N0d675f2f6cc34f4ba1d3c0717f403492]" typeof="owl:Class"></span>
+  									<span about="[_:N0d675f2f6cc34f4ba1d3c0717f403492]" rel="owl:unionOf" resource="[_:N61f08fd5e71a48a5a1de6fa9f5a4ec1e]"></span>  <span about="[_:N61f08fd5e71a48a5a1de6fa9f5a4ec1e]" typeof="rdf:Description"></span>
+  									<span about="[_:N61f08fd5e71a48a5a1de6fa9f5a4ec1e]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis">diag:Hypothesis</a></span>
+  									<span about="[_:N61f08fd5e71a48a5a1de6fa9f5a4ec1e]" rel="rdf:rest" resource="[_:Nf52f033398604a33839777d69a413fde]"></span> or <span about="[_:Nf52f033398604a33839777d69a413fde]" typeof="rdf:Description"></span>
+  														<span about="[_:Nf52f033398604a33839777d69a413fde]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation">diag:Observation</a></span> <span about="[_:Nf52f033398604a33839777d69a413fde]" rel="rdf:rest" resource="[_:N18d3b71389d84e61878dc803df67be79]"></span> or <span about="[_:N18d3b71389d84e61878dc803df67be79]" typeof="rdf:Description"></span>
+  														<span about="[_:N18d3b71389d84e61878dc803df67be79]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction">diag:TestAction</a></span> <span about="[_:N18d3b71389d84e61878dc803df67be79]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasBayesianNode">#</a>] <!-- hasBayesianNode --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasBeenPerformedBy" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasBeenPerformedBy" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasBeenPerformedBy</h3> 
+  			<em property="rdfs:label" >hasBeenPerformedBy</em> - <span property="rdfs:comment" >This property indicates who have done an action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction"><a href="#PerformedAction">PerformedAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasPerformed">hasPerformed</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasBeenPerformedBy">#</a>] <!-- hasBeenPerformedBy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasCondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasCondition" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasCondition</h3> 
+  			<em property="rdfs:label" >hasCondition</em> - <span property="rdfs:comment" >This property indicates if a class has a condition
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition"><a href="#Condition">Condition</a></span>
+ </td></tr><tr><th>Has sub property</th>
+ <td>  <a href="#hasPrecondition">hasPrecondition</a>
+ <a href="#hasPostcondition">hasPostcondition</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasCondition">#</a>] <!-- hasCondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasConnection" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasConnection" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasConnection</h3> 
+  			<em property="rdfs:label" >hasConnection</em> - <span property="rdfs:comment" >This property indicates if a device has a connection</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network"><a href="#Network">Network</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection"><a href="#Connection">Connection</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">isPartOfNetwork</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasConnection">#</a>] <!-- hasConnection --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasData" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasData" typeof="owl:InverseFunctionalProperty">
+  			<h3>Property: diag:hasData</h3> 
+  			<em property="rdfs:label" >hasData</em> - <span property="rdfs:comment" >This property indicates if a device has a determinied data
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Variable"><a href="#Variable">Variable</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">residesIn</em>'</span>
+ (<span about="[_:h]" typeof="owl:FunctionalProperty"><strong>Functional Property</strong></span>, <span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasData">#</a>] <!-- hasData --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasDevice" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasDevice" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:hasDevice</h3> 
+  			<em property="rdfs:label" >hasDevice</em> - <span property="rdfs:comment" >This property indicates if a system has a determined device
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network"><a href="#Network">Network</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device"><a href="#Device">Device</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#belongsToNetwork">belongsToNetwork</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasDevice">#</a>] <!-- hasDevice --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasFailure" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasFailure" typeof="owl:InverseFunctionalProperty">
+  			<h3>Property: diag:hasFailure</h3> 
+  			<em property="rdfs:label" >hasFailure</em> - <span property="rdfs:comment" >This property indicates if the network has a determined failure
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure"><a href="#Failure">Failure</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">hasLocation</em>'</span>
+ (<span about="[_:h]" typeof="owl:FunctionalProperty"><strong>Functional Property</strong></span>, <span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasFailure">#</a>] <!-- hasFailure --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasHypothesis" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasHypothesis" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasHypothesis</h3> 
+  			<em property="rdfs:label" >hasHypothesis</em> - <span property="rdfs:comment" >This property indicates if the diagnosis has a determinied hypothesis
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis"><a href="#Hypothesis">Hypothesis</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasHypothesis">#</a>] <!-- hasHypothesis --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasLocation" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasLocation" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:hasLocation</h3> 
+  			<em property="rdfs:label" >hasLocation</em> - <span property="rdfs:comment" >This property represents the location of a device or agent</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>   <span rel="rdfs:domain" resource="[_:N39caa7e29fe942c9a65f0aaa5019990c]"></span>
+  									<span about="[_:N39caa7e29fe942c9a65f0aaa5019990c]" typeof="owl:Class"></span>
+  									<span about="[_:N39caa7e29fe942c9a65f0aaa5019990c]" rel="owl:unionOf" resource="[_:Nd7ad381793014d2eba7947126ff4fa47]"></span>  <span about="[_:Nd7ad381793014d2eba7947126ff4fa47]" typeof="rdf:Description"></span>
+  									<span about="[_:Nd7ad381793014d2eba7947126ff4fa47]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure">diag:Failure</a></span>
+  									<span about="[_:Nd7ad381793014d2eba7947126ff4fa47]" rel="rdf:rest" resource="[_:Nad2d3e483bb74211a381f5b8480fa65b]"></span> or <span about="[_:Nad2d3e483bb74211a381f5b8480fa65b]" typeof="rdf:Description"></span>
+  														<span about="[_:Nad2d3e483bb74211a381f5b8480fa65b]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom">diag:Symptom</a></span> <span about="[_:Nad2d3e483bb74211a381f5b8480fa65b]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+  			<tr><th>Has inverse property</th>
+ <td>  <a href="#hasFailure">hasFailure</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasLocation">#</a>] <!-- hasLocation --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasPerformed" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPerformed" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasPerformed</h3> 
+  			<em property="rdfs:label" >hasPerformed</em> - <span property="rdfs:comment" >This property indicate what actions has performed an agent
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction"><a href="#PerformedAction">PerformedAction</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">hasBeenPerformedBy</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasPerformed">#</a>] <!-- hasPerformed --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasPossibleActionsToPerform" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPossibleActionsToPerform" typeof="owl:InverseFunctionalProperty">
+  			<h3>Property: diag:hasPossibleActionsToPerform</h3> 
+  			<em property="rdfs:label" >hasPossibleActionsToPerform</em> - <span property="rdfs:comment" >This property indicates if an agent has possible actions to perform
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction"><a href="#EnvironmentAction">EnvironmentAction</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#belongsToDiagnosis">belongsToDiagnosis</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasPossibleActionsToPerform">#</a>] <!-- hasPossibleActionsToPerform --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasPostcondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPostcondition" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasPostcondition</h3> 
+  			<em property="rdfs:label" >hasPostcondition</em> - <span property="rdfs:comment" >This property indicates if a class has a postcondition
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasCondition"><a href="#hasCondition">hasCondition</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasPostcondition">#</a>] <!-- hasPostcondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasPrecondition" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPrecondition" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:hasPrecondition</h3> 
+  			<em property="rdfs:label" >hasPrecondition</em> - <span property="rdfs:comment" >This property indicates if a class has a precondition
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasCondition"><a href="#hasCondition">hasCondition</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasPrecondition">#</a>] <!-- hasPrecondition --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hypothesisConfidence" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hypothesisConfidence" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:hypothesisConfidence</h3> 
+  			<em property="rdfs:label" >hypothesisConfidence</em> - <span property="rdfs:comment" >Float that represents the hypothesis confidence
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis"><a href="#Hypothesis">Hypothesis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#float"><a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hypothesisConfidence">#</a>] <!-- hypothesisConfidence --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="id" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#id" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:id</h3> 
+  			<em property="rdfs:label" >id</em> - <span property="rdfs:comment" >String that represent the id of an object
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>   <span rel="rdfs:domain" resource="[_:N9d5af16a72a24cdd8f1534b88b59b2fb]"></span>
+  									<span about="[_:N9d5af16a72a24cdd8f1534b88b59b2fb]" typeof="owl:Class"></span>
+  									<span about="[_:N9d5af16a72a24cdd8f1534b88b59b2fb]" rel="owl:unionOf" resource="[_:N3485505e67de44b382d93f50bfdb9a04]"></span>  <span about="[_:N3485505e67de44b382d93f50bfdb9a04]" typeof="rdf:Description"></span>
+  									<span about="[_:N3485505e67de44b382d93f50bfdb9a04]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor">diag:Actor</a></span>
+  									<span about="[_:N3485505e67de44b382d93f50bfdb9a04]" rel="rdf:rest" resource="[_:N9caab9c83de94565b682e3e4398f3795]"></span> or <span about="[_:N9caab9c83de94565b682e3e4398f3795]" typeof="rdf:Description"></span>
+  														<span about="[_:N9caab9c83de94565b682e3e4398f3795]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis">diag:Diagnosis</a></span> <span about="[_:N9caab9c83de94565b682e3e4398f3795]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#id">#</a>] <!-- id --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isComposedBy" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isComposedBy" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:isComposedBy</h3> 
+  			<em property="rdfs:label" >isComposedBy</em> - <span property="rdfs:comment" >This property indicates what elements form the network
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Subsystem"><a href="#Subsystem">Subsystem</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#isPartOf">isPartOf</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isComposedBy">#</a>] <!-- isComposedBy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isConnectedBy" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isConnectedBy" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:isConnectedBy</h3> 
+  			<em property="rdfs:label" >isConnectedBy</em> - <span property="rdfs:comment" >This property indicates how are connected two devices
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device"><a href="#Device">Device</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection"><a href="#Connection">Connection</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#connectsSystem">connectsSystem</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isConnectedBy">#</a>] <!-- isConnectedBy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isExecutingIn" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isExecutingIn" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:isExecutingIn</h3> 
+  			<em property="rdfs:label" >isExecutingIn</em> - <span property="rdfs:comment" >This property indicate in what device is being executing the action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasAgentResiding">hasAgentResiding</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isExecutingIn">#</a>] <!-- isExecutingIn --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isPartOf" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isPartOf" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:isPartOf</h3> 
+  			<em property="rdfs:label" >isPartOf</em> - <span property="rdfs:comment" >This property indicates if a subsystem is a part of other bigger system
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Subsystem"><a href="#Subsystem">Subsystem</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">isComposedBy</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isPartOf">#</a>] <!-- isPartOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isPartOfNetwork" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isPartOfNetwork" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:isPartOfNetwork</h3> 
+  			<em property="rdfs:label" >isPartOfNetwork</em> - <span property="rdfs:comment" >This property indicates if a device is part of the network
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection"><a href="#Connection">Connection</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network"><a href="#Network">Network</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasConnection">hasConnection</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isPartOfNetwork">#</a>] <!-- isPartOfNetwork --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="observationResult" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationResult" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:observationResult</h3> 
+  			<em property="rdfs:label" >observationResult</em> - <span property="rdfs:comment" >This class represents the result of an observation
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>   <span rel="rdfs:domain" resource="[_:Ncd1cb2e52aef46d19a2ed40b28788594]"></span>
+  									<span about="[_:Ncd1cb2e52aef46d19a2ed40b28788594]" typeof="owl:Class"></span>
+  									<span about="[_:Ncd1cb2e52aef46d19a2ed40b28788594]" rel="owl:unionOf" resource="[_:N017f15b2b0574226847abfe6087193a9]"></span>  <span about="[_:N017f15b2b0574226847abfe6087193a9]" typeof="rdf:Description"></span>
+  									<span about="[_:N017f15b2b0574226847abfe6087193a9]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom">diag:Symptom</a></span>
+  									<span about="[_:N017f15b2b0574226847abfe6087193a9]" rel="rdf:rest" resource="[_:Nd757397774f042b092fc7aa623c98167]"></span> or <span about="[_:Nd757397774f042b092fc7aa623c98167]" typeof="rdf:Description"></span>
+  														<span about="[_:Nd757397774f042b092fc7aa623c98167]" rel="rdf:first" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction"><a href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction">diag:TestAction</a></span> <span about="[_:Nd757397774f042b092fc7aa623c98167]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation"><a href="#Observation">Observation</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#observationResult">#</a>] <!-- observationResult --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="observationType" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationType" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:observationType</h3> 
+  			<em property="rdfs:label" >observationType</em> - <span property="rdfs:comment" >String that represents the type of an observation
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation"><a href="#Observation">Observation</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#observationType">#</a>] <!-- observationType --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="observationValue" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationValue" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:observationValue</h3> 
+  			<em property="rdfs:label" >observationValue</em> - <span property="rdfs:comment" >String that represents the value of an observation
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation"><a href="#Observation">Observation</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#observationValue">#</a>] <!-- observationValue --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performableTypeOfActions" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performableTypeOfActions" typeof="owl:DatatypeProperty">
+  			<h3>Property: diag:performableTypeOfActions</h3> 
+  			<em property="rdfs:label" >performableTypeOfActions</em> - <span property="rdfs:comment" >String that represents the type of actions that can be performed
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor"><a href="#Actor">Actor</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performableTypeOfActions">#</a>] <!-- performableTypeOfActions --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performed" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performed" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:performed</h3> 
+  			<em property="rdfs:label" >performed</em> - <span property="rdfs:comment" >Boolean that represents if an action has been perfomed
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action"><a href="#Action">Action</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean"><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performed">#</a>] <!-- performed --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performedAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedAction" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:performedAction</h3> 
+  			<em property="rdfs:label" >performedAction</em> - <span property="rdfs:comment" >This property represent the type of a perfomed action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction"><a href="#PerformedAction">PerformedAction</a></span>
+ </td></tr><tr><th>Has sub property</th>
+ <td>  <a href="#performedHealingAction">performedHealingAction</a>
+ <a href="#performedTestAction">performedTestAction</a>
+ <a href="#performedMonitoringAction">performedMonitoringAction</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performedAction">#</a>] <!-- performedAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performedHealingAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedHealingAction" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:performedHealingAction</h3> 
+  			<em property="rdfs:label" >performedHealingAction</em> - <span property="rdfs:comment" >This property represents if a perfomed action is a healing action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>   <span rel="rdfs:range" resource="[_:]"></span>
+  									<span about="[_:]" typeof="owl:Class"></span>
+  									<span about="[_:]" rel="owl:unionOf" resource="[_:]"></span>  <span about="[_:]" typeof="rdf:Description"></span>
+  									<span about="[_:]" rel="rdf:first" href=""><a href=""></a></span>
+  									<span about="[_:]" rel="rdf:rest" resource="[_:]"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedAction"><a href="#performedAction">performedAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performedHealingAction">#</a>] <!-- performedHealingAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performedMonitoringAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedMonitoringAction" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:performedMonitoringAction</h3> 
+  			<em property="rdfs:label" >performedMonitoringAction</em> - <span property="rdfs:comment" >This property represents if a performed action is a monitoring action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>   <span rel="rdfs:range" resource="[_:]"></span>
+  									<span about="[_:]" typeof="owl:Class"></span>
+  									<span about="[_:]" rel="owl:unionOf" resource="[_:]"></span>  <span about="[_:]" typeof="rdf:Description"></span>
+  									<span about="[_:]" rel="rdf:first" href=""><a href=""></a></span>
+  									<span about="[_:]" rel="rdf:rest" resource="[_:]"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedAction"><a href="#performedAction">performedAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performedMonitoringAction">#</a>] <!-- performedMonitoringAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="performedTestAction" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedTestAction" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:performedTestAction</h3> 
+  			<em property="rdfs:label" >performedTestAction</em> - <span property="rdfs:comment" >This property represents if a performed action is a test action
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>   <span rel="rdfs:range" resource="[_:]"></span>
+  									<span about="[_:]" typeof="owl:Class"></span>
+  									<span about="[_:]" rel="owl:unionOf" resource="[_:]"></span>  <span about="[_:]" typeof="rdf:Description"></span>
+  									<span about="[_:]" rel="rdf:first" href=""><a href=""></a></span>
+  									<span about="[_:]" rel="rdf:rest" resource="[_:]"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedAction"><a href="#performedAction">performedAction</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#performedTestAction">#</a>] <!-- performedTestAction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="possibleResults" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#possibleResults" typeof="owl:DatatypeProperty">
+  			<h3>Property: diag:possibleResults</h3> 
+  			<em property="rdfs:label" >possibleResults</em> - <span property="rdfs:comment" >String that represents the possible results of the diagnosis</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#possibleResults">#</a>] <!-- possibleResults --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="repairsFailure" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#repairsFailure" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:repairsFailure</h3> 
+  			<em property="rdfs:label" >repairsFailure</em> - <span property="rdfs:comment" >This class indicates if an action repairs a determined failure
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HealingAction"><a href="#HealingAction">HealingAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure"><a href="#Failure">Failure</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">canBeRepairedWith</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#repairsFailure">#</a>] <!-- repairsFailure --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="representsPossibleFailure" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#representsPossibleFailure" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:representsPossibleFailure</h3> 
+  			<em property="rdfs:label" >representsPossibleFailure</em> - <span property="rdfs:comment" >This property represent a possible failure in a device or in a link</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis"><a href="#Hypothesis">Hypothesis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure"><a href="#Failure">Failure</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#representsPossibleFailure">#</a>] <!-- representsPossibleFailure --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="residesIn" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#residesIn" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:residesIn</h3> 
+  			<em property="rdfs:label" >residesIn</em> - <span property="rdfs:comment" >This property represents in what device resides a software</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Variable"><a href="#Variable">Variable</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System"><a href="#System">System</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasData">hasData</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#residesIn">#</a>] <!-- residesIn --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="resultSymptom" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#resultSymptom" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:resultSymptom</h3> 
+  			<em property="rdfs:label" >resultSymptom</em> - <span property="rdfs:comment" >This property represent the results of a sympton
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#MonitoringAction"><a href="#MonitoringAction">MonitoringAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom"><a href="#Symptom">Symptom</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#resultSymptom">#</a>] <!-- resultSymptom --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="satisfied" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#satisfied" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:satisfied</h3> 
+  			<em property="rdfs:label" >satisfied</em> - <span property="rdfs:comment" >Boolean that represents if an action satisfies the conditions
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition"><a href="#Condition">Condition</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean"><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#satisfied">#</a>] <!-- satisfied --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="startedBySymptom" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#startedBySymptom" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:startedBySymptom</h3> 
+  			<em property="rdfs:label" >startedBySymptom</em> - <span property="rdfs:comment" >This property represent the sympton which started the diagnosis
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom"><a href="#Symptom">Symptom</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:h]">the anonymous defined property with the label
+  							 '<em about="[_:h]" property="rdfs:label">startsDiagnosis</em>'</span>
+ (<span about="[_:h]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#startedBySymptom">#</a>] <!-- startedBySymptom --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="startsDiagnosis" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#startsDiagnosis" typeof="owl:ObjectProperty">
+  			<h3>Property: diag:startsDiagnosis</h3> 
+  			<em property="rdfs:label" >startsDiagnosis</em> - <span property="rdfs:comment" >This property represents if a sympton can start a diagnosis
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom"><a href="#Symptom">Symptom</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis"><a href="#Diagnosis">Diagnosis</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#startedBySymptom">startedBySymptom</a>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#startsDiagnosis">#</a>] <!-- startsDiagnosis --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="status" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#status" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:status</h3> 
+  			<em property="rdfs:label" >status</em> - <span property="rdfs:comment" >String that represent if a diagnosis is started or finished
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>   <span rel="rdfs:range" resource="[_:]"></span>
+  									<span about="[_:]" typeof="owl:Class"></span>
+  									<span about="[_:]" rel="owl:unionOf" resource="[_:]"></span>  <span about="[_:]" typeof="rdf:Description"></span>
+  									<span about="[_:]" rel="rdf:first" href=""><a href=""></a></span>
+  									<span about="[_:]" rel="rdf:rest" resource="[_:]"></span> </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#status">#</a>] <!-- status --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="successfullyPerformed" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#successfullyPerformed" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:successfullyPerformed</h3> 
+  			<em property="rdfs:label" >successfullyPerformed</em> - <span property="rdfs:comment" >Boolean that represents if an action has been performed successfully
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction"><a href="#PerformedAction">PerformedAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean"><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#successfullyPerformed">#</a>] <!-- successfullyPerformed --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="variableType" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#variableType" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:variableType</h3> 
+  			<em property="rdfs:label" >variableType</em> - <span property="rdfs:comment" >String that represents the type of a variable
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Variable"><a href="#Variable">Variable</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string"><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#variableType">#</a>] <!-- variableType --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="variableValue" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#variableValue" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:variableValue</h3> 
+  			<em property="rdfs:label" >variableValue</em> - <span property="rdfs:comment" >String that represent the value of a variable</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#variableValue">#</a>] <!-- variableValue --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="whenHasBeenPerformed" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasBeenPerformed" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:whenHasBeenPerformed</h3> 
+  			<em property="rdfs:label" >whenHasBeenPerformed</em> - <span property="rdfs:comment" >Date Time that represents when an action has been performed
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction"><a href="#PerformedAction">PerformedAction</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#dateTime"><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#whenHasBeenPerformed">#</a>] <!-- whenHasBeenPerformed --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="whenHasFinished" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasFinished" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:whenHasFinished</h3> 
+  			<em property="rdfs:label" >whenHasFinished</em> - <span property="rdfs:comment" >Date time that represents when a diagnosis has finished</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#dateTime"><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#whenHasFinished">#</a>] <!-- whenHasFinished --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="whenHasStarted" about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasStarted" typeof="owl:FunctionalProperty">
+  			<h3>Property: diag:whenHasStarted</h3> 
+  			<em property="rdfs:label" >whenHasStarted</em> - <span property="rdfs:comment" >Date time that indicates when a diagnosis has started
+</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#dateTime"><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#whenHasStarted">#</a>] <!-- whenHasStarted --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+		</P>
+	<H2 CLASS="western"><A NAME="changes"></A>A Changelog</H2>
+	<H3 CLASS="western">2012-11-08</H3>
+	<UL>
+		<LI><P>First version of the document 
+		</P>
+	</UL>
+	<H2 CLASS="western"><A NAME="acknowledgements"></A>B
+	Acknowledgements</H2>
+	<P>This documentation has been generated automatically from the most
+	recent ontology specification in OWL using a python script called
+	<A HREF="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</A>.
+	The style formatting has been inspired on <A HREF="http://xmlns.com/foaf/spec/">FOAF</A>
+	specification. 
+	</P>
+</DIV>
+</BODY>
+</HTML>

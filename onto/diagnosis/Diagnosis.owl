@@ -1,0 +1,1784 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
+    <!ENTITY rdfb "http://swrl.stanford.edu/ontologies/built-ins/3.4/rdfb.owl#" >
+    <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
+    <!ENTITY diag "http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#"
+     xml:base="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl"
+     xmlns:rdfb="http://swrl.stanford.edu/ontologies/built-ins/3.4/rdfb.owl#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:diag="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">TODO: </owl:versionInfo>
+        <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.4/rdfb.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&swrl;arguments"/>
+    <owl:AnnotationProperty rdf:about="&swrl;builtin"/>
+    <owl:AnnotationProperty rdf:about="&ns;term_status"/>
+    <rdf:Description rdf:about="&swrla;isRuleEnabled">
+        <rdfs:label xml:lang="en">isRuleEnabled</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represent if a rule is enabled
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <owl:AnnotationProperty rdf:about="&swrl;argument2"/>
+    <owl:AnnotationProperty rdf:about="&swrl;propertyPredicate"/>
+    <owl:AnnotationProperty rdf:about="&swrl;argument1"/>
+    <owl:AnnotationProperty rdf:about="&swrl;classPredicate"/>
+    <rdf:Description rdf:about="&swrla;hasRuleCategory">
+        <rdfs:label xml:lang="en">hasRuleCategory</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the rule category
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#belongsToDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="&diag;belongsToDiagnosis">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">belongsToDiagnosis</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicate if a classes belongs to diagnosis
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Diagnosis"/>
+        <rdfs:domain rdf:resource="&diag;EnvironmentAction"/>
+        <owl:inverseOf rdf:resource="&diag;hasPossibleActionsToPerform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#belongsToNetwork -->
+
+    <owl:ObjectProperty rdf:about="&diag;belongsToNetwork">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">belongsToNetwork</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a class belongs to network
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Device"/>
+        <rdfs:range rdf:resource="&diag;Network"/>
+        <owl:inverseOf rdf:resource="&diag;hasDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canBePerformedBy -->
+
+    <owl:ObjectProperty rdf:about="&diag;canBePerformedBy">
+        <rdfs:label xml:lang="en">canBePerformedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicate who can perform the action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Action"/>
+        <rdfs:range rdf:resource="&diag;Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canBeRepairedWith -->
+
+    <owl:ObjectProperty rdf:about="&diag;canBeRepairedWith">
+        <rdfs:label xml:lang="en">canBeRepairedWith</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicate how can be repaired an object
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Failure"/>
+        <rdfs:range rdf:resource="&diag;HealingAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#canPerform -->
+
+    <owl:ObjectProperty rdf:about="&diag;canPerform">
+        <rdfs:label xml:lang="en">canPerform</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates what actions can perform an agent
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Action"/>
+        <rdfs:domain rdf:resource="&diag;Actor"/>
+        <owl:inverseOf rdf:resource="&diag;canBePerformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#connectsSystem -->
+
+    <owl:ObjectProperty rdf:about="&diag;connectsSystem">
+        <rdfs:label xml:lang="en">connectsSystem</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates what systems are connected by the object
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Connection"/>
+        <rdfs:range rdf:resource="&diag;Device"/>
+        <owl:inverseOf rdf:resource="&diag;isConnectedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasAgentResiding -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasAgentResiding">
+        <rdfs:label xml:lang="en">hasAgentResiding</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a class has a residing agent
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Agent"/>
+        <rdfs:domain rdf:resource="&diag;System"/>
+        <owl:inverseOf rdf:resource="&diag;isExecutingIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasBeenPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasBeenPerformedBy">
+        <rdfs:label xml:lang="en">hasBeenPerformedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates who have done an action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Actor"/>
+        <rdfs:domain rdf:resource="&diag;PerformedAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasCondition">
+        <rdfs:label xml:lang="en">hasCondition</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a class has a condition
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Action"/>
+        <rdfs:range rdf:resource="&diag;Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasConnection -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasConnection">
+        <rdfs:label xml:lang="en">hasConnection</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a device has a connection</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Connection"/>
+        <rdfs:domain rdf:resource="&diag;Network"/>
+        <owl:inverseOf rdf:resource="&diag;isPartOfNetwork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasData -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasData">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasData</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a device has a determinied data
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;System"/>
+        <rdfs:range rdf:resource="&diag;Variable"/>
+        <owl:inverseOf rdf:resource="&diag;residesIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasDevice -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasDevice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasDevice</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a system has a determined device
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Device"/>
+        <rdfs:domain rdf:resource="&diag;Network"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasFailure -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasFailure">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasFailure</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if the network has a determined failure
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Failure"/>
+        <rdfs:domain rdf:resource="&diag;System"/>
+        <owl:inverseOf rdf:resource="&diag;hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasHypothesis -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasHypothesis">
+        <rdfs:label xml:lang="en">hasHypothesis</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if the diagnosis has a determinied hypothesis
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Diagnosis"/>
+        <rdfs:range rdf:resource="&diag;Hypothesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasLocation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasLocation</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents the location of a device or agent</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Failure"/>
+                    <rdf:Description rdf:about="&diag;Symptom"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPerformed -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasPerformed">
+        <rdfs:label xml:lang="en">hasPerformed</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicate what actions has performed an agent
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Actor"/>
+        <rdfs:range rdf:resource="&diag;PerformedAction"/>
+        <owl:inverseOf rdf:resource="&diag;hasBeenPerformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPossibleActionsToPerform -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasPossibleActionsToPerform">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasPossibleActionsToPerform</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if an agent has possible actions to perform
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Diagnosis"/>
+        <rdfs:range rdf:resource="&diag;EnvironmentAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPostcondition -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasPostcondition">
+        <rdfs:label xml:lang="en">hasPostcondition</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a class has a postcondition
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&diag;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasPrecondition -->
+
+    <owl:ObjectProperty rdf:about="&diag;hasPrecondition">
+        <rdfs:label xml:lang="en">hasPrecondition</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a class has a precondition
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&diag;hasCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isComposedBy -->
+
+    <owl:ObjectProperty rdf:about="&diag;isComposedBy">
+        <rdfs:label xml:lang="en">isComposedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates what elements form the network
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Subsystem"/>
+        <rdfs:domain rdf:resource="&diag;System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isConnectedBy -->
+
+    <owl:ObjectProperty rdf:about="&diag;isConnectedBy">
+        <rdfs:label xml:lang="en">isConnectedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates how are connected two devices
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Connection"/>
+        <rdfs:domain rdf:resource="&diag;Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isExecutingIn -->
+
+    <owl:ObjectProperty rdf:about="&diag;isExecutingIn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">isExecutingIn</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicate in what device is being executing the action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Agent"/>
+        <rdfs:range rdf:resource="&diag;System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&diag;isPartOf">
+        <rdfs:label xml:lang="en">isPartOf</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a subsystem is a part of other bigger system
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Subsystem"/>
+        <rdfs:range rdf:resource="&diag;System"/>
+        <owl:inverseOf rdf:resource="&diag;isComposedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#isPartOfNetwork -->
+
+    <owl:ObjectProperty rdf:about="&diag;isPartOfNetwork">
+        <rdfs:label xml:lang="en">isPartOfNetwork</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a device is part of the network
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Connection"/>
+        <rdfs:range rdf:resource="&diag;Network"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationResult -->
+
+    <owl:ObjectProperty rdf:about="&diag;observationResult">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">observationResult</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the result of an observation
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Observation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Symptom"/>
+                    <rdf:Description rdf:about="&diag;TestAction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedAction -->
+
+    <owl:ObjectProperty rdf:about="&diag;performedAction">
+        <rdfs:label xml:lang="en">performedAction</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represent the type of a perfomed action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Diagnosis"/>
+        <rdfs:range rdf:resource="&diag;PerformedAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedHealingAction -->
+
+    <owl:ObjectProperty rdf:about="&diag;performedHealingAction">
+        <rdfs:label xml:lang="en">performedHealingAction</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents if a perfomed action is a healing action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&diag;performedAction"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;HealingAction"/>
+                    <rdf:Description rdf:about="&diag;PerformedAction"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedMonitoringAction -->
+
+    <owl:ObjectProperty rdf:about="&diag;performedMonitoringAction">
+        <rdfs:label xml:lang="en">performedMonitoringAction</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents if a performed action is a monitoring action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&diag;performedAction"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;MonitoringAction"/>
+                    <rdf:Description rdf:about="&diag;PerformedAction"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performedTestAction -->
+
+    <owl:ObjectProperty rdf:about="&diag;performedTestAction">
+        <rdfs:label xml:lang="en">performedTestAction</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents if a performed action is a test action
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&diag;performedAction"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;PerformedAction"/>
+                    <rdf:Description rdf:about="&diag;TestAction"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#repairsFailure -->
+
+    <owl:ObjectProperty rdf:about="&diag;repairsFailure">
+        <rdfs:label xml:lang="en">repairsFailure</rdfs:label>
+        <rdfs:comment xml:lang="en">This class indicates if an action repairs a determined failure
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Failure"/>
+        <rdfs:domain rdf:resource="&diag;HealingAction"/>
+        <owl:inverseOf rdf:resource="&diag;canBeRepairedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#representsPossibleFailure -->
+
+    <owl:ObjectProperty rdf:about="&diag;representsPossibleFailure">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">representsPossibleFailure</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represent a possible failure in a device or in a link</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Failure"/>
+        <rdfs:domain rdf:resource="&diag;Hypothesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#residesIn -->
+
+    <owl:ObjectProperty rdf:about="&diag;residesIn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">residesIn</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents in what device resides a software</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;System"/>
+        <rdfs:domain rdf:resource="&diag;Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#resultSymptom -->
+
+    <owl:ObjectProperty rdf:about="&diag;resultSymptom">
+        <rdfs:label xml:lang="en">resultSymptom</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represent the results of a sympton
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;MonitoringAction"/>
+        <rdfs:range rdf:resource="&diag;Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#startedBySymptom -->
+
+    <owl:ObjectProperty rdf:about="&diag;startedBySymptom">
+        <rdfs:label xml:lang="en">startedBySymptom</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represent the sympton which started the diagnosis
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Diagnosis"/>
+        <rdfs:range rdf:resource="&diag;Symptom"/>
+        <owl:inverseOf rdf:resource="&diag;startsDiagnosis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#startsDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="&diag;startsDiagnosis">
+        <rdfs:label xml:lang="en">startsDiagnosis</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents if a sympton can start a diagnosis
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&diag;Diagnosis"/>
+        <rdfs:domain rdf:resource="&diag;Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#available -->
+
+    <owl:DatatypeProperty rdf:about="&diag;available">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">available</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represent if an action is available to be performed
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Action"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#expectedBenefit -->
+
+    <owl:DatatypeProperty rdf:about="&diag;expectedBenefit">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">expectedBenefit</rdfs:label>
+        <rdfs:comment xml:lang="en">Float that the represent the expected benefit of an action, the action that has the highest expected benefit will be selected the first</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;TestAction"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hasBayesianNode -->
+
+    <owl:DatatypeProperty rdf:about="&diag;hasBayesianNode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">hasBayesianNode</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represent if a network has a bayesian node
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Hypothesis"/>
+                    <rdf:Description rdf:about="&diag;Observation"/>
+                    <rdf:Description rdf:about="&diag;TestAction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#hypothesisConfidence -->
+
+    <owl:DatatypeProperty rdf:about="&diag;hypothesisConfidence">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">hypothesisConfidence</rdfs:label>
+        <rdfs:comment xml:lang="en">Float that represents the hypothesis confidence
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Hypothesis"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&diag;id">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">id</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represent the id of an object
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Actor"/>
+                    <rdf:Description rdf:about="&diag;Diagnosis"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationType -->
+
+    <owl:DatatypeProperty rdf:about="&diag;observationType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">observationType</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents the type of an observation
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Observation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#observationValue -->
+
+    <owl:DatatypeProperty rdf:about="&diag;observationValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">observationValue</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents the value of an observation
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Observation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performableTypeOfActions -->
+
+    <owl:DatatypeProperty rdf:about="&diag;performableTypeOfActions">
+        <rdfs:label xml:lang="en">performableTypeOfActions</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents the type of actions that can be performed
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Actor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#performed -->
+
+    <owl:DatatypeProperty rdf:about="&diag;performed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">performed</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represents if an action has been perfomed
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Action"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#possibleResults -->
+
+    <owl:DatatypeProperty rdf:about="&diag;possibleResults">
+        <rdfs:label xml:lang="en">possibleResults</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents the possible results of the diagnosis</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#satisfied -->
+
+    <owl:DatatypeProperty rdf:about="&diag;satisfied">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">satisfied</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represents if an action satisfies the conditions
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Condition"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#status -->
+
+    <owl:DatatypeProperty rdf:about="&diag;status">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">status</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represent if a diagnosis is started or finished
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">Finished</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Started</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#successfullyPerformed -->
+
+    <owl:DatatypeProperty rdf:about="&diag;successfullyPerformed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">successfullyPerformed</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represents if an action has been performed successfully
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;PerformedAction"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#variableType -->
+
+    <owl:DatatypeProperty rdf:about="&diag;variableType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">variableType</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents the type of a variable
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;Variable"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#variableValue -->
+
+    <owl:DatatypeProperty rdf:about="&diag;variableValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">variableValue</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represent the value of a variable</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasBeenPerformed -->
+
+    <owl:DatatypeProperty rdf:about="&diag;whenHasBeenPerformed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">whenHasBeenPerformed</rdfs:label>
+        <rdfs:comment xml:lang="en">Date Time that represents when an action has been performed
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:domain rdf:resource="&diag;PerformedAction"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasFinished -->
+
+    <owl:DatatypeProperty rdf:about="&diag;whenHasFinished">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">whenHasFinished</rdfs:label>
+        <rdfs:comment xml:lang="en">Date time that represents when a diagnosis has finished</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#whenHasStarted -->
+
+    <owl:DatatypeProperty rdf:about="&diag;whenHasStarted">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">whenHasStarted</rdfs:label>
+        <rdfs:comment xml:lang="en">Date time that indicates when a diagnosis has started
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Action -->
+
+    <owl:Class rdf:about="&diag;Action">
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&diag;hasPrecondition"/>
+                <owl:onClass rdf:resource="&diag;RequiredActorCondition"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&diag;available"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">This class represents an action that can be performed by an actor at any time.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Actor -->
+
+    <owl:Class rdf:about="&diag;Actor">
+        <rdfs:label xml:lang="en">Actor</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents any actor that can perform actions.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Agent -->
+
+    <owl:Class rdf:about="&diag;Agent">
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;Actor"/>
+        <owl:disjointWith rdf:resource="&diag;Human"/>
+        <rdfs:comment xml:lang="en">This class represents software actors that can automate actions.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#AvailableAction -->
+
+    <owl:Class rdf:about="&diag;AvailableAction">
+        <rdfs:label xml:lang="en">AvailableAction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Action"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&diag;available"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&diag;UnavailableAction"/>
+        <rdfs:comment xml:lang="en">This class is used to classify actions which all its preconditions are satisfied.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Condition -->
+
+    <owl:Class rdf:about="&diag;Condition">
+        <rdfs:label xml:lang="en">Condition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&diag;satisfied"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">This class represents conditions of actions.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Connection -->
+
+    <owl:Class rdf:about="&diag;Connection">
+        <rdfs:label xml:lang="en">Connection</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the connection between devices.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Device -->
+
+    <owl:Class rdf:about="&diag;Device">
+        <rdfs:label xml:lang="en">Device</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;HardwareSystem"/>
+                    <rdf:Description rdf:about="&diag;System"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&diag;Subsystem"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">This class represent an element of the system
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Diagnosis -->
+
+    <owl:Class rdf:about="&diag;Diagnosis">
+        <rdfs:label xml:lang="en">Diagnosis</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the concept of diagnosis, i.e. the procedure to find the root cause failure.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#EnvironmentAction -->
+
+    <owl:Class rdf:about="&diag;EnvironmentAction">
+        <rdfs:label xml:lang="en">EnvironmentAction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;Action"/>
+        <rdfs:comment xml:lang="en">This class represents actions that can be executed in the environment, for example: external systems.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure -->
+
+    <owl:Class rdf:about="&diag;Failure">
+        <rdfs:label xml:lang="en">Failure</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the concept of failure.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HardwareSystem -->
+
+    <owl:Class rdf:about="&diag;HardwareSystem">
+        <rdfs:label xml:lang="en">HardwareSystem</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;System"/>
+        <owl:disjointWith rdf:resource="&diag;SoftwareSystem"/>
+        <rdfs:comment xml:lang="en">This class represent a physical device
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#HealingAction -->
+
+    <owl:Class rdf:about="&diag;HealingAction">
+        <rdfs:label xml:lang="en">HealingAction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;EnvironmentAction"/>
+        <owl:disjointWith rdf:resource="&diag;MonitoringAction"/>
+        <owl:disjointWith rdf:resource="&diag;TestAction"/>
+        <rdfs:comment xml:lang="en">This class represents an action that can repair a failure.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Human -->
+
+    <owl:Class rdf:about="&diag;Human">
+        <rdfs:label xml:lang="en">Human</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;Actor"/>
+        <rdfs:comment xml:lang="en">This class represents human actors that can perform actions manually.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Hypothesis -->
+
+    <owl:Class rdf:about="&diag;Hypothesis">
+        <rdfs:label xml:lang="en">Hypothesis</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the hypothesis of a failure. It has a associated confidence to represent how many certainty is about the occurrence of a failure.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#MonitoringAction -->
+
+    <owl:Class rdf:about="&diag;MonitoringAction">
+        <rdfs:label xml:lang="en">MonitoringAction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;EnvironmentAction"/>
+        <owl:disjointWith rdf:resource="&diag;TestAction"/>
+        <rdfs:comment xml:lang="en">This class represent and action that scout a device
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Network -->
+
+    <owl:Class rdf:about="&diag;Network">
+        <rdfs:label xml:lang="en">Network</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents a network of connected devices.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Observation -->
+
+    <owl:Class rdf:about="&diag;Observation">
+        <rdfs:label xml:lang="en">Observation</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represent an observation
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#PerformedAction -->
+
+    <owl:Class rdf:about="&diag;PerformedAction">
+        <rdfs:label xml:lang="en">PerformedAction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&diag;performed"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&diag;Action"/>
+        <rdfs:comment xml:lang="en">This class represents an action that has been performed by an actor.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#RequiredActorCondition -->
+
+    <owl:Class rdf:about="&diag;RequiredActorCondition">
+        <rdfs:label xml:lang="en">RequiredActorCondition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;Condition"/>
+        <rdfs:comment xml:lang="en">This type of condition represents that an action needs an actor able to perform it.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SatisfiedCondition -->
+
+    <owl:Class rdf:about="&diag;SatisfiedCondition">
+        <rdfs:label xml:lang="en">SatisfiedCondition</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Condition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&diag;satisfied"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&diag;UnsatisfiedCondition"/>
+        <rdfs:comment xml:lang="en">This class represents conditions that are satisfied.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SoftwareSystem -->
+
+    <owl:Class rdf:about="&diag;SoftwareSystem">
+        <rdfs:label xml:lang="en">SoftwareSystem</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;System"/>
+        <rdfs:comment xml:lang="en">This class represent a program installed in a device
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Subsystem -->
+
+    <owl:Class rdf:about="&diag;Subsystem">
+        <rdfs:label xml:lang="en">Subsystem</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;System"/>
+        <rdfs:comment xml:lang="en">This class represent a part of a whole system
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#SuccessfulyPerformedAction -->
+
+    <owl:Class rdf:about="&diag;SuccessfulyPerformedAction">
+        <rdfs:label xml:lang="en">SuccessfulyPerformedAction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;PerformedAction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&diag;successfullyPerformed"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&diag;UnsuccessfulyPerformedAction"/>
+        <rdfs:comment xml:lang="en">This class represents an action that has been successfuly performed by an actor, i.e. all its postconditions are satisfied.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Symptom -->
+
+    <owl:Class rdf:about="&diag;Symptom">
+        <rdfs:label xml:lang="en">Symptom</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents the symtom that starts a diagnosis.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#System -->
+
+    <owl:Class rdf:about="&diag;System">
+        <rdfs:label xml:lang="en">System</rdfs:label>
+        <rdfs:comment xml:lang="en">This concept represents systems that exist in the scenario.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#TestAction -->
+
+    <owl:Class rdf:about="&diag;TestAction">
+        <rdfs:label xml:lang="en">TestAction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&diag;EnvironmentAction"/>
+        <rdfs:comment xml:lang="en">This class represents an action that can test a device, a systems, etc.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnavailableAction -->
+
+    <owl:Class rdf:about="&diag;UnavailableAction">
+        <rdfs:label xml:lang="en">UnavailableAction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Action"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&diag;AvailableAction"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">This class is used to classify actions which not all its preconditions are satisfied.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsatisfiedCondition -->
+
+    <owl:Class rdf:about="&diag;UnsatisfiedCondition">
+        <rdfs:label xml:lang="en">UnsatisfiedCondition</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;Condition"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&diag;SatisfiedCondition"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">This class represents conditions that are not satisfied.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#UnsuccessfulyPerformedAction -->
+
+    <owl:Class rdf:about="&diag;UnsuccessfulyPerformedAction">
+        <rdfs:label xml:lang="en">UnsuccessfulyPerformedAction</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&diag;PerformedAction"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="&diag;SuccessfulyPerformedAction"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">This class represents an action that has been unsuccessfuly performed by an actor, i.e. not all its postconditions are satisfied.
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Variable -->
+
+    <owl:Class rdf:about="&diag;Variable">
+        <rdfs:label xml:lang="en">Variable</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represents data of the scenario. For example: variableType: clientIP variableValue: 192.168.0.100
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </owl:Class>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="&diag;actor"/>
+        <swrl:argument2 rdf:resource="&diag;performableActionType"/>
+        <swrl:propertyPredicate rdf:resource="&diag;performableTypeOfActions"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:classPredicate rdf:resource="&diag;RequiredActorCondition"/>
+        <swrl:argument1 rdf:resource="&diag;cond"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="&diag;action"/>
+        <swrl:argument2 rdf:resource="&diag;cond"/>
+        <swrl:propertyPredicate rdf:resource="&diag;hasPrecondition"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:argument1 rdf:resource="&diag;cond"/>
+        <swrl:propertyPredicate rdf:resource="&diag;satisfied"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:classPredicate rdf:resource="&diag;Action"/>
+        <swrl:argument1 rdf:resource="&diag;action"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:builtin rdf:resource="&rdfb;isClass"/>
+        <swrl:arguments>
+            <rdf:Description/>
+        </swrl:arguments>
+    </rdf:Description>
+    <rdf:Description>
+        <swrl:classPredicate rdf:resource="&diag;Actor"/>
+        <swrl:argument1 rdf:resource="&diag;actor"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&diag;Rule-RequiredActorCondition">
+        <swrla:hasRuleCategory rdf:datatype="&xsd;string">(12#(1))^(12)-(4)</swrla:hasRuleCategory>
+        <rdfs:comment rdf:datatype="&xsd;string">Check if there is an actor that can perform an action</rdfs:comment>
+        <swrla:isRuleEnabled rdf:datatype="&xsd;boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;hasPropertyPhrase">
+        <rdfs:label xml:lang="en">hasPropertyPhrase</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents if an object has property phrase
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;isRuleGroupEnabled">
+        <rdfs:label xml:lang="en">isRuleGroupEnabled</rdfs:label>
+        <rdfs:comment xml:lang="en">Boolean that represents if a rule group is enabled
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;Entity">
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;hasClassPhrase">
+        <rdfs:label xml:lang="en">hasClassPhrase</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents if an object has class phrase
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrl;Imp">
+        <rdfs:label xml:lang="en">Imp</rdfs:label>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;hasRuleGroup">
+        <rdfs:label xml:lang="en">hasRuleGroup</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates if a network has a rule group
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;RuleGroup">
+        <rdfs:label xml:lang="en">RuleGroup</rdfs:label>
+        <rdfs:comment xml:lang="en">This class represent the group of the different rules in the ontology.</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    <rdf:Description rdf:about="&swrla;hasBuiltInPhrase">
+        <rdfs:label xml:lang="en">hasBuiltInPhrase</rdfs:label>
+        <rdfs:comment xml:lang="en">String that represents if an object has built in phrase
+</rdfs:comment>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&diag;actor">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;action">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;performableActionType">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;cond1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;cond2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;cond3">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;cond">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&diag;performableType">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&diag;action"/>
+                        <swrl:argument1 rdf:resource="&diag;actor"/>
+                        <swrl:propertyPredicate rdf:resource="&diag;canPerform"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&diag;Actor"/>
+                        <swrl:argument1 rdf:resource="&diag;actor"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&diag;AvailableAction"/>
+                                <swrl:argument1 rdf:resource="&diag;action"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="&rdfb;isClass"/>
+                                                <swrl:arguments rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&diag;action"/>
+                                                    <rdf:Description rdf:about="&diag;performableActionType"/>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="&diag;actor"/>
+                                        <swrl:argument2 rdf:resource="&diag;performableActionType"/>
+                                        <swrl:propertyPredicate rdf:resource="&diag;performableTypeOfActions"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&diag;UnavailableAction"/>
+                        <swrl:argument1 rdf:resource="&diag;action"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                                                                <swrl:argument1 rdf:resource="&diag;cond2"/>
+                                                                <swrl:propertyPredicate rdf:resource="&diag;satisfied"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                        <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                                                                        <swrl:argument1 rdf:resource="&diag;cond3"/>
+                                                                        <swrl:propertyPredicate rdf:resource="&diag;satisfied"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                        <swrl:builtin rdf:resource="&sqwrl;notEqual"/>
+                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                            <rdf:Description rdf:about="&diag;cond1"/>
+                                                                                            <rdf:Description rdf:about="&diag;cond3"/>
+                                                                                        </swrl:arguments>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                                <swrl:builtin rdf:resource="&sqwrl;notEqual"/>
+                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                    <rdf:Description rdf:about="&diag;cond2"/>
+                                                                                                    <rdf:Description rdf:about="&diag;cond3"/>
+                                                                                                </swrl:arguments>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                <swrl:builtin rdf:resource="&sqwrl;notEqual"/>
+                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                    <rdf:Description rdf:about="&diag;cond1"/>
+                                                                                    <rdf:Description rdf:about="&diag;cond2"/>
+                                                                                </swrl:arguments>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                        <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                                                        <swrl:argument1 rdf:resource="&diag;cond1"/>
+                                                        <swrl:propertyPredicate rdf:resource="&diag;satisfied"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                <swrl:argument1 rdf:resource="&diag;action"/>
+                                                <swrl:argument2 rdf:resource="&diag;cond3"/>
+                                                <swrl:propertyPredicate rdf:resource="&diag;hasPrecondition"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="&diag;action"/>
+                                        <swrl:argument2 rdf:resource="&diag;cond2"/>
+                                        <swrl:propertyPredicate rdf:resource="&diag;hasPrecondition"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:argument1 rdf:resource="&diag;action"/>
+                                <swrl:argument2 rdf:resource="&diag;cond1"/>
+                                <swrl:propertyPredicate rdf:resource="&diag;hasPrecondition"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                        <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                        <swrl:argument1 rdf:resource="&diag;action"/>
+                        <swrl:propertyPredicate rdf:resource="&diag;available"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&diag;Action"/>
+                        <swrl:argument1 rdf:resource="&diag;action"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="&diag;RequiredActorCondition"/>
+                                        <swrl:argument1 rdf:resource="&diag;cond"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                <swrl:argument1 rdf:resource="&diag;action"/>
+                                                <swrl:argument2 rdf:resource="&diag;cond"/>
+                                                <swrl:propertyPredicate rdf:resource="&diag;hasPrecondition"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="&rdfb;isClass"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&diag;action"/>
+                                                                    <rdf:Description rdf:about="&diag;performableType"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                        <swrl:argument1 rdf:resource="&diag;actor"/>
+                                                        <swrl:argument2 rdf:resource="&diag;performableType"/>
+                                                        <swrl:propertyPredicate rdf:resource="&diag;performableTypeOfActions"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&diag;Actor"/>
+                                <swrl:argument1 rdf:resource="&diag;actor"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                        <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                        <swrl:argument1 rdf:resource="&diag;cond"/>
+                        <swrl:propertyPredicate rdf:resource="&diag;satisfied"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/merinom/ontologies/2018/10/sbo#"
+     xml:base="http://www.semanticweb.org/merinom/ontologies/2018/10/sbo"
+     xmlns:dbp="http://dbpedia.org/page/"
+     xmlns:ifc="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#"
+     xmlns:ifo="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#"
+     xmlns:obx="https://behavior.lbl.gov/?q=obXML#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ptt="http://www.ontotext.com/proton/protontop#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sbo="http://gsi.dit.upm.es/ontologies/sbo#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/spec/#"
+     xmlns:moac="http://observedchange.com/moac/ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/merinom/ontologies/2018/10/sbo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#list -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#list">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#AppliesAn -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#AppliesAn">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#ContainsA -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#ContainsA">
+        <rdfs:domain rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuilding"/>
+        <rdfs:range rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#FollowsAn -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#FollowsAn">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationRoute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#HasA -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#HasA">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#FOV"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#IsASetOf -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#IsASetOf">
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationRoute"/>
+        <rdfs:range rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#PerformancesA -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#PerformancesA">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="https://behavior.lbl.gov/?q=obXML#MovementBehavior"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#SpreadsIn -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#SpreadsIn">
+        <rdfs:domain rdf:resource="http://observedchange.com/moac/ns#Fire"/>
+        <rdfs:range rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuilding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Suffers -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Suffers">
+        <rdfs:domain rdf:resource="http://dbpedia.org/page/Old_age"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/page/Mobility_disabilities"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#isFormedOf -->
+
+    <owl:ObjectProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#isFormedOf">
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#FOV"/>
+        <rdfs:range rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#location_IfcPlacement -->
+
+    <owl:ObjectProperty rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#location_IfcPlacement">
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#FireSpot"/>
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#Obstacle"/>
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#POI"/>
+        <rdfs:domain rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protontop#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontotext.com/proton/protontop#hasChild">
+        <rdfs:domain rdf:resource="http://dbpedia.org/page/Adult"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/page/Child"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protontop#hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontotext.com/proton/protontop#hasParent">
+        <rdfs:domain rdf:resource="http://dbpedia.org/page/Child"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/page/Adult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protontop#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontotext.com/proton/protontop#partOf">
+        <rdfs:domain rdf:resource="http://observedchange.com/moac/ns#Fire"/>
+        <rdfs:range rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#FireSpot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Id_Occupant -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Id_Occupant">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Unique identifier of an occupant</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Id_POI -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Id_POI">
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Unique identifier of an POI</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Intensity -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Intensity">
+        <rdfs:domain rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#FireSpot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Level of intensity of a fire spot</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Life -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Life">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of lives of an occupant (0 lives means dead)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Speed -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Speed">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>Speed of an occupant</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#State -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#State">
+        <rdfs:domain rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>State of an occupant</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#growthRate -->
+
+    <owl:DatatypeProperty rdf:about="http://gsi.dit.upm.es/ontologies/sbo#growthRate">
+        <rdfs:domain rdf:resource="http://observedchange.com/moac/ns#Fire"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Rate of spreading of the fire</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#Coordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#Coordinates">
+        <rdfs:domain rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#list"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/page/Adult -->
+
+    <owl:Class rdf:about="http://dbpedia.org/page/Adult">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/page/Child -->
+
+    <owl:Class rdf:about="http://dbpedia.org/page/Child">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/page/Mobility_disabilities -->
+
+    <owl:Class rdf:about="http://dbpedia.org/page/Mobility_disabilities"/>
+    
+
+
+    <!-- http://dbpedia.org/page/Old_age -->
+
+    <owl:Class rdf:about="http://dbpedia.org/page/Old_age">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Avatar -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Avatar">
+        <rdfs:subClassOf rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <rdfs:comment>Virtual representation in the simulation of external users.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#EvacuationRoute -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#EvacuationRoute">
+        <rdfs:comment>The evacuation route is the path traveled by occupants to leave the building during an emergency.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy">
+        <rdfs:comment>The evacuation strategy defines the criteria for selecting the evacuation route.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#FOV -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#FOV">
+        <rdfs:comment>The Field Of Vision is the space that can be visualized by an occupant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#FireSpot -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#FireSpot">
+        <rdfs:comment>The fire spot is a discrete position where there is fire.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Nearest -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Nearest">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy"/>
+        <rdfs:comment>Selection of the evacuation route according to the nearest exit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Obstacle -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Obstacle">
+        <rdfs:subClassOf rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+        <rdfs:comment>An element of the building that cannot be crossed by an occupant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#POI -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#POI">
+        <rdfs:subClassOf rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+        <rdfs:comment>Element of the building in which the agents carry out activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Safest -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Safest">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy"/>
+        <rdfs:comment>Selection of the evuation route according to the safest exit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gsi.dit.upm.es/ontologies/sbo#Uncrowded -->
+
+    <owl:Class rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Uncrowded">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#EvacuationStrategy"/>
+        <rdfs:comment>Selection of the evacuation route according to the uncrowded exit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://observedchange.com/moac/ns#Emergency -->
+
+    <owl:Class rdf:about="http://observedchange.com/moac/ns#Emergency"/>
+    
+
+
+    <!-- http://observedchange.com/moac/ns#Fire -->
+
+    <owl:Class rdf:about="http://observedchange.com/moac/ns#Fire"/>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuilding -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuilding"/>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcCartesianPoint"/>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#CHAIR -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#CHAIR">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#POI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#DESK -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#DESK">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#Obstacle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#FILECABINET -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#FILECABINET">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#Obstacle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#GATE -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#GATE">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#POI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcDoor -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcDoor">
+        <rdfs:subClassOf rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcWall -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcWall">
+        <rdfs:subClassOf rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcWindow -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#IfcWindow">
+        <rdfs:subClassOf rdf:resource="http://www.buildingsmart-tech.org/ifc/IFC4/Add2/IFC4_ADD2.xsd#IfcBuildingElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#SHELF -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#SHELF">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#Obstacle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#SOFA -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#SOFA">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#POI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#TABLE -->
+
+    <owl:Class rdf:about="http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#TABLE">
+        <rdfs:subClassOf rdf:resource="http://gsi.dit.upm.es/ontologies/sbo#Obstacle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/spec/#Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/spec/#Agent">
+        <rdfs:subClassOf rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+    </owl:Class>
+    
+
+
+    <!-- https://behavior.lbl.gov/?q=obXML#MovementBehavior -->
+
+    <owl:Class rdf:about="https://behavior.lbl.gov/?q=obXML#MovementBehavior"/>
+    
+
+
+    <!-- https://behavior.lbl.gov/?q=obXML#Occupant -->
+
+    <owl:Class rdf:about="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/merinom/ontologies/2018/10/sbo#dani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/merinom/ontologies/2018/10/sbo#dani">
+        <rdf:type rdf:resource="https://behavior.lbl.gov/?q=obXML#Occupant"/>
+        <sbo:Id_Occupant rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123</sbo:Id_Occupant>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/page/Adult"/>
+            <rdf:Description rdf:about="http://dbpedia.org/page/Child"/>
+            <rdf:Description rdf:about="http://dbpedia.org/page/Old_age"/>
+            <rdf:Description rdf:about="http://gsi.dit.upm.es/ontologies/sbo#Avatar"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+

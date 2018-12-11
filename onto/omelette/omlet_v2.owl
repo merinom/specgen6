@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY http "http://" >
+    <!ENTITY ctag "http://commontag.org/ns#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY http2 "http://www.w3.org/2006/http#" >
+    <!ENTITY hrests "http://www.wsmo.org/ns/hrests#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY omr "http://www.ict-omelette.eu/omr/" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY rosm "http://www.wsmo.org/ns/rosm/0.1#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY wsmo-lite "http://www.wsmo.org/ns/wsmo-lite#" >
+    <!ENTITY maps "http://code.google.com/apis/maps/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY tags "http://www.ict-omelette.eu/omr/tags/" >
+    <!ENTITY apis "http://www.ict-omelette.eu/omr/apis/" >
+    <!ENTITY ios "http://itunes.apple.com/us/genre/ios/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY omelette "http://www.ict-omelette.eu/schema.rdf#" >
+    <!ENTITY widgets "http://www.ict-omelette.eu/omr/widgets/" >
+    <!ENTITY mashups "http://www.ict-omelette.eu/omr/mashups/" >
+    <!ENTITY messages "http:////www.ict-omelette.eu/omr/messages/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY appstore "http://www.ict-omelette.eu/omr/categories/appstore/" >
+    <!ENTITY twitter_monitor "http://www.ict-omelette.eu/omr/mashups/twitter_monitor/" >
+    <!ENTITY operawidgets "http://www.ict-omelette.eu/omr/categories/operawidgets/" >
+    <!ENTITY programmableweb "http://www.ict-omelette.eu/omr/categories/programmableweb/" >
+    <!ENTITY page_index "http://widgets.opera.com/widget/download/5218/1.1/?page_index=" >
+    <!ENTITY operation1 "http://www.ict-omelette.eu/omr/mashups/twitter_monitor/operation1/" >
+]>
+
+
+<rdf:RDF xmlns="&http;www.ict-omelette.eu/"
+     xml:base="&http;www.ict-omelette.eu/schema.rdf"
+     xmlns:widgets="&http;www.ict-omelette.eu/omr/widgets/"
+     xmlns:wsmo-lite="&http;www.wsmo.org/ns/wsmo-lite#"
+     xmlns:mashups="&http;www.ict-omelette.eu/omr/mashups/"
+     xmlns:messages="&http;//www.ict-omelette.eu/omr/messages/"
+     xmlns:dcterms="&http;purl.org/dc/terms/"
+     xmlns:rdfs="&http;www.w3.org/2000/01/rdf-schema#"
+     xmlns:programmableweb="&http;www.ict-omelette.eu/omr/categories/programmableweb/"
+     xmlns:swrl="&http;www.w3.org/2003/11/swrl#"
+     xmlns:twitter_monitor="&http;www.ict-omelette.eu/omr/mashups/twitter_monitor/"
+     xmlns:operawidgets="&http;www.ict-omelette.eu/omr/categories/operawidgets/"
+     xmlns:ctag="&http;commontag.org/ns#"
+     xmlns:rdf="&http;www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:appstore="&http;www.ict-omelette.eu/omr/categories/appstore/"
+     xmlns:hrests="&http;www.wsmo.org/ns/hrests#"
+     xmlns:omelette="&http;www.ict-omelette.eu/schema.rdf#"
+     xmlns:tags="&http;www.ict-omelette.eu/omr/tags/"
+     xmlns:dc="&http;purl.org/dc/elements/1.1/"
+     xmlns:protege="&http;protege.stanford.edu/plugins/owl/protege#"
+     xmlns:page_index="&http;widgets.opera.com/widget/download/5218/1.1/?page_index="
+     xmlns:foaf="&http;xmlns.com/foaf/0.1/"
+     xmlns:ios="&http;itunes.apple.com/us/genre/ios/"
+     xmlns:http2="&http;www.w3.org/2006/http#"
+     xmlns:apis="&http;www.ict-omelette.eu/omr/apis/"
+     xmlns:xsp="&http;www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rosm="&http;www.wsmo.org/ns/rosm/0.1#"
+     xmlns:maps="&http;code.google.com/apis/maps/"
+     xmlns:http="http://"
+     xmlns:omr="&http;www.ict-omelette.eu/omr/"
+     xmlns:owl="&http;www.w3.org/2002/07/owl#"
+     xmlns:xsd="&http;www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="&http;www.w3.org/2003/11/swrlb#"
+     xmlns:operation1="&http;www.ict-omelette.eu/omr/mashups/twitter_monitor/operation1/"
+     xmlns:skos="&http;www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="&http;xmlns.com/foaf/0.1/"/>
+        <owl:imports rdf:resource="&http;www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="&http;commontag.org/ns#"/>
+    </owl:Ontology>
+    <skos:Concept rdf:about="&http;www.ict-omelette.eu/omr/categories/operawidgets/fun_and_games">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#NamedIndividual"/>
+    </skos:Concept>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#OptionalParameter">
+        <rdfs:subClassOf rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:Class>
+    <owl:NamedIndividual rdf:about="&http;www.ict-omelette.eu/omr/tags/travel"/>
+    <owl:NamedIndividual rdf:about="&http;www.ict-omelette.eu/omr/mashups/twitter_monitor/operation1/parameter1">
+        <rosm:parameterName rdf:datatype="&http;www.w3.org/2001/XMLSchema#string">keywords</rosm:parameterName>
+    </owl:NamedIndividual>
+    <skos:Concept rdf:about="&http;www.ict-omelette.eu/omr/categories/appstore/music">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#NamedIndividual"/>
+        <skos:topConceptOf rdf:resource="&http;itunes.apple.com/us/genre/ios/id36"/>
+    </skos:Concept>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#Parameter">
+        <rdf:type rdf:resource="&http;www.w3.org/1999/02/22-rdf-syntax-ns#Class"/>
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Class>
+    <owl:DatatypeProperty rdf:ID="protocol">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:ID="apiBlog">
+        <rdfs:domain rdf:resource="#Service"/>
+        <rdfs:subPropertyOf rdf:resource="&http;xmlns.com/foaf/0.1/weblog"/>
+    </owl:ObjectProperty>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#ServicedResourceCollection">
+        <rdfs:subClassOf rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#ServicedResource"/>
+    </owl:Class>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#RequiredParameter">
+        <rdfs:subClassOf rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:Class>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#basedOnMethod">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2006/http#Method"/>
+    </owl:AnnotationProperty>
+    <owl:Class rdf:ID="Component">
+        <rdfs:comment xml:lang="en"
+            >This is an omelette component</rdfs:comment>
+        <rdfs:label xml:lang="en">Component</rdfs:label>
+    </owl:Class>
+    <owl:DatatypeProperty rdf:ID="commercialLicense">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:DatatypeProperty>
+    <rdf:Description rdf:about="&http;purl.org/dc/terms/title"/>
+    <owl:DatatypeProperty rdf:ID="usageFees">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:DatatypeProperty>
+    <owl:Class rdf:ID="Widget">
+        <rdfs:subClassOf rdf:resource="#Component"/>
+    </owl:Class>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#requestURIParameter">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:AnnotationProperty>
+    <owl:ObjectProperty rdf:ID="api">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:ObjectProperty>
+    <rdf:Property rdf:about="&http;purl.org/dc/terms/creator"/>
+    <owl:DatatypeProperty rdf:ID="communityApiKit">
+        <rdfs:subPropertyOf rdf:resource="#apiKit"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:ID="apiForum">
+        <rdfs:domain rdf:resource="#Service"/>
+        <rdfs:subPropertyOf rdf:resource="&http;xmlns.com/foaf/0.1/weblog"/>
+    </owl:ObjectProperty>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#requestHeaderFieldParameter">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:AnnotationProperty>
+    <owl:NamedIndividual rdf:about="&http;www.ict-omelette.eu/omr/tags/alaska"/>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#requestBodyParameter">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#supportsOperation">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#ServicedResource"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/hrests#hasAddress"/>
+    <owl:NamedIndividual rdf:about="&http;code.google.com/apis/maps/index.html"/>
+    <owl:DatatypeProperty rdf:ID="usageLimits">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="developerKeyRequired">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="clientInstallRequired">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:Class rdf:about="&http;www.w3.org/2006/http#ResponseCode"/>
+    <owl:ObjectProperty rdf:ID="uses">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:range rdf:resource="#Component"/>
+    </owl:ObjectProperty>
+    <owl:NamedIndividual rdf:about="&http;www.google.com"/>
+    <owl:Class rdf:ID="Service">
+        <rdfs:subClassOf rdf:resource="#Component"/>
+    </owl:Class>
+    <owl:ObjectProperty rdf:ID="endpoint">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:ObjectProperty>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#containsResource">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#ServicedResourceCollection"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#ServicedResource"/>
+    </owl:AnnotationProperty>
+    <owl:DatatypeProperty rdf:ID="nonCommercialLicense">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:DatatypeProperty>
+    <owl:NamedIndividual rdf:about="&http;widgets.opera.com/widget/download/5218/1.1/?page_index=None"/>
+    <owl:NamedIndividual rdf:about="&http;www.ict-omelette.eu/omr/mashups/twitter_monitor/operation1">
+        <rosm:basedOnMethod rdf:resource="&http;www.w3.org/2006/http#GetRequest"/>
+        <rosm:requestURIParameter rdf:resource="&http;www.ict-omelette.eu/omr/mashups/twitter_monitor/operation1/parameter1"/>
+        <hrests:hasAddress rdf:datatype="&http;www.w3.org/2001/XMLSchema#string"
+            >http://pipes.yahoo.com/pipes/pipe.run?_id=c328dbc82f8019c0097eb3318205fa09&amp;_render=rss</hrests:hasAddress>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&http;itunes.apple.com/us/genre/ios/id36"/>
+    <owl:NamedIndividual rdf:about="&http;code.google.com/apis/maps/terms.html"/>
+    <owl:DatatypeProperty rdf:ID="example">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="readOnlyWithoutLogin">
+        <rdfs:domain rdf:resource="#Service"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="apiKit">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:DatatypeProperty>
+    <owl:Class rdf:about="&http;www.w3.org/2006/http#Method"/>
+    <rdf:Description rdf:about="&http;www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:Description rdf:about="&http;purl.org/dc/terms/Agent"/>
+    <owl:Class rdf:about="&http;www.w3.org/1999/02/22-rdf-syntax-ns#Class"/>
+    <rdf:Property rdf:about="&http;purl.org/dc/terms/created"/>
+    <owl:NamedIndividual rdf:about="&http;www.programmableweb.com"/>
+    <owl:ObjectProperty rdf:ID="provider"/>
+    <owl:DatatypeProperty rdf:ID="dataFormat">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:DatatypeProperty>
+    <owl:NamedIndividual rdf:about="&http;googlegeodevelopers.blogspot.com/"/>
+    <rdf:Description rdf:about="&http;purl.org/dc/terms/contributor"/>
+    <owl:ObjectProperty rdf:ID="supportPage">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:subPropertyOf rdf:resource="&http;xmlns.com/foaf/0.1/homepage"/>
+    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:ID="developerAccountRequired">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:ID="describedBy">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="categorizedBy">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en"
+            >link to a category</rdfs:comment>
+        <rdfs:label xml:lang="en">categorized By</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:NamedIndividual rdf:about="&http;groups-beta.google.com/group/Google-Maps-API?pli=1"/>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#ServicedResource">
+        <rdfs:subClassOf rdf:resource="&http;www.w3.org/2000/01/rdf-schema#resource"/>
+    </owl:Class>
+    <rdf:Description rdf:about="&http;purl.org/dc/terms/description"/>
+    <owl:NamedIndividual rdf:about="&http;www.w3.org/2006/http#GetRequest"/>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#Service">
+        <rdfs:subClassOf rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#ServicedResourceCollection"/>
+    </owl:Class>
+    <rdf:Description rdf:about="&http;purl.org/dc/elements/1.1/contributor"/>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#hasResponse">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Operation"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Response"/>
+    </owl:AnnotationProperty>
+    <owl:NamedIndividual rdf:about="&http;guide.alaskatravel.com/"/>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#hasResponseCode">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Response"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2006/http#ResponseCode"/>
+    </owl:AnnotationProperty>
+    <owl:ObjectProperty rdf:ID="usageHomePage">
+        <rdfs:domain rdf:resource="#Component"/>
+        <rdfs:subPropertyOf rdf:resource="&http;xmlns.com/foaf/0.1/homepage"/>
+    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:ID="sslSupport">
+        <rdfs:domain rdf:resource="#Service"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="authenticationModel">
+        <rdfs:domain rdf:resource="#Service"/>
+    </owl:DatatypeProperty>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#hasBody">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Response"/>
+        <rdfs:range rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+    </owl:AnnotationProperty>
+    <owl:ObjectProperty rdf:ID="termsAndConditions">
+        <rdfs:domain rdf:resource="#Component"/>
+    </owl:ObjectProperty>
+    <owl:NamedIndividual rdf:about="&http;www.ict-omelette.eu/omr/tags/mapping"/>
+    <rdf:Description rdf:about="&http;purl.org/dc/terms/issued"/>
+    <omelette:Widget rdf:about="&http;www.ict-omelette.eu/test_widget">
+        <omelette:describedBy rdf:resource="&http;widgets.opera.com/widget/download/5218/1.1/?page_index=None"/>
+        <omelette:categorizedBy rdf:resource="&http;www.ict-omelette.eu/omr/categories/operawidgets/fun_and_games"/>
+        <dc:description rdf:datatype="&http;www.w3.org/2001/XMLSchema#string"
+            >Watch fun colourful shapes get drawn
+
+Choose a few simple paramaters and sit back while a spirograph is drawn before your eyes.
+
+The more technical name for these kinds of curves is a hypotrochoid or an epitrochoid.</dc:description>
+        <dc:title rdf:datatype="&http;www.w3.org/2001/XMLSchema#string">Spirograph</dc:title>
+    </omelette:Widget>
+    <owl:DatatypeProperty rdf:ID="vendorApiKit">
+        <rdfs:subPropertyOf rdf:resource="#apiKit"/>
+    </owl:DatatypeProperty>
+    <owl:Class rdf:about="&http;www.w3.org/2000/01/rdf-schema#resource"/>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#Operation">
+        <rdf:type rdf:resource="&http;www.w3.org/1999/02/22-rdf-syntax-ns#Class"/>
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Class>
+    <owl:Class rdf:about="&http;www.wsmo.org/ns/rosm/0.1#Response"/>
+    <rdf:Description rdf:about="&http;commontag.org/mappings"/>
+    <owl:AnnotationProperty rdf:about="&http;www.wsmo.org/ns/rosm/0.1#parameterName">
+        <rdf:type rdf:resource="&http;www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="&http;www.wsmo.org/ns/rosm/0.1#Parameter"/>
+        <rdfs:range rdf:resource="&http;www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:AnnotationProperty>
+</rdf:RDF>

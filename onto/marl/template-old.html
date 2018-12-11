@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>MARL Ontology Specification</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper2">
+
+	<a href="http://lab.gsi.dit.upm.es/"><img id="logo_gsi" src="img/gsi_logo.png" alt="Grupo de Sistemas Ingeligentes" style="border: 0pt none; padding: 10px;"/></a> 
+	<a href="http://purl.org/gi2mo/"><img id="logo_gi2mo" src="img/gi2mo_logo.png" alt="GI2MO Ontology" style="border: 0pt none ; float: right; padding: 10px;" /></a> 
+
+    <!-- <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3> -->
+    <h1 id="title">MARL Ontology Specification</h1>
+    <!--    <h2 id="subtitle">LONG NAME</h2> -->
+    <h3 id="mymw-doctype">V0.4 - 03 December 2010</h3>
+    <dl>
+    <table border="0">
+    <tr>
+        <td>
+            <b>This version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/0.4/ns">http://purl.org/gi2mo/0.4/ns</a> (<a href="ns.owl">RDF/XML</a>, <a href="ns.html">HTML</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Latest version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/ns">http://purl.org/gi2mo/ns</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Editors:</b>
+        </td>
+        <td>
+            <a href="http://www.adamwesterski.com/">Adam Westerski</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Authors:</b>
+        </td>
+        <td>
+            <a href="http://www.adamwesterski.com/">Adam Westerski</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Contributors:</b>
+        </td>
+        <td>
+            See <a href="#acknowledgements">acknowledgements</a>
+        </td>
+    </tr>
+    </table>
+    
+    <p>
+    <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0pt none ; float: right; padding: 10px;" src="img/cc_licence.png" /></a> 
+    </p>    
+    <p class="copyright">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. This copyright applies to the GI2MO Ontology Specification and accompanying documentation in RDF. This ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+    <!-- ===================================================================== -->
+    <hr/>
+
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        <b>G</b>enteric <b>I</b>sea and <b>I</b>innovation <b>M</b>management <b>O</b>ntology (<b>GI2MO</b>) is a standardized data schema (also referred as "ontology" or "vocabulary") designed to annotate and describe resources gathered inside Idea Management facilities. The following document contains the description of ontology and instructions how to connect it with descriptions of other resources.</p>
+
+    <hr/>
+
+    <h2 id="contents">Table of Contents</h2>
+    <ol id="toc">
+      <li><a href="#intro">Introduction</a>
+        <ol>
+          <li><a href="#s11">Idea Management Systems and Innovation Management Process</a></li>
+          <li><a href="#s12">The Semantic Web</a></li>
+          <li><a href="#s13">What is GI2MO for?</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec-glance">GI2MO ontology at a glance</a></li>
+      <li>
+        <a href="#overview">GI2MO ontology overview</a>
+<!--        <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+        <ol>
+          <li><a href="#s32">Example</a></li>
+        </ol>
+      </li>
+      <li><a href="#reference">Cross-reference for GI2MO %s</a></li>
+    </ol>
+
+    <h3>Appendixes</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+<!--      <li><a href="#references">Normative References</a></li> -->
+      <li><a href="#changes">Changelog</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+
+    <h2 id="intro">1 Introduction</h2>
+
+    <p>The following specification is a formal description of metadata schema proposal that can be applied to data gathered in the so-called Idea Management Systems. The goal of the following section is to introduce both Semantic Web and Idea Management experts to the topic and goals of the ontology and provide the basic knowledge to comprehand the technical part of the specification.</p>
+    <p><b>An important note</b> is that GI2MO ontology is not a complete model of the Idea Management System. It merly defines concepts that are not described yet by the means of other ontologies. For detailed instructions how to completly model Idea Management Systems with GI2MO and other ontologies see <a href="http://purl.org/gi2mo/modeling/">homepage</a> of the GI2MO project.</p>
+
+    <h3 id="s11">1.1 Idea Management Systems and Innovation Management Process</h3>
+
+    <p>The Idea Management Systems are refered most often as an application used by organizations to collect input about various ideas regarding their products and services; and manage them afterwards providing certain assessment and screening facilities.
+    </p>    
+    <p>
+    Although, the concept of such systems and vendors that deliver them are available on the market for quite a while, the scope and technologies involved are constantly evolving. The most most basic idea management process includes: 
+    <ul>
+    <li>idea generation (facilities for submiting ideas)</li>
+    <li>idea improvement (usually Web 2.0 facilities to modify ideas in collaboratibve environment)</li>
+    <li>idea assessment (idea analysis, assessment and selection tools, e.g. diagrams and reports)</li>
+    </ul>
+    However, in the contemporary systems the tendency is to extend this process towards: 
+    <ul>
+    <li>idea implementation (lightweight project management tools or integration with more complex suits)</li>
+    <li>idea deployment (analysis of business metrics related to products based on ideas from IM process, e.g. ROI)</li>
+    </ul>
+    <p>
+    <b>In relation to other IT systems used in modern organizations</b>, at the time of writing this specification the IM Systems have not been yet introducted as a standard compotent by the key players as part of their ERP, PLM/PLCM or CRM suites. Idea Management, in relation to those systems, is still being considered as a rising market and a complementary solution that can be supplied depending on organization's interest in investment in innovation.
+    </p>
+    <p>
+    <b>In relation to other processes run in the modern enterprises</b>, Idea Management can be defined as part of Innovation Management Process run as part of innovation strategy in many contemporary enterprises. Idea Management is percieved as complementary solution to this process that delivers tools that can enhance the successfulness of the innovation management process and open it to new possibilities.
+    </p>
+    </p>
+
+    <h3 id="s12">1.2 The Semantic Web</h3>
+
+    <p>The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is a W3C initiative that aims to introduce rich metadata to the current Web and provide machine readable and processable data as a supplement to human-readable Web.
+    </p>
+    <p>
+    Semantic Web is a mature domain that has been in research phase for many years and with the increasing amount of commercial interest and emerging products is starting to gain appreciation and popularity as one of the rising trends for the future Internet.
+    </p>
+    
+    <p>
+    One of the corner stores of the Semantic Web is research on inerlinkable and interoperable data schemas for information published online. Those schemas are often refered to as ontologies or vocabularies. In order to facilitate the concept of ontologies that lead to a truly interoperable Web of Data, W3C has proposed a series of technologies such as <a href="http://www.w3.org/RDF/">RDF</a> and <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>.
+    <b>GI2MO</b> uses those technologies and the research that comes within to propose an ontology set in the domain of Idea Management.
+    </p>
+
+    <h3 id="s13">1.3 What is GI2MO for?</h3>
+    <p>
+    The goals of the GI2MO ontology to achieve as a data schema are:
+    <ul>
+    <li>enable to publish raw data from Idea Management Systems online and in complience with current and future Internet trends</li>
+    <li>interconnect Idea Management assets with other resources (projects, product metrics, basic knowledge management concepts)</li>
+    <li>utilize all above to enhance current idea assessment capabilities with algorithms based on analysis of rich semantic descriptions of idea management assets</li>
+    </ul>
+    For more information please refer to GI2MO project <a href="http://purl.org/gi2mo/">website</a>.
+    </p>
+
+
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. GI2MO ontology at a glance</h2>
+
+    <p>
+      An alphabetical index of GI2MO terms,  by class (concepts) and by property 
+      (relationships, attributes), are given below. All the terms are hyperlinked 
+      to their detailed description for quick reference. <!-- %s -->
+    </p>
+
+    <!-- The list of classes and properties goes here -->
+ 
+ %s
+
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. GI2MO ontology overview</h2>
+
+    <p>The GI2MO UML diagram presented below shows connections between classes that implement the data model of Idea Management Systems.</p>
+    
+    <div class="img"> 
+				<a href="img/class_diagram_v0.4.png"><img src="img/class_diagram_v0.4_small.png" alt="UML Class Diagram for the GI2MO Ontology" title="click to enlarge" style="border:0" /></a> 
+				<div>UML Class Diagram for the GI2MO Ontology (high resolution version: <a href="img/class_diagram_v0.4.png">PNG</a>)</div> 
+	</div> 
+    <!--
+    <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+    -->
+
+    <!-- ===================================================================== -->
+
+    <h3 id="s32">3.1. Example</h3> <!-- 3.2. Example -->
+
+    <p>A very basic example below shows a single idea annotated with GI2MO metadata:</p>
+
+    <div class="example">
+      <pre>
+  &lt;rdf:Description rdf:about="http://lab.gsi.dit.upm.es/apache/adam/gsideas/idea/012345"&gt;
+    &lt;foaf:page rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/user/Pablo"/&gt;
+    &lt;gi2mo:content&gt;I often forget keys to the laboratory, so i think it would be great to install a card access lock 
+                    with a reader for chips in spanish ID
+    &lt;/gi2mo:content&gt;
+    &lt;dcterms:title&gt;Card-lock for laboratory door&lt;/gi2mo:title&gt;
+    &lt;dcterms:created&gt;2010-02-23&lt;/gi2mo:created&gt;
+    &lt;gi2mo:hasStatus rdf:resource="http://www.upm.es/gi2mo#Implemented"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/comment/054321"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/comment/054322"/&gt;
+    &lt;gi2mo:hasCategory rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/category/General"/&gt;
+    &lt;gi2mo:hasDuplicate rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/idea/02345"/&gt;
+  &lt;/rdf:Description&gt;
+      </pre>
+    </div>
+    
+    <p> For more examples please see a GI2MO  <a href="http://lab.gsi.dit.upm.es/apache/adam/gsideas/dump.rdf">RDF export</a> for a simple Idea Management System <a href="http://lab.gsi.dit.upm.es/apache/adam/gsideas">instance</a> installed on lab GSI severs.</p>
+
+    <!-- ===================================================================== -->
+
+    <h2 id="reference">4. Cross-reference for GI2MO classes and properties</h2>
+
+    <p>Below see a comprehensive list of all GI2MO classes, properties and their descriptions.</p>
+
+    <!-- The following is the script-generated list of classes and properties -->
+
+<!-- %s -->
+<!-- %s -->
+<!-- this is the a-z listing -->
+
+<!-- and this is the bulk of the vocab descriptions -->
+%s
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<p>
+The description of the terms in the <em>Ordered List Ontology</em> 'dictionary' make reference to classes and properties elsewhere. This section of the <em>Ordered List Ontology</em> 
+specification provides a placeholder reference for any <em>Ordered List Ontology</em> mention of externally defined terms. For example, sometimes we might say that <em>Ordered List Ontology</em> property has 
+a domain or range of an externally defined class, or that a <em>Ordered List Ontology</em> class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
+common members). Such claims help fix the intended meaning of <em>Ordered List Ontology</em> terms in relationship to other 'peer' vocabularies.
+Currently, the <em>Ordered List Ontology</em> sub classes:</p>
+<dl>
+<dt><a about="http://purl.org/ontology/olo/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
+<dd>The class extension of owl:Thing is the set of all individuals.
+</dd>
+</dl>
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+<p>
+Each term in the <em>Ordered List Ontology</em> is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+</p>
+<p>
+Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
+ be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
+ the <em>Ordered List Ontology</em>, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ </p>
+
+<dl>
+<dt>vs:term_status</dt>
+<dd>The vs:term_status property indicates the status of a vocabulary term, one of 'stable','unstable','testing' or 'archaic'. </dd>
+</dl>
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  <p>I would like to thank very much Samer A. Abdallah (!), Yves Raimond, Kurt Jacbson and Aldo Gangemi
+ to help to establish this multiple purpose ordered list ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
+specification.</p>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+<pre>=========================
+Version 0.72 (July 2010)
+=========================
+ * MODIFIED: removed owl:ObjectProperty type and owl:inverseOf from olo:item
+ * MODIFIED: olo:Slot - removed restriction on olo:item
+
+=========================
+Version 0.71 (July 2010)
+=========================
+
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:index
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:length
+ * REMOVED: anonymous defined inverse properties from olo:index and olo:length
+ 
+=========================
+Version 0.7 (July 2010)
+=========================
+ * MODIFIED: olo:OrderedList and olo:Slot now sub class of owl:Thing
+ * MODIFIED: olo:OrderedList and olo:Slot now of the type rdf:Class and owl:Class
+ * MODIFIED: every property is now also of the type rdf:Property
+
+=========================
+Version 0.6 (June 2010)
+=========================
+ * CHANGED: base URI to http://purl.org/ontology/olo/core#
+ * FIXED: bad typo of owl:inverseOf
+ * ADDED: olo:previous as explicit inverse property of olo:next
+ * ADDED: olo:ordered_list as explicit inverse property of olo:slot
+ * MODIFIED: correct setting of restrictions now (used owl:Restriction)
+ * REMOVED: owl:someValuesFrom from olo:length + olo:index
+ 
+=========================
+Version 0.5 (June 2010)
+=========================
+ * MODIFIED: olo:item - removed rdfs:range.
+ * MODIFIED: dc:date - used xsd:dateTime datatype.
+ * MODIFIED: changed foaf:maker to dc:creator.
+ * REMOVED: DCTerms and FOAF from owl:imports.
+  
+=========================
+Version 0.4 (June 2010)
+=========================
+ * MODIFIED: olo:length - back to rdfs:range xsd:nonNegativeInteger.
+ * MODIFIED: olo:length + olo:index now with owl:someValuesFrom.
+
+=========================
+Version 0.3 (June 2010)
+=========================
+ * ADDED: olo:next - to associate the next slot of a slot in an ordered list.
+ * MODIFIED: olo:length - to enable a single length association to an ordered list.
+ * MODIFIED: olo:length - rdfs:range xsd:positiveInteger.
+ * MODIFIED: olo:index - to enable a single index association to a slot in an ordered list.
+ * MODIFIED: anonymous inverse property of olo:slot to rdfs:type owl:FunctionalProperty.
+
+=========================
+Version 0.2 (June 2010)
+=========================
+ * MODIFIED: olo:index - rdfs:range to xsd:positiveInteger
+ * MODIFIED: olo:length - rdfs:range to nongativeInteger
+
+=========================
+Version 0.1 (June 2010)
+=========================
+ * ADDED: olo:OrderedList - a concept for ordered lists
+ * ADDED: olo:Slot - a slot in an ordered list
+ * ADDED: olo:slot - associates an ordered list to its slots
+ * ADDED: olo:length - the length of an ordered list
+ * ADDED: olo:index - an index of a slot in an ordered list
+ * ADDED: olo:item - an item of an slot in an ordered list
+</pre>
+
+</body>
+</html>

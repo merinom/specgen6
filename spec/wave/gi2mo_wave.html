@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>Gi2MO Wave Ontology Specification</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper2">
+
+	<a href="http://www.mondragon.edu/en"><img id="logo_gsi" src="img/logo_mondragon.gif" alt="Mondragon University" style="border: 0pt none; padding: 10px;"/></a> 
+	<a href="http://purl.org/gi2mo/wave/"><img id="logo_gi2mo" src="img/gi2mo_logo.png" alt="GI2MO Wave Ontology" style="border: 0pt none ; float: right; padding: 10px;" /></a> 
+
+    <!-- <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3> -->
+    <h1 id="title">Gi2MO Wave Ontology Specification</h1>
+    <!--    <h2 id="subtitle">LONG NAME</h2> -->
+    <h3 id="mymw-doctype">V0.1 - 04 June 2012</h3>
+    <dl>
+    <table border="0">
+    <tr>
+        <td>
+            <b>This version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/wave/0.1/ns">http://purl.org/gi2mo/wave/0.1/ns</a> (<a href="ns.owl">RDF/XML</a>, <a href="ns.html">HTML</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Latest version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/wave/ns">http://purl.org/gi2mo/wave/ns</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Editors:</b>
+        </td>
+        <td>
+            Felix Larrinaga, Osane Lizarralde, Alain Perez
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Authors:</b>
+        </td>
+        <td>
+            Felix Larrinaga, Osane Lizarralde, Alain Perez
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Contributors:</b>
+        </td>
+        <td>
+            See <a href="#acknowledgements">acknowledgements</a>
+        </td>
+    </tr>
+    </table>
+    
+    <p>
+    <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0pt none ; float: right; padding: 10px;" src="img/cc_licence.png" /></a> 
+    </p>    
+    <p class="copyright">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. This copyright applies to the Gi2MO Wave Ontology Specification and accompanying documentation in RDF. This ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+    <!-- ===================================================================== -->
+    <hr/>
+
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        <b>Gi2MO Wave</b> is a standardized data schema (also referred as "ontology" or "vocabulary") designed to use for annotation and describing resources gathered inside Idea Management facilities. The following document contains the description of ontology and instructions how to connect it with descriptions of other resources.</p>
+
+    <hr/>
+
+    <h2 id="contents">Table of Contents</h2>
+    <ol id="toc">
+      <li><a href="#intro">Introduction</a>
+        <ol>
+          <li><a href="#s11">Idea Management Systems and InnoWEB project context</a></li>
+          <li><a href="#s12">The Semantic Web</a></li>
+          <li><a href="#s13">What is Gi2MO Wave for?</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec-glance">Gi2MO Wave Ontology at a glance</a></li>
+      <li>
+        <a href="#overview">Gi2MO Wave Ontology overview</a>
+<!--        <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+        <ol>
+          <li><a href="#s32">Example</a></li>
+        </ol>
+      </li>
+      <li><a href="#reference">Cross-reference for Gi2MO Wave Classes and Properties</a></li>
+    </ol>
+
+    <h3>Appendixes</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+<!--      <li><a href="#references">Normative References</a></li> -->
+      <li><a href="#changes">Changelog</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+
+    <h2 id="intro">1 Introduction</h2>
+
+    <p>The following specification is a formal description of metadata schema proposal that can be applied to data gathered in the so-called Idea Management Systems. The goal of the following section is to introduce both Semantic Web and Idea Management experts to the topic and goals of the ontology and provide the basic knowledge to comprehend the technical part of the specification.</p>
+    <p><b>An important note</b> is that Gi2MO Wave Ontology is not a complete model of the Idea Management System. It extends the concepts of the main <a href="http://purl.org/gi2mo/ns">Gi2MO Ontology</a> and defines concepts that were particular for Idea Management pipeline of InnoWEB project. See <a href="#s13">goals of the Wave ontology</a> to see if this particular setting is fit for reuse in your case.
+
+    <h3 id="s11">1.1 Idea Management Systems and InnoWEB project context</h3>
+
+    <p>The Idea Management Systems are referred most often as an application used by organizations to collect input about various ideas regarding their products and services; and manage them afterwards providing certain assessment and screening facilities. Those kind of systems are the main research interest of the InnoWEB project that evaluates new techniques for collaborative innovation in corporate environment.
+    </p>    
+    
+	<p>
+	The InnoWeb is an project by the <a href="http://www.mondragon.edu/en">Mondragon University</a>, <a href="http://www.iseamcc.net/">ISEA institute</a> and companies of <a href="http://www.mondragon-corporation.com/">Mondragon Corporation</a>. One of the outcomes of the project is a collaborative innovation platform based on social software. The specific characteristic of the platform is the introduction of 'innovation waves' - an element similar to the notion of Idea Contest but imposing a number of limitations on the innovators and as well as idea reviewers (e.g. elements of idea descriptions that users have to provide).
+	</p>
+	<p>
+	The presented ontology is an extension to a regular Idea Management model as a consequence of introducing this notion of innovation waves. 
+	</p>
+	<p>
+	For more details about the research and case studies conducted during InnoWEB please refer to a related publication from the 17th International Conference on Concurrent Enterprising (ICE 2011): "<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6041243">A Case Study on the Use of Community Platforms for Inter-Enterprise Innovation</a>" by Felix Larrinaga, Igor Santos, Osane Lizarralde, Alain Perez.
+	</p>
+    </p>
+
+    <h3 id="s12">1.2 The Semantic Web</h3>
+
+    <p>The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is a W3C initiative that aims to introduce rich metadata to the current Web and provide machine readable and processable data as a supplement to human-readable Web.
+    </p>
+    <p>
+    Semantic Web is a mature domain that has been in research phase for many years and with the increasing amount of commercial interest and emerging products is starting to gain appreciation and popularity as one of the rising trends for the future Internet.
+    </p>
+    
+    <p>
+    One of the corner stores of the Semantic Web is research on inter-linkable and interoperable data schemas for information published online. Those schemas are often referred to as ontologies or vocabularies. In order to facilitate the concept of ontologies that lead to a truly interoperable Web of Data, W3C has proposed a series of technologies such as <a href="http://www.w3.org/RDF/">RDF</a> and <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>.
+    <b>Gi2MO Wave</b> uses those technologies and the research that comes within to propose an ontology set in the domain of Idea Management.
+    </p>
+    
+    <h3 id="s13">1.4 What is Gi2MO Wave for?</h3>
+    <p>
+    The goals of the Gi2MO Wave Ontology to achieve as a data schema are:
+    <ul>
+    <li>extend the notion of Gi2MO's Idea Contests to 'innovation waves' that can have a status, type, and different idea selection criteria</li>
+    <li>force (limit to) a certain type of idea descriptions: Target, Market, Customer, Competitor, Outcome etc.</li>
+    </ul>
+    </p>
+
+
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. Gi2MO Wave Ontology at a glance</h2>
+
+    <p>
+      An alphabetical index of Gi2MO Wave terms,  by class (concepts) and by property 
+      (relationships, attributes), are given below. All the terms are hyperlinked 
+      to their detailed description for quick reference. <!-- class (categories or types) and by property -->
+    </p>
+
+    <!-- The list of classes and properties goes here -->
+ 
+ <div class="azlist">
+<p>Classes: | <a href="#Competitor">Competitor</a> |  <a href="#Customer">Customer</a> |  <a href="#IdeaContestType">IdeaContestType</a> |  <a href="#Market">Market</a> |  <a href="#Outcome">Outcome</a> |  <a href="#Resource">Resource</a> |  <a href="#Target">Target</a> |  <a href="#Technology">Technology</a> | 
+</p>
+<p>Properties: | <a href="#hasCompetitor">hasCompetitor</a> |  <a href="#hasCustomer">hasCustomer</a> |  <a href="#hasMarket">hasMarket</a> |  <a href="#hasOutcome">hasOutcome</a> |  <a href="#hasOwner">hasOwner</a> |  <a href="#hasResource">hasResource</a> |  <a href="#hasSelectionCriteria">hasSelectionCriteria</a> |  <a href="#hasTarget">hasTarget</a> |  <a href="#hasTechnology">hasTechnology</a> |  <a href="#hasType">hasType</a> |  <a href="#isCompetitorOf">isCompetitorOf</a> |  <a href="#isCustomerOf">isCustomerOf</a> |  <a href="#isMarketOf">isMarketOf</a> |  <a href="#isOutcomeOf">isOutcomeOf</a> |  <a href="#isOwnerOf">isOwnerOf</a> |  <a href="#isResourceOf">isResourceOf</a> |  <a href="#isSelectionCriteriaOf">isSelectionCriteriaOf</a> |  <a href="#isTargetOf">isTargetOf</a> |  <a href="#isTypeOf">isTypeOf</a> | 
+</p>
+</div>
+
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. GI2MO Wave Ontology overview</h2>
+
+    <p>The GI2MO Wave UML diagram presented below shows connections between classes that implement the data model of Idea Management Systems.</p>
+    
+    <div class="img"> 
+				<a href="img/class_diagram_v0.1.jpg"><img src="img/class_diagram_v0.1_small.jpg" alt="UML Class Diagram for the GI2MO Wave Ontology" title="click to enlarge" style="border:0" /></a> 
+				<div>UML Class Diagram for the GI2MO Wave Ontology (based on Gi2MO Ontology diagram), high resolution version: <a href="img/class_diagram_v0.1.jpg">PNG</a>)</div> 
+	</div> 
+    <!--
+    <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO Wave Ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+    -->
+
+    <!-- ===================================================================== -->
+
+    <h3 id="s32">3.1. Example</h3> <!-- 3.2. Example -->
+
+    <p>A very basic example below shows a single idea annotated with Gi2MO and Gi2MO Wave metadata:</p>
+
+    <div class="example">
+      <pre>
+  &lt;gi2mo:Idea rdf:about="http://gi2mo.org/idea/012345"&gt;
+    &lt;foaf:page rdf:resource="http://gi2mo.org/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://gi2mo.org/user/pedro"/&gt;
+    &lt;gi2mo:content&gt;A new, nice and modern building for the department that would have a similar interior design 
+    as shopping malls
+    &lt;/gi2mo:content&gt;
+    &lt;dcterms:title&gt;Department building with shopping mall interior design&lt;/gi2mo:title&gt;
+    &lt;dcterms:created&gt;2012-04-23&lt;/gi2mo:created&gt;
+    &lt;gi2mo:hasStatus rdf:resource="http://www.purl.org/gi2mo/ns#Implemented"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://gi2mo.org/comment/054321"/&gt;
+    &lt;gi2mo:hasCategory rdf:resource="http://gi2mo.org/category/General"/&gt;
+    &lt;gi2mowave:hasTarget rdf:resource="http://gi2mo.org/description/02345"/&gt;
+    &lt;gi2mowave:hasCustomer rdf:resource="http://gi2mo.org/description/02346"/&gt;
+    &lt;gi2mowave:hasOutcome rdf:resource="http://gi2mo.org/description/02347"/&gt;
+  &lt;/gi2mo:Idea&gt;
+  
+  &lt;gi2mowave:Outcome rdf:about="http://gi2mo.org/description/012345"&gt;
+    &lt;foaf:page rdf:resource="http://gi2mo.org/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://gi2mo.org/user/pedro"/&gt;
+    &lt;gi2mo:content&gt;A new building would make people feel better in comparison to studding in the current one that has 
+    40+ years without renovation.
+    &lt;/gi2mo:content&gt;
+    &lt;dcterms:title&gt;Outcome: Department building with shopping mall interior design&lt;/gi2mo:title&gt;
+    &lt;dcterms:created&gt;2012-04-23&lt;/gi2mo:created&gt;
+    &lt;gi2mowave:isOutcomeOf rdf:resource="http://gi2mo.org/idea/012345"/&gt;
+  &lt;/gi2mowave:Outcome&gt;
+      </pre>
+    </div>
+    
+    <!-- ===================================================================== -->
+
+    <h2 id="reference">4. Cross-reference for Gi2MO Wave classes and properties</h2>
+
+    <p>Below see a comprehensive list of all Gi2MO Wave classes, properties and their descriptions.</p>
+
+    <!-- The following is the script-generated list of classes and properties -->
+
+<!-- Classes and Properties -->
+<!-- classes and properties -->
+<!-- this is the a-z listing -->
+<!-- <div class="azlist">
+<p>Classes: | <a href="#Competitor">Competitor</a> |  <a href="#Customer">Customer</a> |  <a href="#IdeaContestType">IdeaContestType</a> |  <a href="#Market">Market</a> |  <a href="#Outcome">Outcome</a> |  <a href="#Resource">Resource</a> |  <a href="#Target">Target</a> |  <a href="#Technology">Technology</a> | 
+</p>
+<p>Properties: | <a href="#hasCompetitor">hasCompetitor</a> |  <a href="#hasCustomer">hasCustomer</a> |  <a href="#hasMarket">hasMarket</a> |  <a href="#hasOutcome">hasOutcome</a> |  <a href="#hasOwner">hasOwner</a> |  <a href="#hasResource">hasResource</a> |  <a href="#hasSelectionCriteria">hasSelectionCriteria</a> |  <a href="#hasTarget">hasTarget</a> |  <a href="#hasTechnology">hasTechnology</a> |  <a href="#hasType">hasType</a> |  <a href="#isCompetitorOf">isCompetitorOf</a> |  <a href="#isCustomerOf">isCustomerOf</a> |  <a href="#isMarketOf">isMarketOf</a> |  <a href="#isOutcomeOf">isOutcomeOf</a> |  <a href="#isOwnerOf">isOwnerOf</a> |  <a href="#isResourceOf">isResourceOf</a> |  <a href="#isSelectionCriteriaOf">isSelectionCriteriaOf</a> |  <a href="#isTargetOf">isTargetOf</a> |  <a href="#isTypeOf">isTypeOf</a> | 
+</p>
+</div> -->
+
+<!-- and this is the bulk of the vocab descriptions -->
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ 
+
+
+<div class="specterm" id="Competitor" about="http://purl.org/gi2mo/wave/ns#Competitor" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Competitor</h3> 
+  			<em property="rdfs:label" >Competitor</em> - <span property="rdfs:comment" >An object of this type indicates a competitor for an idea or IdeaContest</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isCompetitorOf">isCompetitorOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasCompetitor">hasCompetitor</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Competitor">#</a>] <!-- Competitor --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Customer" about="http://purl.org/gi2mo/wave/ns#Customer" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Customer</h3> 
+  			<em property="rdfs:label" >Customer</em> - <span property="rdfs:comment" >An object of this type indicates the customer targeted by an idea or IdeaContest</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isCustomerOf">isCustomerOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasCustomer">hasCustomer</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Customer">#</a>] <!-- Customer --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="IdeaContestType" about="http://purl.org/gi2mo/wave/ns#IdeaContestType" typeof="owl:Class">
+  			<h3>Class: gi2mowave:IdeaContestType</h3> 
+  			<em property="rdfs:label" >IdeaContestType</em> - <span property="rdfs:comment" >An object of this type indicates the type of innovation search by the IdeaContest. 
+There are 12 dimensions or types identified.
+For a list of recommended instances of this class see the individuals list associated to this class in the ontology definition.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isTypeOf">isTypeOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasType">hasType</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#IdeaContestType">#</a>] <!-- IdeaContestType --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Market" about="http://purl.org/gi2mo/wave/ns#Market" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Market</h3> 
+  			<em property="rdfs:label" >Market</em> - <span property="rdfs:comment" >An object of this type indicates the market aim by an idea or IdeaContest. It could be a place, a sector, a niche, etc</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isMarketOf">isMarketOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasMarket">hasMarket</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Market">#</a>] <!-- Market --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Outcome" about="http://purl.org/gi2mo/wave/ns#Outcome" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Outcome</h3> 
+  			<em property="rdfs:label" >Outcome</em> - <span property="rdfs:comment" >An object of this type indicates final result or outcome for an idea or IdeaContest. 
+This outcome or result can be a product, a service, a process, a strategy, an improvement, a company or spin-off or cooperation among companies, departments,etc.
+For a list of recommended instances of this class see the individuals list associated to this class in the ontology definition.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isOutcomeOf">isOutcomeOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasOutcome">hasOutcome</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Outcome">#</a>] <!-- Outcome --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Resource" about="http://purl.org/gi2mo/wave/ns#Resource" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Resource</h3> 
+  			<em property="rdfs:label" >Resource</em> - <span property="rdfs:comment" >An object of this type indicates a resource necessary for an idea or IdeaContest. 
+This resource can be of different types; general, knowledge, financial, income, etc.
+For a list of recommended instances of this class see the individuals list associated to this class in the ontology definition.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isResourceOf">isResourceOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasResource">hasResource</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Resource">#</a>] <!-- Resource --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Target" about="http://purl.org/gi2mo/wave/ns#Target" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Target</h3> 
+  			<em property="rdfs:label" >Target</em> - <span property="rdfs:comment" >An object of this type indicates the objective or target aim by an idea or IdeaContest</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#isTargetOf">isTargetOf</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasTarget">hasTarget</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Target">#</a>] <!-- Target --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Technology" about="http://purl.org/gi2mo/wave/ns#Technology" typeof="owl:Class">
+  			<h3>Class: gi2mowave:Technology</h3> 
+  			<em property="rdfs:label" >Technology</em> - <span property="rdfs:comment" >An object of this type indicates the technology used or proposed by an idea or IdeaContest</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			
+  			<tr><th>Used with:</th>
+ <td>  <a href="#hasTechnology">hasTechnology</a>
+</td></tr> <tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#Technology">#</a>] <!-- Technology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><h2>Properties</h2>
+ 
+
+
+<div class="specterm" id="hasCompetitor" about="http://purl.org/gi2mo/wave/ns#hasCompetitor" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasCompetitor</h3> 
+  			<em property="rdfs:label" >hasCompetitor</em> - <span property="rdfs:comment" >Property indicating an idea or other entity having a competitor in the market.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Competitor"><a href="#Competitor">Competitor</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isCompetitorOf"><a href="#isCompetitorOf">isCompetitorOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasCompetitor">#</a>] <!-- hasCompetitor --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasCustomer" about="http://purl.org/gi2mo/wave/ns#hasCustomer" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasCustomer</h3> 
+  			<em property="rdfs:label" >hasCustomer</em> - <span property="rdfs:comment" >Property indicating an idea or other entity having a customer or possible customer.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Customer"><a href="#Customer">Customer</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isCustomerOf"><a href="#isCustomerOf">isCustomerOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasCustomer">#</a>] <!-- hasCustomer --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasMarket" about="http://purl.org/gi2mo/wave/ns#hasMarket" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasMarket</h3> 
+  			<em property="rdfs:label" >hasMarket</em> - <span property="rdfs:comment" >Property indicating an idea or other entity aiming towards a market.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Market"><a href="#Market">Market</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isMarketOf"><a href="#isMarketOf">isMarketOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasMarket">#</a>] <!-- hasMarket --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasOutcome" about="http://purl.org/gi2mo/wave/ns#hasOutcome" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasOutcome</h3> 
+  			<em property="rdfs:label" >hasOutcome</em> - <span property="rdfs:comment" >Property indicating an idea or other entity having an outcome as an expectation.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Outcome"><a href="#Outcome">Outcome</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isOutcomeOf"><a href="#isOutcomeOf">isOutcomeOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasOutcome">#</a>] <!-- hasOutcome --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasOwner" about="http://purl.org/gi2mo/wave/ns#hasOwner" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasOwner</h3> 
+  			<em property="rdfs:label" >hasOwner</em> - <span property="rdfs:comment" >Property indicating an ideacontest or other entity having a user as an owner or responsible.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#User"><a href="http://purl.org/gi2mo/ns#User">http://purl.org/gi2mo/ns#:User</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isOwnerOf"><a href="#isOwnerOf">isOwnerOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasOwner">#</a>] <!-- hasOwner --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasResource" about="http://purl.org/gi2mo/wave/ns#hasResource" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasResource</h3> 
+  			<em property="rdfs:label" >hasResource</em> - <span property="rdfs:comment" >Property indicating an idea or other entity having (using, depending ...) a resource.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Resource"><a href="#Resource">Resource</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isResourceOf"><a href="#isResourceOf">isResourceOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasResource">#</a>] <!-- hasResource --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasSelectionCriteria" about="http://purl.org/gi2mo/wave/ns#hasSelectionCriteria" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasSelectionCriteria</h3> 
+  			<em property="rdfs:label" >hasSelectionCriteria</em> - <span property="rdfs:comment" >Property indicating an ideaContest uses one of the IdeaContestSelectionCriteria.
+For a list of the possible types of selection criteria available see the individuals for IdeaContestSelectionCriteria</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr>
+  			<tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isSelectionCriteriaOf"><a href="#isSelectionCriteriaOf">isSelectionCriteriaOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasSelectionCriteria">#</a>] <!-- hasSelectionCriteria --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasTarget" about="http://purl.org/gi2mo/wave/ns#hasTarget" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasTarget</h3> 
+  			<em property="rdfs:label" >hasTarget</em> - <span property="rdfs:comment" >Property indicating an idea or other entity having an objective or target.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>   <span rel="rdfs:domain" resource="[_:zdvgOBXR3]"></span>
+  									<span about="[_:zdvgOBXR3]" typeof="owl:Class"></span>
+  									<span about="[_:zdvgOBXR3]" rel="owl:unionOf" resource="[_:zdvgOBXR4]"></span>  <span about="[_:zdvgOBXR4]" typeof="rdf:Description"></span>
+  									<span about="[_:zdvgOBXR4]" rel="rdf:first" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+  									<span about="[_:zdvgOBXR4]" rel="rdf:rest" resource="[_:zdvgOBXR5]"></span> or <span about="[_:zdvgOBXR5]" typeof="rdf:Description"></span>
+  														<span about="[_:zdvgOBXR5]" rel="rdf:first" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span> <span about="[_:zdvgOBXR5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Target"><a href="#Target">Target</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isTargetOf"><a href="#isTargetOf">isTargetOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasTarget">#</a>] <!-- hasTarget --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasTechnology" about="http://purl.org/gi2mo/wave/ns#hasTechnology" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasTechnology</h3> 
+  			<em property="rdfs:label" >hasTechnology</em> - <span property="rdfs:comment" >Property indicating an idea or other entity using, employing or depending on a technology.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#Technology"><a href="#Technology">Technology</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasTechnology">#</a>] <!-- hasTechnology --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="hasType" about="http://purl.org/gi2mo/wave/ns#hasType" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:hasType</h3> 
+  			<em property="rdfs:label" >hasType</em> - <span property="rdfs:comment" >Property indicating an ideacontest has a type.
+For a list of the possible types available see the individuals for IdeaContestType</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/wave/ns#IdeaContestType"><a href="#IdeaContestType">IdeaContestType</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/gi2mo/wave/ns#isTypeOf"><a href="#isTypeOf">isTypeOf</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#hasType">#</a>] <!-- hasType --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isCompetitorOf" about="http://purl.org/gi2mo/wave/ns#isCompetitorOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isCompetitorOf</h3> 
+  			<em property="rdfs:label" >isCompetitorOf</em> - <span property="rdfs:comment" >Property indicating an individual or entity being competitor of an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Competitor"><a href="#Competitor">Competitor</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasCompetitor">hasCompetitor</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isCompetitorOf">#</a>] <!-- isCompetitorOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isCustomerOf" about="http://purl.org/gi2mo/wave/ns#isCustomerOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isCustomerOf</h3> 
+  			<em property="rdfs:label" >isCustomerOf</em> - <span property="rdfs:comment" >Property indicating a customer is the beneficiary of an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Customer"><a href="#Customer">Customer</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasCustomer">hasCustomer</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isCustomerOf">#</a>] <!-- isCustomerOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isMarketOf" about="http://purl.org/gi2mo/wave/ns#isMarketOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isMarketOf</h3> 
+  			<em property="rdfs:label" >isMarketOf</em> - <span property="rdfs:comment" >Property indicating a market is the objective of an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Market"><a href="#Market">Market</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasMarket">hasMarket</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isMarketOf">#</a>] <!-- isMarketOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isOutcomeOf" about="http://purl.org/gi2mo/wave/ns#isOutcomeOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isOutcomeOf</h3> 
+  			<em property="rdfs:label" >isOutcomeOf</em> - <span property="rdfs:comment" >Property indicating an entity being the outcome or the expected outcome of an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Outcome"><a href="#Outcome">Outcome</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasOutcome">hasOutcome</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isOutcomeOf">#</a>] <!-- isOutcomeOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isOwnerOf" about="http://purl.org/gi2mo/wave/ns#isOwnerOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isOwnerOf</h3> 
+  			<em property="rdfs:label" >isOwnerOf</em> - <span property="rdfs:comment" >Property indicating a user is the owner or responsible of an idea contest or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/ns#User"><a href="http://purl.org/gi2mo/ns#User">http://purl.org/gi2mo/ns#:User</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasOwner">hasOwner</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isOwnerOf">#</a>] <!-- isOwnerOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isResourceOf" about="http://purl.org/gi2mo/wave/ns#isResourceOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isResourceOf</h3> 
+  			<em property="rdfs:label" >isResourceOf</em> - <span property="rdfs:comment" >Property indicating a resource is being used by an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Resource"><a href="#Resource">Resource</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasResource">hasResource</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isResourceOf">#</a>] <!-- isResourceOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isSelectionCriteriaOf" about="http://purl.org/gi2mo/wave/ns#isSelectionCriteriaOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isSelectionCriteriaOf</h3> 
+  			<em property="rdfs:label" >isSelectionCriteriaOf</em> - <span property="rdfs:comment" >Property indicating an ideaContestSelectionCriteria defines an IdeaContest selection method.
+For a list of the possible types of selection criteria available see the individuals for IdeaContestSelectionCriteria.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasSelectionCriteria">hasSelectionCriteria</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isSelectionCriteriaOf">#</a>] <!-- isSelectionCriteriaOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isTargetOf" about="http://purl.org/gi2mo/wave/ns#isTargetOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isTargetOf</h3> 
+  			<em property="rdfs:label" >isTargetOf</em> - <span property="rdfs:comment" >Property indicating an objective is being looked for by an idea or other entity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#Target"><a href="#Target">Target</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>   <span rel="rdfs:range" resource="[_:zdvgOBXR6]"></span>
+  									<span about="[_:zdvgOBXR6]" typeof="owl:Class"></span>
+  									<span about="[_:zdvgOBXR6]" rel="owl:unionOf" resource="[_:zdvgOBXR7]"></span>  <span about="[_:zdvgOBXR7]" typeof="rdf:Description"></span>
+  									<span about="[_:zdvgOBXR7]" rel="rdf:first" href="http://purl.org/gi2mo/ns#Idea"><a href="http://purl.org/gi2mo/ns#Idea">http://purl.org/gi2mo/ns#:Idea</a></span>
+  									<span about="[_:zdvgOBXR7]" rel="rdf:rest" resource="[_:zdvgOBXR8]"></span> or <span about="[_:zdvgOBXR8]" typeof="rdf:Description"></span>
+  														<span about="[_:zdvgOBXR8]" rel="rdf:first" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span> <span about="[_:zdvgOBXR8]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasTarget">hasTarget</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isTargetOf">#</a>] <!-- isTargetOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isTypeOf" about="http://purl.org/gi2mo/wave/ns#isTypeOf" typeof="owl:ObjectProperty">
+  			<h3>Property: gi2mowave:isTypeOf</h3> 
+  			<em property="rdfs:label" >isTypeOf</em> - <span property="rdfs:comment" >Property indicating an ideaContestType defines the type of an IdeaContest.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unknown</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://purl.org/gi2mo/wave/ns#IdeaContestType"><a href="#IdeaContestType">IdeaContestType</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/gi2mo/ns#IdeaContest"><a href="http://purl.org/gi2mo/ns#IdeaContest">http://purl.org/gi2mo/ns#:IdeaContest</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#hasType">hasType</a>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="padding: 0 6px 0 6px;margin: 10px 0 0 0;background: white; float: right; font-size: small;">[<a href="#isTypeOf">#</a>] <!-- isTypeOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+    <h2 id="changes">A Changelog</h2>
+
+    <h3 id="sec-changes20120508">2012-06-04</h3> 
+    <ul>
+      <li>First version of the document</li> 
+    </ul>
+    
+	<h2><a id="acknowledgements"></a>B Acknowledgements</h2>
+
+    <p>
+        This documentation has been generated automatically from the most recent ontology specification in OWL using a python script called <a href="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</a>. The style formatting has been inspired on <a href="http://xmlns.com/foaf/spec/">FOAF</a> specification.
+    </p>
+
+</body>
+</html>
+
+

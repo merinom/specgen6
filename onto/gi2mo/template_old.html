@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>GI2MO Ontology Specification</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+	<a href="http://lab.gsi.dit.upm.es/"><img id="logo_gsi" src="img/gsi_logo.png" alt="Grupo de Sistemas Ingeligentes" /></a> 
+	<a href="http://purl.org/gi2mo/"><img id="logo_gi2mo" src="img/gi2mo_logo.png" alt="GI2MO Ontology" style="border: 0pt none ; float: right; padding: 10px;" /></a> 
+
+    <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3>
+    <h1 id="title">GI2MO Ontology Specification</h1>
+    <!--    <h2 id="subtitle">LONG NAME</h2> -->
+    <h3 id="mymw-doctype">27 April 2010</h3>
+    <dl>
+    <table border="0">
+    <tr>
+        <td>
+            <b>This version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/0.1/ns">http://purl.org/gi2mo/0.1/ns</a> (<a href="ns.owl">RDF/XML</a>, <a href="ns.html">HTML</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Latest version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/gi2mo/ns">http://purl.org/gi2mo/ns</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Editors:</b>
+        </td>
+        <td>
+            <a href="http://lab.gsi.dit.upm.es/apache/adam/homepage/">Adam Westerski</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Authors:</b>
+        </td>
+        <td>
+            <a href="http://lab.gsi.dit.upm.es/apache/adam/homepage/">Adam Westerski</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Contributors:</b>
+        </td>
+        <td>
+            See <a href="#acknowledgements">acknowledgements</a>
+        </td>
+    </tr>
+    </table>
+    
+    <p>
+    <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0pt none ; float: right; padding: 10px;" src="img/cc_licence.png" /></a> 
+    </p>    
+    <p class="copyright">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. This copyright applies to the GI2MO Ontology Specification and accompanying documentation in RDF. This ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+    <!-- ===================================================================== -->
+    <hr/>
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        <b>G</b>eneric <b>I</b>dea and <b>I</b>nnovation <b>M</b>anagement <b>O</b>ntology (<b>GI2MO</b>) is a standardised data schema (also referred as "ontology" or "vocabulary") designed to annotate and describe resources gathered inside Idea Management facilities. The following document contains the description of ontology and instructions how to connect it with descriptions of other resources.</p>
+
+    <hr/>
+  
+    <h2 id="contents">Table of Contents</h2>    <ol id="toc">
+      <li><a href="#intro">Introduction</a>
+        <ol>
+          <li><a href="#s11">Idea Management Systems and Innovation Management Process</a></li>
+          <li><a href="#s12">The Semantic Web</a></li>
+          <li><a href="#s13">What is GI2MO for?</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec-glance">GI2MO ontology at a glance</a></li>
+      <li>
+        <a href="#overview">GI2MO ontology overview</a>
+<!--        <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+        <ol>
+          <li><a href="#s32">Example</a></li>
+        </ol>
+      </li>
+      <li><a href="#reference">Cross-reference for GI2MO classes and properties</a></li>
+    </ol>
+
+    <h3>Appendixes</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+<!--      <li><a href="#references">Normative References</a></li> -->
+      <li><a href="#changes">Changelog</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+    <h2 id="intro">1 Introduction</h2>
+
+    <p>The following specification is a formal description of metadata schema proposal that can be applied to data gathered in the so-called Idea Management Systems. The goal of the following section is to introduce both Semantic Web and Idea Management experts to the topic and goals of the ontology and provide the basic knowledge to comprehand the technical part of the specification.</p>
+    <p><b>An important note</b> is that GI2MO ontology is not a complete model of the Idea Management System. It merly defines concepts that are not described yet by the means of other ontologies. For detailed instructions how to completly model Idea Management Systems with GI2MO and other ontologies see <a href="http://purl.org/gi2mo/modeling/">homepage</a> of the GI2MO project.</p>
+
+    <h3 id="s11">1.1 Idea Management Systems and Innovation Management Process</h3>
+
+    <p>The Idea Management Systems are refered most often as an application used by organizations to collect input about various ideas regarding their products and services; and manage them afterwards providing certain assessment and screening facilities.
+    </p>    
+    <p>
+    Although, the concept of such systems and vendors that deliver them are available on the market for quite a while, the scope and technologies involved are constantly evolving. The most most basic idea management process includes: 
+    <ul>
+    <li>idea generation (facilities for submiting ideas)</li>
+    <li>idea improvement (usually Web 2.0 facilities to modify ideas in collaboratibve environment)</li>
+    <li>idea assessment (idea analysis, assessment and selection tools, e.g. diagrams and reports)</li>
+    </ul>
+    However, in the contemporary systems the tendency is to extend this process towards: 
+    <ul>
+    <li>idea implementation (lightweight project management tools or integration with more complex suits)</li>
+    <li>idea deployment (analysis of business metrics related to products based on ideas from IM process, e.g. ROI)</li>
+    </ul>
+    <p>
+    <b>In relation to other IT systems used in modern organizations</b>, at the time of writing this specification the IM Systems have not been yet introducted as a standard compotent by the key players as part of their ERP, PLM/PLCM or CRM suites. Idea Management, in relation to those systems, is still being considered as a rising market and a complementary solution that can be supplied depending on organization's interest in investment in innovation.
+    </p>
+    <p>
+    <b>In relation to other processes run in the modern enterprises</b>, Idea Management can be defined as part of Innovation Management Process run as part of innovation strategy in many contemporary enterprises. Idea Management is percieved as complementary solution to this process that delivers tools that can enhance the successfulness of the innovation management process and open it to new possibilities.
+    </p>
+    </p>
+
+    <h3 id="s12">1.2 The Semantic Web</h3>
+
+    <p>The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is a W3C initiative that aims to introduce rich metadata to the current Web and provide machine readable and processable data as a supplement to human-readable Web.
+    </p>
+    <p>
+    Semantic Web is a mature domain that has been in research phase for many years and with the increasing amount of commercial interest and emerging products is starting to gain appreciation and popularity as one of the rising trends for the future Internet.
+    </p>
+    
+    <p>
+    One of the corner stores of the Semantic Web is research on inerlinkable and interoperable data schemas for information published online. Those schemas are often refered to as ontologies or vocabularies. In order to facilitate the concept of ontologies that lead to a truly interoperable Web of Data, W3C has proposed a series of technologies such as <a href="http://www.w3.org/RDF/">RDF</a> and <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>.
+    <b>GI2MO</b> uses those technologies and the research that comes within to propose an ontology set in the domain of Idea Management.
+    </p>
+
+    <h3 id="s13">1.3 What is GI2MO for?</h3>
+    <p>
+    The goals of the GI2MO ontology to achieve as a data schema are:
+    <ul>
+    <li>enable to publish raw data from Idea Management Systems online and in complience with current and future Internet trends</li>
+    <li>interconnect Idea Management assets with other resources (projects, product metrics, basic knowledge management concepts)</li>
+    <li>utilize all above to enhance current idea assessment capabilities with algorithms based on analysis of rich semantic descriptions of idea management assets</li>
+    </ul>
+    For more information please refer to GI2MO project <a href="http://purl.org/gi2mo/">website</a>.
+    </p>
+
+
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. GI2MO ontology at a glance</h2>
+
+    <p>
+      An alphabetical index of GI2MO terms, by class (concepts) and by property 
+      (relationships, attributes), are given below. All the terms are hyperlinked 
+      to their detailed description for quick reference.
+    </p>
+
+    <!-- The list of classes and properties goes here -->
+    %s
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. GI2MO ontology overview</h2>
+
+    <p>The GI2MO UML diagram presented below shows connections between classes that implement the data model of Idea Management Systems.</p>
+    
+    <div class="img"> 
+				<a href="img/class_diagram_v0.1.png"><img src="img/class_diagram_v0.1_small.png" alt="UML Class Diagram for the GI2MO Ontology" title="click to enlarge" style="border:0" /></a> 
+				<div>UML Class Diagram for the GI2MO Ontology (high resolution version: <a href="img/class_diagram_v0.1.png">PNG</a>)</div> 
+	</div> 
+    <!--
+    <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+    -->
+
+    <h3 id="s32">3.1. Example</h3> <!-- 3.2. Example -->
+
+    <p>A very basic example below shows a single idea annotated with GI2MO metadata:</p>
+
+    <div class="example">
+      <pre>
+  &lt;rdf:Description rdf:about="http://lab.gsi.dit.upm.es/apache/adam/gsideas/idea/012345"&gt;
+    &lt;gi2mo:primaryTopic rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/ideaView?id=012345"/&gt;
+    &lt;gi2mo:hasCreator rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/user/Pablo"/&gt;
+    &lt;gi2mo:content&gt;I often forget keys to the laboratory, so i think it would be great to install a card access lock 
+                    with a reader for chips in spanish ID
+    &lt;/gi2mo:content&gt;
+    &lt;gi2mo:title&gt;Card-lock for laboratory door&lt;/gi2mo:title&gt;
+    &lt;gi2mo:created&gt;2010-02-23&lt;/gi2mo:created&gt;
+    &lt;gi2mo:hasStatus rdf:resource="http://www.upm.es/gi2mo#Implemented"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/comment/054321"/&gt;
+    &lt;gi2mo:hasComment rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/comment/054322"/&gt;
+    &lt;gi2mo:hasCategory rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/category/General"/&gt;
+    &lt;gi2mo:hasDuplicate rdf:resource="http://lab.gsi.dit.upm.es/apache/adam/gsideas/idea/02345"/&gt;
+  &lt;/rdf:Description&gt;
+      </pre>
+    </div>
+    
+    <p> For more examples please see a GI2MO  <a href="http://lab.gsi.dit.upm.es/apache/adam/gsideas/dump.rdf">RDF export</a> for a simple Idea Management System <a href="http://lab.gsi.dit.upm.es/apache/adam/gsideas">instance</a> installed on lab GSI severs.</p>
+
+    <!-- ===================================================================== -->
+
+    <h2 id="reference">4. Cross-reference for GI2MO classes and properties</h2>
+
+    <p>Below see a comprehensive list of all GI2MO classes, properties and their descriptions.</p>
+
+    <!-- The following is the script-generated list of classes and properties -->
+    %s
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <!-- <h2 id="references">A References</h2> -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="changes">A Changelog</h2>
+
+    <ul>
+      <li>First version of the document</li> 
+    </ul>
+
+    <h2><a id="acknowledgements"></a>B Acknowledgements</h2>
+
+    <p>
+        This documentation has been generated automatically from the most recent ontology specification in OWL using a python script called <a href="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</a>. The style formatting has been inspired on <a href="http://xmlns.com/foaf/spec/">FOAF</a> specification.
+    </p>
+    
+    <p>
+        Special thanks for support with ontology creation and research to: Prof. Carlos A. Iglesias and members of the GSI Group of DIT department of Universidad Polit&#233;cnica de Madrid.
+    </p>
+    </div>
+  </body>
+
+</html>
+

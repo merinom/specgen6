@@ -1,0 +1,2353 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl">
+    <Prefix name="ns" IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#"/>
+    <Prefix name="xsp" IRI="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="protege" IRI="http://protege.stanford.edu/plugins/owl/protege#"/>
+    <Prefix name="sqwrl" IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"/>
+    <Prefix name="diag" IRI="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#"/>
+    <Prefix name="rdfb" IRI="http://swrl.stanford.edu/ontologies/built-ins/3.4/rdfb.owl#"/>
+    <Prefix name="" IRI="http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl</Import>
+    <Import>http://swrl.stanford.edu/ontologies/3.3/swrla.owl</Import>
+    <Import>http://swrl.stanford.edu/ontologies/built-ins/3.4/rdfb.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="&xsd;string">TODO: </Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AvailableAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Condition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Connection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diagnosis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Failure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HardwareSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealingAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hypothesis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitoringAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerformedAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequiredActorCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SatisfiedCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoftwareSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Subsystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SuccessfulyPerformedAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Symptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TestAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnavailableAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnsatisfiedCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnsuccessfulyPerformedAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Variable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToDiagnosis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToNetwork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canBePerformedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canBeRepairedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canPerform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectsSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgentResiding"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBeenPerformedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConnection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFailure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHypothesis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPerformed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPossibleActionsToPerform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPostcondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComposedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConnectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isExecutingIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfNetwork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observationResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedHealingAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedMonitoringAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedTestAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#repairsFailure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#representsPossibleFailure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#residesIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#resultSymptom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#startedBySymptom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#startsDiagnosis"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#available"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#expectedBenefit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBayesianNode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hypothesisConfidence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#observationType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#observationValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#performableTypeOfActions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#performed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#possibleResults"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#satisfied"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#status"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#successfullyPerformed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#variableType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#variableValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#whenHasBeenPerformed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#whenHasFinished"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#whenHasStarted"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:arguments"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:builtin"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AvailableAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Action"/>
+            <DataHasValue>
+                <DataProperty IRI="#available"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Device"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HardwareSystem"/>
+            <Class IRI="#System"/>
+            <ObjectComplementOf>
+                <Class IRI="#Subsystem"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PerformedAction"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#performed"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SatisfiedCondition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Condition"/>
+            <DataHasValue>
+                <DataProperty IRI="#satisfied"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SuccessfulyPerformedAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PerformedAction"/>
+            <DataHasValue>
+                <DataProperty IRI="#successfullyPerformed"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnavailableAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Action"/>
+            <ObjectComplementOf>
+                <Class IRI="#AvailableAction"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnsatisfiedCondition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Condition"/>
+            <ObjectComplementOf>
+                <Class IRI="#SatisfiedCondition"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnsuccessfulyPerformedAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PerformedAction"/>
+            <ObjectComplementOf>
+                <Class IRI="#SuccessfulyPerformedAction"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasPrecondition"/>
+            <Class IRI="#RequiredActorCondition"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#available"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Condition"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Condition"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#satisfied"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentAction"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HardwareSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealingAction"/>
+        <Class IRI="#EnvironmentAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitoringAction"/>
+        <Class IRI="#EnvironmentAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerformedAction"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequiredActorCondition"/>
+        <Class IRI="#Condition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subsystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TestAction"/>
+        <Class IRI="#EnvironmentAction"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Human"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AvailableAction"/>
+        <Class IRI="#UnavailableAction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HardwareSystem"/>
+        <Class IRI="#SoftwareSystem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HealingAction"/>
+        <Class IRI="#MonitoringAction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HealingAction"/>
+        <Class IRI="#TestAction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MonitoringAction"/>
+        <Class IRI="#TestAction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SatisfiedCondition"/>
+        <Class IRI="#UnsatisfiedCondition"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SuccessfulyPerformedAction"/>
+        <Class IRI="#UnsuccessfulyPerformedAction"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPostcondition"/>
+        <ObjectProperty IRI="#hasCondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecondition"/>
+        <ObjectProperty IRI="#hasCondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#performedHealingAction"/>
+        <ObjectProperty IRI="#performedAction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#performedMonitoringAction"/>
+        <ObjectProperty IRI="#performedAction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#performedTestAction"/>
+        <ObjectProperty IRI="#performedAction"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsToDiagnosis"/>
+        <ObjectProperty IRI="#hasPossibleActionsToPerform"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsToNetwork"/>
+        <ObjectProperty IRI="#hasDevice"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#canPerform"/>
+        <ObjectProperty IRI="#canBePerformedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#repairsFailure"/>
+        <ObjectProperty IRI="#canBeRepairedWith"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#connectsSystem"/>
+        <ObjectProperty IRI="#isConnectedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAgentResiding"/>
+        <ObjectProperty IRI="#isExecutingIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPerformed"/>
+        <ObjectProperty IRI="#hasBeenPerformedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasConnection"/>
+        <ObjectProperty IRI="#isPartOfNetwork"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasData"/>
+        <ObjectProperty IRI="#residesIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFailure"/>
+        <ObjectProperty IRI="#hasLocation"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPartOf"/>
+        <ObjectProperty IRI="#isComposedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#startedBySymptom"/>
+        <ObjectProperty IRI="#startsDiagnosis"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsToDiagnosis"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDevice"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLocation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isExecutingIn"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#observationResult"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#representsPossibleFailure"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#residesIn"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsToNetwork"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasData"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFailure"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPossibleActionsToPerform"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToDiagnosis"/>
+        <Class IRI="#EnvironmentAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToNetwork"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canBePerformedBy"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canBeRepairedWith"/>
+        <Class IRI="#Failure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canPerform"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#connectsSystem"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgentResiding"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBeenPerformedBy"/>
+        <Class IRI="#PerformedAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasData"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDevice"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFailure"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHypothesis"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectUnionOf>
+            <Class IRI="#Failure"/>
+            <Class IRI="#Symptom"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPerformed"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPossibleActionsToPerform"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isComposedBy"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isConnectedBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isExecutingIn"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Subsystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfNetwork"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#observationResult"/>
+        <ObjectUnionOf>
+            <Class IRI="#Symptom"/>
+            <Class IRI="#TestAction"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performedAction"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#repairsFailure"/>
+        <Class IRI="#HealingAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#representsPossibleFailure"/>
+        <Class IRI="#Hypothesis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#residesIn"/>
+        <Class IRI="#Variable"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#resultSymptom"/>
+        <Class IRI="#MonitoringAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#startedBySymptom"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#startsDiagnosis"/>
+        <Class IRI="#Symptom"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToDiagnosis"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToNetwork"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canBePerformedBy"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canBeRepairedWith"/>
+        <Class IRI="#HealingAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canPerform"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#connectsSystem"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgentResiding"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBeenPerformedBy"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#Condition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasData"/>
+        <Class IRI="#Variable"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDevice"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFailure"/>
+        <Class IRI="#Failure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHypothesis"/>
+        <Class IRI="#Hypothesis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPerformed"/>
+        <Class IRI="#PerformedAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPossibleActionsToPerform"/>
+        <Class IRI="#EnvironmentAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isComposedBy"/>
+        <Class IRI="#Subsystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isConnectedBy"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isExecutingIn"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfNetwork"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#observationResult"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedAction"/>
+        <Class IRI="#PerformedAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedHealingAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealingAction"/>
+            <Class IRI="#PerformedAction"/>
+        </ObjectIntersectionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedMonitoringAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MonitoringAction"/>
+            <Class IRI="#PerformedAction"/>
+        </ObjectIntersectionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedTestAction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PerformedAction"/>
+            <Class IRI="#TestAction"/>
+        </ObjectIntersectionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#repairsFailure"/>
+        <Class IRI="#Failure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#representsPossibleFailure"/>
+        <Class IRI="#Failure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#residesIn"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#resultSymptom"/>
+        <Class IRI="#Symptom"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#startedBySymptom"/>
+        <Class IRI="#Symptom"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#startsDiagnosis"/>
+        <Class IRI="#Diagnosis"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#available"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#expectedBenefit"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasBayesianNode"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hypothesisConfidence"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#observationType"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#observationValue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#performed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#satisfied"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#status"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#successfullyPerformed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#variableType"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#variableValue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#whenHasBeenPerformed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#whenHasFinished"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#whenHasStarted"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#available"/>
+        <Class IRI="#Action"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#expectedBenefit"/>
+        <Class IRI="#TestAction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBayesianNode"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hypothesis"/>
+            <Class IRI="#Observation"/>
+            <Class IRI="#TestAction"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hypothesisConfidence"/>
+        <Class IRI="#Hypothesis"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#id"/>
+        <ObjectUnionOf>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Diagnosis"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observationType"/>
+        <Class IRI="#Observation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observationValue"/>
+        <Class IRI="#Observation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performableTypeOfActions"/>
+        <Class IRI="#Actor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed"/>
+        <Class IRI="#Action"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#satisfied"/>
+        <Class IRI="#Condition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#successfullyPerformed"/>
+        <Class IRI="#PerformedAction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#variableType"/>
+        <Class IRI="#Variable"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#whenHasBeenPerformed"/>
+        <Class IRI="#PerformedAction"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#available"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#expectedBenefit"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBayesianNode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hypothesisConfidence"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#id"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#observationType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#observationValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#performableTypeOfActions"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#performed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#possibleResults"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#satisfied"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#status"/>
+        <DataOneOf>
+            <Literal datatypeIRI="&xsd;string">Finished</Literal>
+            <Literal datatypeIRI="&xsd;string">Started</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#successfullyPerformed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#variableType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#whenHasBeenPerformed"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#whenHasFinished"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#whenHasStarted"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Action"/>
+                <Variable IRI="#action"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Actor"/>
+                <Variable IRI="#actor"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#RequiredActorCondition"/>
+                <Variable IRI="#cond"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasPrecondition"/>
+                <Variable IRI="#action"/>
+                <Variable IRI="#cond"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#performableTypeOfActions"/>
+                <Variable IRI="#actor"/>
+                <Variable IRI="#performableType"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="rdfb:isClass">
+                <Variable IRI="#action"/>
+                <Variable IRI="#performableType"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#satisfied"/>
+                <Variable IRI="#cond"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Actor"/>
+                <Variable IRI="#actor"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#AvailableAction"/>
+                <Variable IRI="#action"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#performableTypeOfActions"/>
+                <Variable IRI="#actor"/>
+                <Variable IRI="#performableActionType"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="rdfb:isClass">
+                <Variable IRI="#action"/>
+                <Variable IRI="#performableActionType"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#canPerform"/>
+                <Variable IRI="#actor"/>
+                <Variable IRI="#action"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#UnavailableAction"/>
+                <Variable IRI="#action"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasPrecondition"/>
+                <Variable IRI="#action"/>
+                <Variable IRI="#cond1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasPrecondition"/>
+                <Variable IRI="#action"/>
+                <Variable IRI="#cond2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasPrecondition"/>
+                <Variable IRI="#action"/>
+                <Variable IRI="#cond3"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#satisfied"/>
+                <Variable IRI="#cond1"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#satisfied"/>
+                <Variable IRI="#cond2"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#satisfied"/>
+                <Variable IRI="#cond3"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="sqwrl:notEqual">
+                <Variable IRI="#cond1"/>
+                <Variable IRI="#cond2"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="sqwrl:notEqual">
+                <Variable IRI="#cond1"/>
+                <Variable IRI="#cond3"/>
+            </BuiltInAtom>
+            <BuiltInAtom abbreviatedIRI="sqwrl:notEqual">
+                <Variable IRI="#cond2"/>
+                <Variable IRI="#cond3"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#available"/>
+                <Variable IRI="#action"/>
+                <Literal datatypeIRI="&xsd;boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Action</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that can be performed by an actor at any 
+      time.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Action</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents any actor that can perform actions.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents software actors that can automate actions.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AvailableAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class is used to classify actions which all its preconditions are 
+      satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#AvailableAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Condition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents conditions of actions.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Condition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Connection</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the connection between devices.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Connection</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent an element of the system
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Diagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the concept of diagnosis, i.e. the procedure to 
+      find the root cause failure.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Diagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnvironmentAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents actions that can be executed in the environment, 
+      for example: external systems.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#EnvironmentAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Failure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the concept of failure.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Failure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HardwareSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent a physical device
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#HardwareSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HealingAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that can repair a failure.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#HealingAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Human</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents human actors that can perform actions manually.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hypothesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the hypothesis of a failure. It has a associated 
+      confidence to represent how many certainty is about the occurrence of a 
+      failure.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Hypothesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MonitoringAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent and action that scout a device
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#MonitoringAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Network</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents a network of connected devices.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Network</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Observation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent an observation
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Observation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that has been performed by an actor.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#PerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RequiredActorCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This type of condition represents that an action needs an actor able to 
+      perform it.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#RequiredActorCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrla:hasRuleCategory"/>
+        <IRI>#Rule-RequiredActorCondition</IRI>
+        <Literal datatypeIRI="&xsd;string">(12#(1))^(12)-(4)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+        <IRI>#Rule-RequiredActorCondition</IRI>
+        <Literal datatypeIRI="&xsd;boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rule-RequiredActorCondition</IRI>
+        <Literal datatypeIRI="&xsd;string">Check if there is an actor that can perform an action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SatisfiedCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents conditions that are satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#SatisfiedCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SoftwareSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent a program installed in a device
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#SoftwareSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Subsystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent a part of a whole system
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Subsystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SuccessfulyPerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that has been successfuly performed by 
+      an actor, i.e. all its postconditions are satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#SuccessfulyPerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Symptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the symtom that starts a diagnosis.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Symptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#System</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This concept represents systems that exist in the scenario.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#System</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TestAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that can test a device, a systems, etc.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#TestAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnavailableAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class is used to classify actions which not all its preconditions 
+      are satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#UnavailableAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnsatisfiedCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents conditions that are not satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#UnsatisfiedCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnsuccessfulyPerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents an action that has been unsuccessfuly performed by 
+      an actor, i.e. not all its postconditions are satisfied.
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#UnsuccessfulyPerformedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Variable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents data of the scenario. For example: variableType: 
+      clientIP variableValue: 192.168.0.100
+    &lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#Variable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#available</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represent if an action is available to be performed
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#available</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#belongsToDiagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicate if a classes belongs to diagnosis
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#belongsToDiagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#belongsToNetwork</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a class belongs to network
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#belongsToNetwork</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#canBePerformedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicate who can perform the action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#canBePerformedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#canBeRepairedWith</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicate how can be repaired an object
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#canBeRepairedWith</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#canPerform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates what actions can perform an agent
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#canPerform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#connectsSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates what systems are connected by the object
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#connectsSystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#expectedBenefit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Float that the represent the expected benefit of an action, the action that has the highest expected benefit will be selected the first
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#expectedBenefit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAgentResiding</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a class has a residing agent
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasAgentResiding</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBayesianNode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represent if a network has a bayesian node
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasBayesianNode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBeenPerformedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates who have done an action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasBeenPerformedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a class has a condition
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConnection</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a device has a connection
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasConnection</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasData</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a device has a determinied data
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasData</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDevice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a system has a determined device
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasDevice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if the network has a determined failure
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHypothesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if the diagnosis has a determinied hypothesis
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasHypothesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a device has a determined location
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicate what actions has performed an agent
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPossibleActionsToPerform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if an agent has possible actions to perform
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasPossibleActionsToPerform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPostcondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a class has a postcondition
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasPostcondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrecondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a class has a precondition
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hasPrecondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hypothesisConfidence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Float that represents the hypothesis confidence
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#hypothesisConfidence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#id</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represent the id of an object
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#id</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isComposedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates what elements form the network
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#isComposedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isConnectedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates how are connected two devices
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#isConnectedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isExecutingIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicate in what device is being executing the action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#isExecutingIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPartOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a subsystem is a part of other bigger system
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#isPartOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPartOfNetwork</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a device is part of the network
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#isPartOfNetwork</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#observationResult</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represents the result of an observation
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#observationResult</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#observationType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents the type of an observation
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#observationType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#observationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents the value of an observation
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#observationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performableTypeOfActions</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents the type of actions that can be performed
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performableTypeOfActions</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represents if an action has been perfomed
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represent the type of a perfomed action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performedAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performedHealingAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;ç
+This property represents if a perfomed action is a healing action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performedHealingAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performedMonitoringAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represents if a performed action is a monitoring action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performedMonitoringAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performedTestAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represents if a performed action is a test action
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#performedTestAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#possibleResults</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents the possibles results of a diagnosis
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#possibleResults</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#repairsFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class indicates if an action repairs a determined failure
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#repairsFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#representsPossibleFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if an observation represent a possible failure
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#representsPossibleFailure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#residesIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represents in what device resides a software
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#residesIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#resultSymptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represent the results of a sympton
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#resultSymptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#satisfied</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represents if an action satisfies the conditions
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#satisfied</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#startedBySymptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represent the sympton which started the diagnosis
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#startedBySymptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#startsDiagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property represents if a sympton can start a diagnosis
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#startsDiagnosis</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#status</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represent if a diagnosis is started or finished
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#status</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#successfullyPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represents if an action has been performed successfully
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#successfullyPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#variableType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String thta represents the type of a variable
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#variableType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#variableValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents the value of a variable
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#variableValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#whenHasBeenPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Date Time that represents when an action has been performed
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#whenHasBeenPerformed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#whenHasFinished</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Date time that represents when a diagnosis has finished
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#whenHasFinished</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#whenHasStarted</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Date time that indicates when a diagnosis has started
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <IRI>#whenHasStarted</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:Entity</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:RuleGroup</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This class represent the group of the different rules in the ontology
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:RuleGroup</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:hasBuiltInPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents if an object has built in phrase
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:hasBuiltInPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:hasClassPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents if an object has class phrase
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:hasClassPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:hasPropertyPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+String that represents if an object has property phrase
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:hasPropertyPhrase</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:hasRuleCategory</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Represents the rule category
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:hasRuleCategory</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:hasRuleGroup</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+This property indicates if a network has a rule group
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:hasRuleGroup</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:isRuleEnabled</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represent if a rule is enabled
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:isRuleEnabled</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>swrla:isRuleGroupEnabled</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">&lt;p style=&quot;margin-top: 0&quot;&gt;
+Boolean that represents if a rule group is enabled
+&lt;/p&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ns:term_status"/>
+        <AbbreviatedIRI>swrla:isRuleGroupEnabled</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:arguments"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid59"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid60"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:builtin"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid59"/>
+        <AbbreviatedIRI>rdfb:isClass</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid61"/>
+        <IRI>#actor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid61"/>
+        <IRI>#Actor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid62"/>
+        <IRI>#action</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid62"/>
+        <IRI>#cond</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid62"/>
+        <IRI>#hasPrecondition</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid63"/>
+        <IRI>#cond</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid63"/>
+        <IRI>#satisfied</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid64"/>
+        <IRI>#cond</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid64"/>
+        <IRI>#RequiredActorCondition</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid65"/>
+        <IRI>#actor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument2"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid65"/>
+        <IRI>#performableActionType</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:propertyPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid65"/>
+        <IRI>#performableTypeOfActions</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:argument1"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid66"/>
+        <IRI>#action</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="swrl:classPredicate"/>
+        <AnonymousIndividual nodeID="_:http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#genid66"/>
+        <IRI>#Action</IRI>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

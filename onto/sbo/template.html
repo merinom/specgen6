@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mvcb="http://webns.net/mvcb/"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>Marl Ontology Specification</title>
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+	<a href="http://gsi.dit.upm.es/"><img id="logo_gsi" src="img/gsi_logo.png" alt="Grupo de Sistemas Ingeligentes"/></a> 
+	<a href="http://gsi.dit.upm.es/ontologies/marl/"><img id="marl_logo" src="img/marl_logo.png" alt="Marl Ontology"/></a> 
+
+    <h1 id="title">Marl Ontology Specification</h1>
+    <!--    <h2 id="subtitle">LONG NAME</h2> -->
+    <h3 id="mymw-doctype">V1.0 - 10 May 2013</h3>
+    <dl>
+    <table border="0">
+    <tr>
+        <td>
+            <b>This version:</b>
+        </td>
+        <td>
+            <a href="http://gsi.dit.upm.es/ontologies/marl/1.0">http://gsi.dit.upm.es/ontologies/marl/1.0</a> (<a href="1.0/marl.owl">RDF/XML</a>, <a href="1.0/index.html">HTML</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Latest version:</b>
+        </td>
+        <td>
+            <a href="http://gsi.dit.upm.es/ontologies/marl">http://gsi.dit.upm.es/ontologies/marl</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Previous version:</b>
+        </td>
+        <td>
+            <a href="http://purl.org/marl/0.2">http://purl.org/marl/0.2</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Editors:</b>
+        </td>
+        <td>
+            <a href="http://gsi.dit.upm.es/index.php?option=com_jresearch&view=member&task=show&id=2&Itemid=193">J. Fernando Sánchez-Rada</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Authors:</b>
+        </td>
+        <td>
+            <a href="http://adamwesterski.com/">Adam Westerski</a>
+            <a href="http://gsi.dit.upm.es/index.php?option=com_jresearch&view=member&task=show&id=2&Itemid=193">J. Fernando Sánchez-Rada</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Contributors:</b>
+        </td>
+        <td>
+            See <a href="#acknowledgements">acknowledgements</a>
+        </td>
+    </tr>
+    </table>
+    
+    <p>
+    <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0pt none ; float: right; padding: 10px;" src="img/cc_licence.png" /></a> 
+    </p>    
+    <p class="copyright">This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. This copyright applies to the Marl Ontology Specification and accompanying documentation in RDF. This ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+    <!-- ===================================================================== -->
+    <hr/>
+    <h2 id="abstract">Abstract</h2>
+    <p>
+        <b>Marl</b> is a standardised data schema (also referred as "ontology" or "vocabulary") designed to annotate and describe subjective opinions expressed on the web or in particular Information Systems. The following document contains the description of the ontology and instructions on how to connect it with descriptions of other resources.</p>
+
+    <hr/>
+  
+    <h2 id="contents">Table of Contents</h2>    <ol id="toc">
+      <li><a href="#intro">Introduction</a>
+        <ol>
+          <li><a href="#s11">Opinions on the Web and the opinion mining process</a></li>
+          <li><a href="#s12">The Semantic Web</a></li>
+          <li><a href="#s13">What is Marl for?</a></li>
+          <li><a href="#s14">What is W3C's Provenance?</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec-glance">Marl ontology at a glance</a></li>
+      <li>
+        <a href="#overview">Marl ontology overview</a>
+<!--        <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+        <ol>
+          <li><a href="#s32">Example</a></li>
+        </ol>
+      </li>
+      <li><a href="#reference">Cross-reference for Marl classes and properties %s</a></li>
+    </ol>
+
+    <h3>Appendixes</h3>
+    <ol id="appendix" style="list-style-type:upper-alpha;">
+<!--      <li><a href="#references">Normative References</a></li> -->
+      <li><a href="#changes">Changelog</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ol>
+
+    <hr />
+
+    <!-- ===================================================================== -->
+    <h2 id="intro">1 Introduction</h2>
+
+    <p>The following specification is a formal description of metadata schema proposal that can be applied to data representing subjective opinions published on the Web. The goal of the following section is to provide the basic knowledge to comprehend the technical part of the specification. As such it shall introduce both Semantic Web and general topic of opinion representation and sentiment analysis.</p>
+    <p><b>An important note</b> is that Marl ontology presented here is not a complete model to address the problem of describing and linking opinions online and inside information systems. It mainly defines concepts that are not described yet by the means of other ontologies and provides the data attributes that enable to connect opinions with contextual information already defined in metadata created with other ontologies. For detailed instructions and recommendations to fully model opinions and the results of opinion mining process refer to analysis done in the original specification of <a href="http://marl.gi2mo.org">Marl</a>.</p>
+
+    <h3 id="s11">1.1 Opinions on the Web and the opinion mining process</h3>
+
+    <p>With the birth of Web 2.0 users started to provide their input and create content on mass scape about their subjective opinions related to various topics (e.g. opinions about movies). While this kind of content can be very beneficial for many different uses (e.g. market analysis or predictions) it's accurate analysis and interpretation has not been fully harnessed yet. Information left by the users is often very disorganised and many portals that enable user input leave the user added information unmoderated.
+	</p>
+	<p>
+Opinion mining (often referred as sentiment analysis) is one of the attempts bring order to those vast amounts of user generated content. The domain focuses to analyse textual content using special language processing tools and as output provides a quantified judgement of the sentiments contained in the text (e.g. if the text expresses a positive or negative opinion).</p>
+    <p>
+Due to the complexity of the problem and attempts to provide efficient and fast tools the area can be divided into three main research directions:
+<ul>
+    <li>document wide sentiment analysis</li>
+    <li>sentence sentiment analysis</li>
+    <li>feature-based sentiment analysis</li>
+    </ul>
+    
+    <p>
+    <b>In relation to the World Wide Web</b>, there is a number of common uses of opinion formalisation and analysis. Firstly, it can be applied on top of search engines to find the desired content and next run it through opinion analysis software to obtain desired statistics (e.g. Swotti). Secondly, such algorithms can used within dedicated systems that use the Web to connect to particular communities and gather their opinions on very specific topics (e.g. Internet shops or review websites).
+    </p>
+    <p>
+    <b>In relation to the dedicated systems (e.g. Enterprise Systems)</b>, there the community collaborative models that have proven successful in the open web are often transferred to large enterprise to enhance knowledge exchange and bring the employees together. The same opinion mining techniques can be applied in such cases to extract particular information and use it for internal statistics and to improve knowledge search across the enterprise (e.g. see use of opinion mining in Idea Management [link]).
+    </p>
+
+    </p>
+
+    <h3 id="s12">1.2 The Semantic Web</h3>
+
+    <p>The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is a W3C initiative that aims to introduce rich metadata to the current Web and provide machine readable and processable data as a supplement to human-readable Web.
+    </p>
+    <p>
+    Semantic Web is a mature domain that has been in research phase for many years and with the increasing amount of commercial interest and emerging products is starting to gain appreciation and popularity as one of the rising trends for the future Internet.
+    </p>
+    
+    <p>
+    One of the corner stones of the Semantic Web is research on inter-linkable and interoperable data schemas for information published online. Those schemas are often referred to as ontologies or vocabularies. In order to facilitate the concept of ontologies that lead to a truly interoperable Web of Data, W3C has proposed a series of technologies such as <a href="http://www.w3.org/RDF/">RDF</a> and <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>.
+    <b>Marl</b> uses those technologies and the research that comes within to propose an ontology for the particular goal of describing opinions and linking them with contextual information (such as opinion topic, features described in the opinion etc.).
+    </p>
+
+    <h3 id="s13">1.3 What is Marl for?</h3>
+    <p>
+    The goals of the Marl ontology to achieve as a data schema are:
+    <ul>
+    <li>enable to publish raw data about opinions and the sentiments expressed in them</li>
+    <li>deliver schema that will allow to compare opinions coming from different systems (polarity, topics, features) </li>
+    <li>interconnect opinions by linking them to contextual information expressed with concepts from other popular ontologies or specialised domain ontologies</li>
+    </ul>
+    For more information please refer to Marl usage study done as part of the research in the <a href="http://purl.org/gi2mo/">Gi2MO project</a>.
+    </p>
+
+    <h3 id="s14">1.4 What is W3C's Provenance?</h3>
+    <p>Provenance is information about entities, activities, and people involved in producing a piece of data or thing, which can be used to form assessments about its quality, reliability or trustworthiness. The PROV Family of Documents defines a model, corresponding serializations and other supporting definitions to enable the inter-operable interchange of provenance information in heterogeneous environments such as the Web. This document provides an overview of this family of documents.
+    </p>
+    <p>The <a href="http://www.w3.org/2011/prov/wiki/Main_Page">Provenance Working Group</a> aims to provide a set of recommendations and standards to represent provenance data on the Web. This includes suggestions for representation in several languages, including a full-fledged ontology, which we will use in Marl. The Ontology itself is much wider and complete than the pieces we used in Marl. Thus, we encourage the reader to read the <a href="http://www.w3.org/TR/prov-o/">PROV-O Specification</a> to get to know the conceptual and implementation details. However, to understand the role of Provenance in Marl and vice versa, it is enough to understand the following figure:</p>
+
+    <img src="img/prov.png"/>
+
+    <p>
+    As we can see, Agents take part in Activities to transform Entities (data) into different Entities (modified data). This process can be aggregation of information, translation, adaptation, etc. In our case, this activity is a Sentiment Analysis, which turns plain data into semantic sentiment information.
+    <p>
+
+    <!-- ===================================================================== -->
+
+    <h2 id="sec-glance">2. Marl ontology at a glance</h2>
+
+    <p>
+      An alphabetical index of Marl terms, by class (concepts) and by property 
+      (relationships, attributes), are given below. All the terms are hyperlinked 
+      to their detailed description for quick reference.
+      <!-- %s -->
+    </p>
+
+    <!-- The list of classes and properties goes here -->
+
+%s
+
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <h2 id="overview">3. Marl ontology overview</h2>
+
+    <p>The Marl class diagram presented below shows connections between classes and properties used for describing opinions.</p>
+    
+    <div class="img"> 
+				<a href="img/class_diagram_v1.0.png"><img src="img/class_diagram_v1.0_small.png" alt="Class and Properties Diagram for the Marl Ontology" class="wideimg" title="click to enlarge" style="border:0" /></a> 
+				<div>Class and Properties Diagram for the Marl Ontology (high resolution version: <a href="img/class_diagram_v1.0.png">PNG</a>)</div> 
+	</div> 
+    <!--
+    <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+    -->
+
+    <h3 id="s32">3.1. Example</h3> <!-- 3.2. Example -->
+
+    <p>A very basic example below shows a single opinion annotated with Marl metadata (the second class maps the opinion structure and is shown as reference):</p>
+
+    <img class="wideimg" src="img/example.png"/>
+    <!-- ===================================================================== -->
+
+    <h2 id="reference">4. Cross-reference for Marl classes and properties</h2>
+
+    <p>Below see a comprehensive list of all Marl classes, properties and their descriptions.</p>
+
+    <!-- The following is the script-generated list of classes and properties -->
+    <!-- %s -->
+<!-- %s -->
+<!-- %s -->
+
+%s
+    <!-- End of the terms list -->
+
+    <!-- ===================================================================== -->
+
+    <!-- <h2 id="references">A References</h2> -->
+
+    <!-- ===================================================================== -->
+    
+    <h2 id="changes">A Changelog</h2>
+
+    <h3 id="sec-changes20130510">2013-05-10</h3>
+    <ul>
+        <li>Added Provenance concepts</li>
+        <li>Added SentimentAnalysis activity</li>
+    </ul>
+    <h3 id="sec-changes20100427">2011-03-13</h3> 
+    <ul>
+      <li>Added a number of properties based on ontology evaluation with live datasets</li> 
+      <ul>
+        <li>marl:opinionCount, marl:negativeOpinionCount, marl:positiveOpinionCount, marl:neutralOpinionCount can be used with AggregatedOpinion class to express amount of aggregated opinions</li> 
+        <li>marl:opinionText can be used with Opinion class to describe the exact text extract that the Opinion class describes (in case extractedFrom has many opinions)</li> 
+      </ul>
+    </ul>
+
+	<h3 id="sec-changes20100427">2011-01-27</h3> 
+    <ul>
+      <li>First version of the document</li> 
+    </ul>
+
+    <h2><a id="acknowledgements"></a>B Acknowledgements</h2>
+
+    <p>
+        This documentation has been generated automatically from the most recent ontology specification in OWL using a python script called <a href="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</a>. The style formatting has been inspired on <a href="http://xmlns.com/foaf/spec/">FOAF</a> specification.
+    </p>
+    
+    <p>
+        Special thanks for support with ontology creation and research to: Prof. Carlos A. Iglesias and members of the GSI Group of DIT department of Universidad Polit&#233;cnica de Madrid.
+    </p>
+
+    <p>This ontology has been modified and updated to be used in the <a href="http://eurosentiment.eu">EUROSENTIMENT Project<a/><a href="http://eurosentiment.eu"><img id="eurologo" src="img/eurosentiment_logo.png"/></a></p>  
+    </div>
+  </body>
+</html>
+
+<!-- specification regenerated by SpecGen5 at 22:44:54 03/13/11 CET -->
+

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Gi2MO Wave Ontology Specification</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.5  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGED" CONTENT="20121108;18120200">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<META NAME="CHANGEDBY" CONTENT="Daniel Diezma">
+	<!-- <h3><div style="color:red; float:right">(Draft: Under Construcion!)</div> </h3> -->
+	<STYLE TYPE="text/css">
+	<!--
+		H3.cjk { font-family: "Droid Sans Fallback" }
+		H3.ctl { font-family: "FreeSans" }
+		H2.cjk { font-family: "Droid Sans Fallback" }
+		H2.ctl { font-family: "FreeSans" }
+		PRE.cjk { font-family: "Droid Sans Fallback", monospace }
+		PRE.ctl { font-family: "FreeSans", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<DIV ID="wrapper2" DIR="LTR">
+	<P><A NAME="logo_gsi"></A><A NAME="logo_gi2mo"></A><A HREF="http://www.mondragon.edu/en">
+	</A><BR><BR>
+	</P>
+	<H1>Starfire</H1>
+	<H3 CLASS="western"><A NAME="mymw-doctype"></A><!-- <h2 id="subtitle">LONG NAME</h2> -->V0.1
+	– 08 November 2012</H3>
+	<TABLE WIDTH=457 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=108>
+		<COL WIDTH=341>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>This version:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>DIRECCION DONDE ESTE ALOJADA LA ONTOLOGIA</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Latest version:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>MISMA DIRECCION QUE LA ANTERIOR</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Editors:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>Alvaro Carrera Barroso, Daniel Lara Diezma</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=108 STYLE="border: none; padding: 0cm">
+				<P><B>Authors:</B> 
+				</P>
+			</TD>
+			<TD WIDTH=341 STYLE="border: none; padding: 0cm">
+				<P>Alvaro Carrera Barroso, Daniel Lara Diezma</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR><BR>
+	</P>
+	<H2 CLASS="western"><A NAME="abstract"></A><!-- ===================================================================== -->Abstract</H2>
+	<P><B>Starfire</B> is a standardized data schema (also referred as
+	&quot;ontology&quot; or &quot;vocabulary&quot;) designed to use for
+	diagnosis failures in a network and try to solve them. The following
+	document contains the description of ontology and instructions how
+	to connect it with descriptions of other resources.</P>
+	<H2 CLASS="western"><A NAME="contents"></A>Table of Contents</H2>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A NAME="toc"></A><A HREF="#intro">Introduction</A>
+				</P>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0cm"><A HREF="#1.1 What is Starfire for_|outline">What
+			is Starfire for?</A></P>
+		</OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#2. Starfire Ontology at a glance|outline">Starfire
+		Ontology at a glance</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#3. Starfire Ontology overview|outline">Starfire
+		Ontology overview</A><!-- <ol>
+          <li><a href="#s31">Referenced namespaces</a></li>
+        </ol> -->
+				</P>
+		<OL>
+			<LI><P STYLE="margin-bottom: 0cm"><A HREF="#s32">Example</A> 
+			</P>
+		</OL>
+		<LI><P><A HREF="#reference">Cross-reference for Starfire %s</A> 
+		</P>
+	</OL>
+	<H3 CLASS="western">Appendixes</H3>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0cm"><A NAME="appendix"></A><!-- <li><a href="#references">Normative References</a></li> --><A HREF="#changes">Changelog</A>
+				</P>
+		<LI><P STYLE="margin-bottom: 0cm"><A HREF="#acknowledgements">Acknowledgements</A>
+				</P>
+	</OL>
+	<HR>
+	<H2 CLASS="western"><A NAME="intro"></A><!-- ===================================================================== -->1
+	Introduction</H2>
+	<P>The following specification is a formal description of metadata
+	schema proposal that can be applied to diagnosis failures in a
+	network and try to resolve the failure according to the diagnostic.
+	The goal of the following section is to introduce goals of the
+	ontology and provide the basic knowledge to comprehend the technical
+	part of the specification.</P>
+	<H3 CLASS="western"><A NAME="s13"></A>1.1 What is Starfire for?</H3>
+	<P STYLE="margin-bottom: 0cm">The goals of the Starfire Ontology to
+	achieve as a data schema are: 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm">make a Diagnosis for failures
+		that happen in a Network</P>
+		<LI><P>try to solve the failures according the diagnosis.</P>
+	</UL>
+	<H2 CLASS="western"><A NAME="sec-glance"></A><A NAME="2. Starfire Ontology at a glance|outline"></A>
+	<!-- ===================================================================== -->2.
+	Starfire Ontology at a glance</H2>
+	<P>An alphabetical index of Starfire terms, by class (concepts) and
+	by property (relationships, attributes), are given below. All the
+	terms are hyperlinked to their detailed description for quick
+	reference.<!-- %s --> 
+	</P>
+	<P><!-- The list of classes and properties goes here -->%s<!-- End of the terms list --><!-- ===================================================================== -->
+		</P>
+	<H2 CLASS="western"><A NAME="overview"></A><A NAME="3. Starfire Ontology overview|outline"></A>
+	3. Starfire Ontology overview</H2>
+	<P>The Starfire UML diagram presented below shows connections
+	between classes that implement the data model of Network Failure
+	Diagnosis</P>
+	<P STYLE="margin-bottom: 0cm"><A HREF="img/class_diagram_v0.1.jpg"> </A>
+	</P>
+	<P><BR><BR>
+	</P>
+	<H3 CLASS="western"><A NAME="s32"></A><!-- <h3 id="s31">3.1. Referenced Namespaces</h3>
+    <p>
+    A common practice in Semantic Web domain is to take advantage of the work previously done and model new domains with the use of widely known and well established vocabularies. This practice simplifies the vocabulary pool, allows to establish naming standards and implement better interoperability and data portability across potentially very different systems.
+    </p>
+    <p>
+    Within GI2MO project we attempted to follow those rules and part of the Idea Management System model has been described with the use of other ontologies. As a result, some of the classes and properties defined in this specification have references to properties from other ontologies to indicate point of connection. Those referenced ontologies are described with the following namespaces:
+    </p>
+    <table CELLPADDING="3" cellspacing="2">
+        <tr style="font-weight: bold;">
+            <td class="prefix_table_cell">
+                Prefix
+            </td>
+            <td class="prefix_table_cell">
+                Namespace
+            </td>
+            <td class="prefix_table_cell">
+                Specification/ Usage Description
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                dcterms
+            </td>
+            <td class="prefix_table_cell">
+                http://purl.org/dc/terms/
+            </td>
+            <td class="prefix_table_cell" style="border-bottom: 1px solid #E1D7D7;">
+                <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a> ontology is a core ontology that defines a number of very generic properties such as title, description etc. Those are used across many classes in the GI2MO Wave Ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                doap
+            </td>
+            <td class="prefix_table_cell">
+                http://usefulinc.com/ns/doap#
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://trac.usefulinc.com/doap">Description Of A Project</a> ontology. Used to model the 4th stage of idea life cycle - idea implementation. The concepts of this ontology are used to describe projects run to implement the ideas.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                foaf
+            </td>
+            <td class="prefix_table_cell">
+                http://xmlns.com/foaf/0.1/
+            </td>
+            <td class="prefix_table_cell">
+                <a href="http://xmlns.com/foaf/spec/">Friend Of A Friend</a> ontology. Within GI2MO it is used to model concepts related to user account and the digital personification of a human being.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                scot
+            </td>
+            <td class="prefix_table_cell">
+                http://scot-project.org/scot/ns#
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://scot-project.org/scot/spec/scot.html">Social Semantic Cloud of Tags</a> ontology. The concepts of this ontology are used to model tags together with Newman's Tags ontology.
+            </td>
+        </tr>
+        <tr>
+            <td class="prefix_table_cell">
+                tags
+            </td>
+            <td class="prefix_table_cell">
+                http://www.holygoat.co.uk/owl/redwood/0.1/tags/
+            </td>
+            <td class="prefix_table_cell">
+                 <a href="http://www.holygoat.co.uk/projects/tags/">Newman's Tags</a> ontology. The concepts of this ontology are used as a base model tags. 
+            </td>
+        </tr>
+
+    </table>
+ --><!-- ===================================================================== -->3.1.
+	Example</H3>
+	<P><!-- 3.2. Example -->A very basic example below shows a single
+	failure annotated with Starfire metadata:</P>
+	<PRE CLASS="western">    &lt;owl:Classrdf:about=&quot;http://starfire.googlecode.com/svn/trunk/starfire/plugins/edu.stanford.smi.protegex.owl/Diagnosis.owl#Failure&quot;&gt;&lt;rdfs:comment xml:lang=&quot;en&quot;&gt;&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This class represents the concept of failure.
+    &lt;/p&gt;&lt;/rdfs:comment&gt;&lt;ns:term_status xml:lang=&quot;en&quot;&gt;Stable&lt;/ns:term_status&gt;&lt;/owl:Class&gt;
+  </PRE><H2 CLASS="western">
+	<A NAME="reference"></A><!-- ===================================================================== -->4.
+	Cross-reference for Starfire classes and properties</H2>
+	<P>Below see a comprehensive list of all Starfire classes,
+	properties and their descriptions.</P>
+	<P><!-- The following is the script-generated list of classes and properties --><!-- %s --><!-- %s --><!-- this is the a-z listing --><!-- %s --><!-- and this is the bulk of the vocab descriptions -->%s
+		</P>
+	<H2 CLASS="western"><A NAME="changes"></A>A Changelog</H2>
+	<H3 CLASS="western">2012-11-08</H3>
+	<UL>
+		<LI><P>First version of the document 
+		</P>
+	</UL>
+	<H2 CLASS="western"><A NAME="acknowledgements"></A>B
+	Acknowledgements</H2>
+	<P>This documentation has been generated automatically from the most
+	recent ontology specification in OWL using a python script called
+	<A HREF="http://forge.morfeo-project.org/wiki_en/index.php/SpecGen">SpecGen</A>.
+	The style formatting has been inspired on <A HREF="http://xmlns.com/foaf/spec/">FOAF</A>
+	specification. 
+	</P>
+</DIV>
+</BODY>
+</HTML>
